@@ -1,7 +1,7 @@
 ﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft realms index.
+	/// JSON structure for an index of World of Warcraft realms.
 	/// </summary>
 	[System.Serializable]
 	public class WowRealmsIndex_JSON : Object_Json

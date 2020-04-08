@@ -75,14 +75,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="name">THe character's name.</param>
 		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfileSummary(API.BattleNetRegion region, string realm, string name, Action<WowCharacterProfileSummary_JSON> result = null)
+		public static IEnumerator CGetCharacterProfileSummary(BlizzardAPI.BattleNetRegion region, string realm, string name, Action<WowCharacterProfileSummary_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = string.Format("/profile/wow/character/{0}/{1}", realm, name);
-			string url = API.UrlFormatter(region, path, API.namespaceProfile);
-
-			yield return API.SendRequest<WowCharacterProfileSummary_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
 		}
 
 		/// <summary>
@@ -93,19 +89,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="name">THe character's name.</param>
 		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfileSummaryTest(API.BattleNetRegion region, string realm, string name, Action<WowCharacterProfileSummary_JSON> result = null)
+		public static IEnumerator CGetCharacterProfileSummaryTest(BlizzardAPI.BattleNetRegion region, string realm, string name, Action<WowCharacterProfileSummary_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			Dictionary<string, string> headers = new Dictionary<string, string>()
 			{
-				{ "Battlenet-Namespace", API.namespaceProfile + region },
-				{ "Authorization", "Bearer " + API.accessToken.token }
+				{ "Battlenet-Namespace", BlizzardAPI.namespaceProfile + region },
+				{ "Authorization", "Bearer " + BlizzardAPI.accessToken.token }
 			};
 
-			string url = string.Concat(API.UrlDomain(region), "/profile/wow/character/", realm, "/", name);
+			string path = string.Concat("/profile/wow/character/", realm, "/", name);
 
-			yield return API.SendRequestHeaders<WowCharacterProfileSummary_JSON>(url, headers, x => result(x));
+			yield return BlizzardAPI.SendRequestHeaders(region, BlizzardAPI.namespaceProfile, path, headers, result);
 		}
 
 		#endregion

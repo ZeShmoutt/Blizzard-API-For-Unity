@@ -11,7 +11,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	/// <summary>
 	/// Interface for working with the Blizzard API inside Unity.
 	/// </summary>
-	public static class API
+	public static class BlizzardAPI
 	{
 		#region Constants
 
@@ -92,7 +92,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <summary>
 		/// Creates a nicely formatted request URL, including the namespace and access token.
 		/// </summary>
-		/// <param name="region">Region </param>
+		/// <param name="region">Region to retrieve the data from.</param>
 		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
 		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
 		/// <param name="queryParameters">Additional query parameters to add to the request. No "&" needed.</param>
@@ -291,11 +291,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// Send a request to Blizzard with the specified URL, and execute an action on the result.
 		/// </summary>
 		/// <typeparam name="T">Type of JSON result expected (character, realm, etc.).</typeparam>
-		/// <param name="url">Request URL to send. Make sure to include the access token.</param>
+		/// <param name="region">Region to retrieve the data from.</param>
+		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
+		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
 		/// <param name="result">Action to apply to the result.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequest<T>(string url, Action<T> result = null) where T : Object_Json
+		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> result) where T : Object_Json
 		{
+			yield return CheckAccessToken(region);
+
+			string url = UrlFormatter(region, apiPath, apiNamespace);
+
 			UnityWebRequest request = UnityWebRequest.Get(url);
 			yield return request.SendWebRequest();
 
@@ -321,12 +327,18 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// EXPERIMENTAL FEATURE, USE WITH CAUTION. Same as SendRequest except it uses web request headers to send the token and namespace, instead of cramming everything in the url.
 		/// </summary>
 		/// <typeparam name="T">Type of JSON result expected (character, realm, etc.).</typeparam>
-		/// <param name="url">Request URL to send. Make sure to include the access token.</param>
+		/// <param name="region">Region to retrieve the data from.</param>
+		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
+		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
 		/// <param name="headers">Headers to send with the web request.</param>
 		/// <param name="result">Action to apply to the result.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequestHeaders<T>(string url, Dictionary<string, string> headers, Action<T> result = null) where T : Object_Json
+		public static IEnumerator SendRequestHeaders<T>(BattleNetRegion region, string apiNamespace, string apiPath, Dictionary<string, string> headers, Action<T> result) where T : Object_Json
 		{
+			yield return CheckAccessToken(region);
+
+			string url = UrlDomain(region) + apiPath;
+
 			UnityWebRequest request = UnityWebRequest.Get(url);
 			foreach (KeyValuePair<string, string> item in headers)
 			{

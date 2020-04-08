@@ -18,14 +18,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The server region to get the data from.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetAchievementCategoriesIndex(API.BattleNetRegion region, Action<WowAchievementCategoriesIndex_Json> result = null)
+		public static IEnumerator CGetAchievementCategoriesIndex(BlizzardAPI.BattleNetRegion region, Action<WowAchievementCategoriesIndex_Json> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = "/data/wow/achievement-category/index";
-			string url = API.UrlFormatter(region, path, API.namespaceStatic);
-
-			yield return API.SendRequest<WowAchievementCategoriesIndex_Json>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
 		}
 
 		/// <summary>
@@ -35,14 +31,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="achievementCategoryId">ID of the achievement category to retrieve.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetAchievementCategory(API.BattleNetRegion region, int achievementCategoryId, Action<WowAchievementCategory_JSON> result = null)
+		public static IEnumerator CGetAchievementCategory(BlizzardAPI.BattleNetRegion region, int achievementCategoryId, Action<WowAchievementCategory_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = string.Format("/data/wow/achievement-category/{0}", achievementCategoryId.ToString());
-			string url = API.UrlFormatter(region, path, API.namespaceStatic);
-
-			yield return API.SendRequest<WowAchievementCategory_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
 		}
 
 		/// <summary>
@@ -51,14 +43,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The server region to get the data from.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetAchievementsIndex(API.BattleNetRegion region, Action<WowAchievementIndex_JSON> result = null)
+		public static IEnumerator CGetAchievementsIndex(BlizzardAPI.BattleNetRegion region, Action<WowAchievementIndex_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = "/data/wow/achievement/index";
-			string url = API.UrlFormatter(region, path, API.namespaceStatic);
-
-			yield return API.SendRequest<WowAchievementIndex_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
 		}
 
 		/// <summary>
@@ -68,14 +56,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="achievementId">ID of the achievement to retrieve.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetAchievement(API.BattleNetRegion region, int achievementId, Action<WoWAchievement_JSON> result = null)
+		public static IEnumerator CGetAchievement(BlizzardAPI.BattleNetRegion region, int achievementId, Action<WoWAchievement_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = string.Format("/data/wow/achievement/{0}", achievementId.ToString());
-			string url = API.UrlFormatter(region, path, API.namespaceStatic);
-
-			yield return API.SendRequest<WoWAchievement_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
 		}
 
 		/// <summary>
@@ -85,33 +69,100 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="achievementId">ID of the achievement to retrieve the corresponding media.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetAchievementMedia(API.BattleNetRegion region, int achievementId, Action<WowAchievementMedia_JSON> result = null)
+		public static IEnumerator CGetAchievementMedia(BlizzardAPI.BattleNetRegion region, int achievementId, Action<WowAchievementMedia_JSON> result)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = string.Format("/data/wow/media/achievement/{0}", achievementId.ToString());
-			string url = API.UrlFormatter(region, path, API.namespaceStatic);
-
-			yield return API.SendRequest<WowAchievementMedia_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
 		}
 
 		#endregion
 
 		#region Auction House API
 
-		// NOT YET IMPLEMENTED.
+		/// <summary>
+		/// Coroutine that retrieves a list of all WoW auctions in a connected realm for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="connectedRealmId">ID of the achievement to retrieve the corresponding media.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetAuctions(BlizzardAPI.BattleNetRegion region, int connectedRealmId, Action<WowAuctions_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/connected-realm/{0}/auctions", connectedRealmId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceDynamic, path, result);
+		}
 
 		#endregion
 
 		#region Azerite Essence API
 
-		// NOT YET IMPLEMENTED.
+		/// <summary>
+		/// Coroutine that retrieves the index of WoW azerite essences for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetAzeriteEssencesIndex(BlizzardAPI.BattleNetRegion region, Action<WowAzeriteEssencesIndex_JSON> result = null)
+		{
+			string path = "/data/wow/azerite-essence/index";
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves a WoW azerite essence for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="azeriteEssenceId">ID of the azerite essence to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetAzeriteEssence(BlizzardAPI.BattleNetRegion region, int azeriteEssenceId, Action<WowAzeriteEssence_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/azerite-essence/{0}", azeriteEssenceId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW azerite essence for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="azeriteEssenceId">ID of the azerite essence to retrieve the corresponding media.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetAzeriteEssenceMedia(BlizzardAPI.BattleNetRegion region, int azeriteEssenceId, Action<WowAzeriteEssenceMedia_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/media/azerite-essence/{0}", azeriteEssenceId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
 
 		#endregion
 
 		#region Connected Realm API
 
-		// NOT YET IMPLEMENTED.
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW azerite essence for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="azeriteEssenceId">ID of the azerite essence to retrieve the corresponding media.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetConnectedRealmsIndex(BlizzardAPI.BattleNetRegion region, Action<WowConnectedRealmsIndex_JSON> result = null)
+		{
+			string path = "/data/wow/connected-realm/index";
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceDynamic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW azerite essence for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="connectedRealmId">ID of the connected realm to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetConnectedRealm(BlizzardAPI.BattleNetRegion region, int connectedRealmId, Action<WowConnectedRealm_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/connected-realm/{0}", connectedRealmId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceDynamic, path, result);
+		}
 
 		#endregion
 
@@ -225,14 +276,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The server region to get the data from.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetRealmsIndex(API.BattleNetRegion region, Action<WowRealmsIndex_JSON> result = null)
+		public static IEnumerator CGetRealmsIndex(BlizzardAPI.BattleNetRegion region, Action<WowRealmsIndex_JSON> result = null)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = "/data/wow/realm/index";
-			string url = API.UrlFormatter(region, path, API.namespaceDynamic);
-
-			yield return API.SendRequest<WowRealmsIndex_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceDynamic, path, result);
 		}
 
 		/// <summary>
@@ -242,14 +289,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="realmSlug">The realm's data-friendly name. Use CGetRealmsIndex to get a list of realms and their slugs.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetRealm(API.BattleNetRegion region, string realmSlug, Action<WowRealm_JSON> result = null)
+		public static IEnumerator CGetRealm(BlizzardAPI.BattleNetRegion region, string realmSlug, Action<WowRealm_JSON> result = null)
 		{
-			yield return API.CheckAccessToken(region);
-
 			string path = string.Format("/data/wow/realm/{0}", realmSlug);
-			string url = API.UrlFormatter(region, path, API.namespaceDynamic);
-
-			yield return API.SendRequest<WowRealm_JSON>(url, x => result(x));
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceDynamic, path, result);
 		}
 
 		#endregion

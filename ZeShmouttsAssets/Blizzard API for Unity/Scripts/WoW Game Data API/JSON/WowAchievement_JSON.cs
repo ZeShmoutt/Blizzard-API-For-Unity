@@ -6,6 +6,8 @@
 	[System.Serializable]
 	public class WoWAchievement_JSON : Object_Json
 	{
+		// Note : missing some stuff. Check with meta-achievements to see whats missing (e.g. "The Loremaster" id:7520).
+
 		public LinkStruct _links;
 
 		public int id;
