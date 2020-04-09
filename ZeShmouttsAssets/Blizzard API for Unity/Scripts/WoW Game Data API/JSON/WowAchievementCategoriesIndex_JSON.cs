@@ -1,7 +1,7 @@
 ﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft index of achievement categories.
+	/// JSON structure for an index of World of Warcraft achievement categories.
 	/// </summary>
 	[System.Serializable]
 	public class WowAchievementCategoriesIndex_Json : Object_Json

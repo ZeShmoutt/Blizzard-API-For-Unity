@@ -1,7 +1,7 @@
 ﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for stuff.
+	/// JSON structure for an index of World of Warcraft auctions.
 	/// </summary>
 	[System.Serializable]
 	public class WowAuctions_JSON : Object_Json

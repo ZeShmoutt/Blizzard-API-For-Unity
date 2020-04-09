@@ -142,7 +142,6 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// Coroutine that retrieves the medias of a WoW azerite essence for the specified region as JSON, then convert the JSON to something easier to handle.
 		/// </summary>
 		/// <param name="region">The server region to get the data from.</param>
-		/// <param name="azeriteEssenceId">ID of the azerite essence to retrieve the corresponding media.</param>
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <returns></returns>
 		public static IEnumerator CGetConnectedRealmsIndex(BlizzardAPI.BattleNetRegion region, Action<WowConnectedRealmsIndex_JSON> result = null)
@@ -168,7 +167,94 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		#region Creature API
 
-		// NOT YET IMPLEMENTED.
+		/// <summary>
+		/// Coroutine that retrieves an index of WoW creature families for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureFamiliesIndex(BlizzardAPI.BattleNetRegion region, Action<WowCreatureFamiliesIndex_JSON> result = null)
+		{
+			string path = "/data/wow/creature-family/index";
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves a WoW creature family for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="creatureFamilyId">ID of the creature family to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureFamily(BlizzardAPI.BattleNetRegion region, int creatureFamilyId, Action<WowCreatureFamily_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/creature-family/{0}", creatureFamilyId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves an index of WoW creature types for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureTypesIndex(BlizzardAPI.BattleNetRegion region, Action<WowCreatureTypesIndex_JSON> result = null)
+		{
+			string path = "/data/wow/creature-type/index";
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves a WoW creature type for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="creatureTypeId">ID of the creature type to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureType(BlizzardAPI.BattleNetRegion region, int creatureTypeId, Action<WowCreatureType_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/creature-type/{0}", creatureTypeId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves a WoW creature for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="creatureId">ID of the creature to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreature(BlizzardAPI.BattleNetRegion region, int creatureId, Action<WowCreature_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/creature/{0}", creatureId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW creature for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="creatureDisplayId">ID of the creature to retrieve.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureDisplayMedia(BlizzardAPI.BattleNetRegion region, int creatureDisplayId, Action<WowCreatureDisplayMedia_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/media/creature-display/{0}", creatureDisplayId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW creature family for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="region">The server region to get the data from.</param>
+		/// <param name="creatureFamilyId">ID of the creature family to retrieve the corresponding medias.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetCreatureFamilyMedia(BlizzardAPI.BattleNetRegion region, int creatureFamilyId, Action<WowCreatureFamilyMedia_JSON> result = null)
+		{
+			string path = string.Format("/data/wow/media/creature-family/{0}", creatureFamilyId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
 
 		#endregion
 

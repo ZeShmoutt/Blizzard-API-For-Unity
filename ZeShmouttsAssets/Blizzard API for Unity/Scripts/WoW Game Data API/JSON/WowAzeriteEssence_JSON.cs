@@ -1,7 +1,7 @@
 ﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft azerite essence.
+	/// JSON structure for World of Warcraft azerite essences.
 	/// </summary>
 	[System.Serializable]
 	public class WowAzeriteEssence_JSON : Object_Json

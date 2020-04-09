@@ -16,11 +16,11 @@ I'd appreciate a lot if you could mention me somewhere if you use it, though.
 
 ## Installation
 
-1. If you don't have one already, go [here](https://develop.battle.net/access/) and create a client. This will give you an unique client ID and client secret.
+1. If you don't have one already, follow [this link](https://develop.battle.net/access/), login, and create a client. This will give you an unique client ID and client secret.
 2. Clone/download the repo and put it in your Unity project's assets.
 3. Find the BlizzardAppInfos.cs script, and change the values with your cliend ID and client secret.
 
-Later on I'll add some custom editor tools that need coroutines, so you might want to install Unity's editor coroutines package. you can download it from the package manager, by showing preview packages.
+Later on I'll add some custom editor tools that need coroutines, so you might want to install Unity's editor coroutines package. You can download it from the package manager, by showing preview packages.
 
 ## Removing unused API endpoints
 
