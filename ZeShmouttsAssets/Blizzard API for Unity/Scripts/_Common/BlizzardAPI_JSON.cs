@@ -123,5 +123,15 @@
 		public string display_string;
 	}
 
+	/// <summary>
+	/// "value" (float), "display_string" (LocalizedString).
+	/// </summary>
+	[System.Serializable]
+	public struct ValueDisplayStruct
+	{
+		public float value;
+		public string display_string;
+	}
+
 	#endregion
 }
