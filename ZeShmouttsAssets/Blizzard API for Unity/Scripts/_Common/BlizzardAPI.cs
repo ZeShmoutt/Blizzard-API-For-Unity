@@ -15,14 +15,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	{
 		#region Constants
 
-		public const string oauthAuthorizeURL = "https://{0}.battle.net/oauth/authorize";
-		public const string oauthTokenURL = "https://{0}.battle.net/oauth/token";
-
-		public const string prefsTokenValue = "BlizzardOAuthTokenValue";
-		public const string prefsTokenType = "BlizzardOAuthTokenType";
-		public const string prefsTokenExpiration = "BlizzardOAuthTokenExpiration";
-
 		public const string urlStart = "https://";
+
+		public const string oauthTokenURL = ".battle.net/oauth/token";
+		public const string oauthAuthorizeURL = ".battle.net/oauth/authorize";
+
+		public const string prefsTokenGeneral = "BlizzardOAuthTokenGeneral";
+		public const string prefsTokenProfile = "BlizzardOAuthTokenProfile";
+
+		private const string urlDomain = ".api.blizzard.com";
+		private const string urlDomainCN = "gateway.battlenet.com.cn";
+
 		public const string headerNamespace = "namespace=";
 		public const string headerToken = "access_token=";
 
@@ -35,9 +38,6 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		#endregion
 
 		#region Region tools
-
-		private const string urlDomain = ".api.blizzard.com";
-		private const string urlDomainCN = "gateway.battlenet.com.cn";
 
 		private const string regionUnitedStates = "us";
 		private const string regionEurope = "eu";
@@ -131,11 +131,23 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <summary>
 		/// JSON structure for OAUth access tokens.
 		/// </summary>
-		public struct AccessTokenJSON
+		public struct AccessToken_JSON
 		{
 			public string access_token;
 			public string token_type;
 			public int expires_in;
+			public string scope;
+		}
+
+		/// <summary>
+		/// JSON structure for OAUth access tokens.
+		/// </summary>
+		public struct StoredToken_JSON
+		{
+			public string access_token;
+			public string token_type;
+			public string expiration;
+			public string scope;
 		}
 
 		/// <summary>
@@ -159,25 +171,32 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// </summary>
 			public DateTime expiration { get; private set; }
 
-			public AccessToken(string access_token, string token_type, DateTime expiration)
+			/// <summary>
+			/// The scope of the token.
+			/// </summary>
+			public string scope { get; private set; }
+
+			public AccessToken(string access_token, string token_type, DateTime expiration, string scope)
 			{
 				this.token = access_token;
 				this.type = token_type;
 				this.expiration = expiration;
+				this.scope = scope;
 			}
 
-			public AccessToken(string access_token, string token_type, int expires_in)
+			public AccessToken(string access_token, string token_type, int expires_in, string scope)
 			{
 				this.token = access_token;
 				this.type = token_type;
 				this.expiration = DateTime.Now.AddSeconds(expires_in);
 			}
 
-			public AccessToken(AccessTokenJSON json)
+			public AccessToken(AccessToken_JSON json)
 			{
 				this.token = json.access_token;
 				this.type = json.token_type;
 				this.expiration = DateTime.Now.AddSeconds(json.expires_in);
+				this.scope = json.scope;
 			}
 		}
 
@@ -186,6 +205,43 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		#endregion
 
 		#region Access Token methods
+
+		/// <summary>
+		/// Retrieves an access token from the selected PlayerPrefs.
+		/// </summary>
+		/// <param name="prefsName">PlayerPrefs where the token is stored.</param>
+		/// <returns>Returns an access token converted from JSON, or 'null' if the PlayerPrefs is invalid.</returns>
+		private static AccessToken GetPrefsToken(string prefsName)
+		{
+			string tokenString = PlayerPrefs.GetString(prefsName);
+
+			if (string.IsNullOrEmpty(tokenString)) { return null; }
+
+			StoredToken_JSON tokenJson = JsonUtility.FromJson<StoredToken_JSON>(tokenString);
+			long temp;
+			try { temp = Convert.ToInt64(tokenJson.expiration); } catch { temp = 0; }
+			DateTime expiration = temp != 0 ? DateTime.FromBinary(temp) : DateTime.Now.AddSeconds(-1);
+
+			return new AccessToken(tokenJson.access_token, tokenJson.token_type, expiration, tokenJson.scope);
+		}
+
+		/// <summary>
+		/// Saves an access token at the selected PlayerPrefs.
+		/// </summary>
+		/// <param name="prefsName">PlayerPrefs where the token will be saved as JSON.</param>
+		/// <param name="token">Access toekn to save.</param>
+		private static void SetPrefsToken(string prefsName, AccessToken token)
+		{
+			StoredToken_JSON tokenJson = new StoredToken_JSON()
+			{
+				access_token = token.token,
+				token_type = token.type,
+				expiration = token.expiration.ToBinary().ToString(),
+				scope = token.scope
+			};
+
+			PlayerPrefs.SetString(prefsName, JsonUtility.ToJson(tokenJson));
+		}
 
 		/// <summary>
 		/// Coroutine checks the cached access token validity. If it isn't valid, retrieves a token from PlayerPrefs if it exists, or get a new token from Blizzard using OAuth.
@@ -200,11 +256,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			if (accessToken != null && accessToken.token.Length <= 0 && accessToken.expiration >= currentDate)
 			{
 				// If we already have a valid access token in the cache, update it and skip the rest
-				PlayerPrefs.SetString(prefsTokenValue, accessToken.token);
-				PlayerPrefs.SetString(prefsTokenType, accessToken.type);
-				PlayerPrefs.SetString(prefsTokenExpiration, accessToken.expiration.ToBinary().ToString());
-
+				SetPrefsToken(prefsTokenGeneral, accessToken);
 				Debug.LogFormat("Cached token still valid : '{0}' (expires {1})", accessToken.token, accessToken.expiration.ToString());
+
 				if (result != null)
 				{
 					result(accessToken.token);
@@ -217,19 +271,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				accessToken = null;
 
 				// If the token is invalid, try to fetch it from the PlayerPrefs first
-				string token = PlayerPrefs.GetString(prefsTokenValue);
-				string type = PlayerPrefs.GetString(prefsTokenType);
-				string expString = PlayerPrefs.GetString(prefsTokenExpiration);
-				long temp;
+				AccessToken storedToken = GetPrefsToken(prefsTokenGeneral);
 
-				try { temp = Convert.ToInt64(expString); }
-				catch { temp = 0; }
-
-				DateTime expiration = temp != 0 ? DateTime.FromBinary(temp) : DateTime.Now.AddSeconds(-1);
-
-				AccessToken storedToken = new AccessToken(token, type, expiration);
-
-				if (storedToken.token.Length > 0 && storedToken.expiration > currentDate)
+				if (storedToken != null && storedToken.token.Length > 0 && storedToken.expiration > currentDate)
 				{
 					// If the stored access token is still valid, replace the cache with it and skip the rest
 					Debug.LogFormat("Stored token still valid : '{0}' (expires {1})", storedToken.token, storedToken.expiration.ToString());
@@ -245,7 +289,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 					Debug.Log("Invalid access token, retrieving a new token...");
 
 					// The stored token is also invalid, fetch an entirely new token, cache it, and store it
-					string url = string.Format(oauthTokenURL, region.RegionToString());
+					string url = string.Concat(urlStart, region.RegionToString(), oauthTokenURL);
 
 					Dictionary<string, string> form = new Dictionary<string, string>()
 					{
@@ -260,14 +304,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 					if (!tokenRequest.isNetworkError && !tokenRequest.isHttpError)
 					{
 						string resultContent = tokenRequest.downloadHandler.text;
-						AccessTokenJSON json = JsonUtility.FromJson<AccessTokenJSON>(resultContent);
+						AccessToken_JSON json = JsonUtility.FromJson<AccessToken_JSON>(resultContent);
 
 						accessToken = new AccessToken(json);
 
-						PlayerPrefs.SetString(prefsTokenValue, accessToken.token);
-						PlayerPrefs.SetString(prefsTokenType, accessToken.type);
-						PlayerPrefs.SetString(prefsTokenExpiration, accessToken.expiration.ToBinary().ToString());
-
+						SetPrefsToken(prefsTokenGeneral, accessToken);
 						Debug.LogFormat("Access token granted : '{0}' ; expires {1}", accessToken.token, accessToken.expiration.ToString());
 
 						if (result != null)
