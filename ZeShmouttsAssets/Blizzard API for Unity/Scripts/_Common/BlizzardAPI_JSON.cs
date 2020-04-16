@@ -78,6 +78,17 @@
 	}
 
 	/// <summary>
+	/// "key" (HRefStruct), "name" (string), "id" (int).
+	/// </summary>
+	[System.Serializable]
+	public struct RefStringIdStruct
+	{
+		public HRefStruct key;
+		public string name;
+		public int id;
+	}
+
+	/// <summary>
 	/// "key" (string), "value" (string).
 	/// </summary>
 	[System.Serializable]
@@ -131,6 +142,28 @@
 	{
 		public float value;
 		public string display_string;
+	}
+
+	/// <summary>
+	/// "male" (LocalizedString), "female" (LocalizedString).
+	/// </summary>
+	[System.Serializable]
+	public struct GenderName
+	{
+		public LocalizedString male;
+		public LocalizedString female;
+	}
+
+	/// <summary>
+	/// "key" (HRefStruct), "name" (string), "id" (int), "realm" (RealmStruct).
+	/// </summary>
+	[System.Serializable]
+	public struct CharacterStruct
+	{
+		public HRefStruct key;
+		public string name;
+		public int id;
+		public RealmStruct realm;
 	}
 
 	#endregion
