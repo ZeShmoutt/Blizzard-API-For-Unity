@@ -469,7 +469,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetPvpTalentSlots(int classId, Action<WowPvpTalentSlots_Json> result, BlizzardAPI.BattleNetRegion region = BlizzardAPI.BattleNetRegion.UnitedStates)
+		public static IEnumerator CGetPvpTalentSlots(int classId, Action<WowPvpTalentSlots_JSON> result, BlizzardAPI.BattleNetRegion region = BlizzardAPI.BattleNetRegion.UnitedStates)
 		{
 			string path = string.Format("/data/wow/playable-class/{0}/pvp-talent-slots", classId.ToString());
 			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
@@ -556,7 +556,31 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		#region Spell API
 
-		// NOT YET IMPLEMENTED.
+		/// <summary>
+		/// Coroutine that retrieves a WoW spell for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="spellId">The ID of the spell.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <param name="region">The region of the data to retrieve.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetSpell(int spellId, Action<WowSpell_JSON> result, BlizzardAPI.BattleNetRegion region = BlizzardAPI.BattleNetRegion.UnitedStates)
+		{
+			string path = string.Format("/data/wow/spell/{0}", spellId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
+
+		/// <summary>
+		/// Coroutine that retrieves the medias of a WoW spell for the specified region as JSON, then convert the JSON to something easier to handle.
+		/// </summary>
+		/// <param name="spellId">The ID of the spell.</param>
+		/// <param name="result">Action to execute with the data once retrieved and converted.</param>
+		/// <param name="region">The region of the data to retrieve.</param>
+		/// <returns></returns>
+		public static IEnumerator CGetSpellMedia(int spellId, Action<WowSpellMedia_JSON> result, BlizzardAPI.BattleNetRegion region = BlizzardAPI.BattleNetRegion.UnitedStates)
+		{
+			string path = string.Format("/data/wow/media/spell/{0}", spellId.ToString());
+			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceStatic, path, result);
+		}
 
 		#endregion
 
