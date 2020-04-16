@@ -55,9 +55,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			switch (region)
 			{
 				case BattleNetRegion.China:
-					return urlStart + urlDomainCN;
+					return string.Concat(urlStart, urlDomainCN);
 				default:
-					return urlStart + region.RegionToString() + urlDomain;
+					return string.Concat(urlStart, region.RegionToString(), urlDomain);
 			}
 		}
 
@@ -140,7 +140,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		}
 
 		/// <summary>
-		/// JSON structure for OAUth access tokens.
+		/// JSON structure for stored OAUth access tokens.
 		/// </summary>
 		public struct StoredToken_JSON
 		{
