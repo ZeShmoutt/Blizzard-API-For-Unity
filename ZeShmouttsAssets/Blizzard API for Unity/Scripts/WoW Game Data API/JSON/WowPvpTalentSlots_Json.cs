@@ -4,7 +4,7 @@
 	/// JSON structure for World of Warcraft PvP talent slots.
 	/// </summary>
 	[System.Serializable]
-	public class WowPvpTalentSlots_Json : Object_Json
+	public class WowPvpTalentSlots_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
