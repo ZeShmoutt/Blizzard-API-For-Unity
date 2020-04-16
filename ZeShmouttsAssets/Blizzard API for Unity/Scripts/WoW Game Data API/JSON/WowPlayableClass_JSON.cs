@@ -11,12 +11,6 @@
 		public int id;
 		public LocalizedString name;
 
-		[System.Serializable]
-		public struct GenderName
-		{
-			public LocalizedString male;
-			public LocalizedString female;
-		}
 		public GenderName gender_name;
 
 		public RefNameIdStruct power_type;
