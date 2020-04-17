@@ -65,7 +65,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="characterName">The lowercase name of the character.</param>
 		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfileSummary(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
+		public static IEnumerator CGetCharacterMediaSummary(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/character-media");
 			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
