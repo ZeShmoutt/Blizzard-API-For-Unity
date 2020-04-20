@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
 namespace ZeShmouttsAssets.BlizzardAPI
@@ -9,7 +8,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	/// API endpoints related to World of Warcraft profile data (characters, account, etc.).
 	/// Reference : https://develop.battle.net/documentation/world-of-warcraft/profile-apis
 	/// </summary>
-	public static class BlizzardAPI_WowProfile
+	public static partial class BlizzardAPI
 	{
 		private const string characterBasePath = "/profile/wow/character/";
 
@@ -63,12 +62,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <param name="realmSlug">The slug of the realm.</param>
 		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterMediaSummary(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
+		public static IEnumerator CGetCharacterMediaSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/character-media");
-			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
+			yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
 		}
 
 		#endregion
@@ -87,12 +87,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <param name="realmSlug">The slug of the realm.</param>
 		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfessionsSummary(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
+		public static IEnumerator CGetCharacterProfessionsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/professions");
-			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
+			yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
 		}
 
 		#endregion
@@ -105,33 +106,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <param name="realmSlug">The slug of the realm.</param>
 		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfileSummary(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterProfileSummary_JSON> result)
+		public static IEnumerator CGetCharacterProfileSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterProfileSummary_JSON> action_Result, Action<string> action_LastModified = null)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName);
-			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
-		}
-
-		/// <summary>
-		/// EXPERIMENTAL FEATURE, USE WITH CAUTION. Same as CGetCharacterProfileSummary except it uses web request headers to send the token and namespace, instead of cramming everything in the url.
-		/// </summary>
-		/// <param name="region">The region of the data to retrieve.</param>
-		/// <param name="realmSlug">The slug of the realm.</param>
-		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
-		/// <returns></returns>
-		public static IEnumerator CGetCharacterProfileSummaryTest(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterProfileSummary_JSON> result)
-		{
-			Dictionary<string, string> headers = new Dictionary<string, string>()
-			{
-				{ "Battlenet-Namespace", BlizzardAPI.namespaceProfile + region },
-				{ "Authorization", "Bearer " + BlizzardAPI.accessToken.token }
-			};
-
-			string path = string.Concat(characterBasePath, realmSlug, "/", characterName);
-
-			yield return BlizzardAPI.SendRequestHeaders(region, BlizzardAPI.namespaceProfile, path, headers, result);
+			yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
 		}
 
 		#endregion
@@ -150,12 +131,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <param name="realmSlug">The slug of the realm.</param>
 		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterQuests(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
+		public static IEnumerator CGetCharacterQuests(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/quests");
-			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
+			yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
 		}
 
 		/// <summary>
@@ -164,12 +146,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">The region of the data to retrieve.</param>
 		/// <param name="realmSlug">The slug of the realm.</param>
 		/// <param name="characterName">The lowercase name of the character.</param>
-		/// <param name="result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <returns></returns>
-		public static IEnumerator CGetCharacterCompletedQuests(BlizzardAPI.BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> result)
+		public static IEnumerator CGetCharacterCompletedQuests(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
 		{
 			string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/quests/completed");
-			yield return BlizzardAPI.SendRequest(region, BlizzardAPI.namespaceProfile, path, result);
+			yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
 		}
 
 		#endregion
