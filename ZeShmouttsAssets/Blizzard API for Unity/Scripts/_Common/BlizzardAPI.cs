@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
@@ -9,31 +8,34 @@ using ZeShmouttsAssets.BlizzardAPI.JSON;
 namespace ZeShmouttsAssets.BlizzardAPI
 {
 	/// <summary>
+	/// Enum type used for Battle.net server regions.
+	/// </summary>
+	public enum BattleNetRegion { UnitedStates, Europe, Korea, Taiwan, China }
+
+	/// <summary>
 	/// Interface for working with the Blizzard API inside Unity.
 	/// </summary>
-	public static class BlizzardAPI
+	public static partial class BlizzardAPI
 	{
 		#region Constants
 
-		public const string urlStart = "https://";
+		private const string urlStart = "https://";
 
-		public const string oauthTokenURL = ".battle.net/oauth/token";
-		public const string oauthAuthorizeURL = ".battle.net/oauth/authorize";
+		private const string oauthTokenURL = ".battle.net/oauth/token";
+		private const string oauthAuthorizeURL = ".battle.net/oauth/authorize";
 
-		public const string prefsTokenGeneral = "BlizzardOAuthTokenGeneral";
-		public const string prefsTokenProfile = "BlizzardOAuthTokenProfile";
+		private const string prefsTokenGeneral = "BlizzardOAuthTokenGeneral";
+		private const string prefsTokenProfile = "BlizzardOAuthTokenProfile";
 
 		private const string urlDomain = ".api.blizzard.com";
 		private const string urlDomainCN = "gateway.battlenet.com.cn";
 
-		public const string headerNamespace = "namespace=";
-		public const string headerToken = "access_token=";
+		private const string headerNamespace = "namespace=";
+		private const string headerToken = "access_token=";
 
-		public const string namespaceDynamic = "dynamic-";
-		public const string namespaceProfile = "profile-";
-		public const string namespaceStatic = "static-";
-
-		public enum BattleNetRegion { UnitedStates, Europe, Korea, Taiwan, China }
+		private const string namespaceDynamic = "dynamic-";
+		private const string namespaceProfile = "profile-";
+		private const string namespaceStatic = "static-";
 
 		#endregion
 
@@ -50,7 +52,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		/// <param name="region">Targeted region.</param>
 		/// <returns></returns>
-		public static string UrlDomain(BattleNetRegion region)
+		private static string UrlDomain(BattleNetRegion region)
 		{
 			switch (region)
 			{
@@ -66,7 +68,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		/// <param name="region">Region to convert.</param>
 		/// <returns></returns>
-		public static string RegionToString(this BattleNetRegion region)
+		private static string RegionToString(this BattleNetRegion region)
 		{
 			switch (region)
 			{
@@ -87,51 +89,28 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		#endregion
 
-		#region URL building tools
+		#region Misc tools
 
 		/// <summary>
-		/// Creates a nicely formatted request URL, including the namespace and access token.
+		/// Converts a date into a HTML date formatted string (same as 'ToString("r")').
 		/// </summary>
-		/// <param name="region">Region to retrieve the data from.</param>
-		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
-		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
-		/// <param name="queryParameters">Additional query parameters to add to the request. No "&" needed.</param>
+		/// <param name="date">Date to convert.</param>
 		/// <returns></returns>
-		public static string UrlFormatter(BattleNetRegion region, string apiPath, string apiNamespace, params string[] queryParameters)
+		private static string ToHTMLDate(this DateTime date)
 		{
-			StringBuilder sb = new StringBuilder();
-			string regionString = region.RegionToString();
-
-			sb.Append(UrlDomain(region));
-			sb.Append(apiPath);
-			sb.Append("?");
-			sb.Append(headerNamespace);
-			sb.Append(apiNamespace);
-			sb.Append(regionString);
-			sb.Append("&");
-			sb.Append(headerToken);
-			sb.Append(accessToken.token);
-
-			if (queryParameters.Length > 0)
-			{
-				for (int i = 0; i < queryParameters.Length; i++)
-				{
-					sb.Append("&");
-					sb.Append(queryParameters[i]);
-				}
-			}
-
-			return sb.ToString();
+			return date.ToString("r");
 		}
 
 		#endregion
 
 		#region Access Token variables
 
+#pragma warning disable 0649
 		/// <summary>
 		/// JSON structure for OAUth access tokens.
 		/// </summary>
-		public struct AccessToken_JSON
+		[Serializable]
+		private struct AccessToken_JSON
 		{
 			public string access_token;
 			public string token_type;
@@ -142,7 +121,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <summary>
 		/// JSON structure for stored OAUth access tokens.
 		/// </summary>
-		public struct StoredToken_JSON
+		[Serializable]
+		private struct StoredToken_JSON
 		{
 			public string access_token;
 			public string token_type;
@@ -154,7 +134,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// OAuth access token.
 		/// </summary>
 		[Serializable]
-		public class AccessToken
+		private class AccessToken
 		{
 			/// <summary>
 			/// The OAuth token.
@@ -199,8 +179,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				this.scope = json.scope;
 			}
 		}
+#pragma warning restore 0649
 
-		public static AccessToken accessToken;
+		private static AccessToken accessToken;
 
 		#endregion
 
@@ -263,6 +244,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{
 					result(accessToken.token);
 				}
+
 				yield break;
 			}
 			else
@@ -277,10 +259,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{
 					// If the stored access token is still valid, replace the cache with it and skip the rest
 					Debug.LogFormat("Stored token still valid : '{0}' (expires {1})", storedToken.token, storedToken.expiration.ToString());
+
 					if (result != null)
 					{
 						result(storedToken.token);
 					}
+
 					accessToken = storedToken;
 					yield break;
 				}
@@ -328,6 +312,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		#region Common request method
 
+		private const string headerApiNamespace = "Battlenet-Namespace";
+		private const string headerAuthorization = "Authorization";
+		private const string headerIfModifiedSince = "If-Modified-Since";
+		private const string headerLastModified = "Last-Modified";
+
 		/// <summary>
 		/// Send a request to Blizzard with the specified URL, and execute an action on the result.
 		/// </summary>
@@ -335,50 +324,27 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">Region to retrieve the data from.</param>
 		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
 		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
-		/// <param name="result">Action to apply to the result.</param>
+		/// <param name="action_Result">Action to execute with the result of the request.</param>
+		/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> result) where T : Object_Json
-		{
-			yield return CheckAccessToken(region);
-
-			string url = UrlFormatter(region, apiPath, apiNamespace);
-
-			UnityWebRequest request = UnityWebRequest.Get(url);
-			yield return request.SendWebRequest();
-
-			if (!request.isNetworkError && !request.isHttpError)
-			{
-				string resultContent = request.downloadHandler.text;
-				T json = JsonUtility.FromJson<T>(resultContent);
-
-				Debug.LogFormat("Retrieved {0} : {1}", typeof(T).Name, resultContent);
-
-				if (result != null)
-				{
-					result(json);
-				}
-			}
-			else
-			{
-				Debug.LogError("<color=red>Error : </color>" + request.error);
-			}
-		}
-
-		/// <summary>
-		/// EXPERIMENTAL FEATURE, USE WITH CAUTION. Same as SendRequest except it uses web request headers to send the token and namespace, instead of cramming everything in the url.
-		/// </summary>
-		/// <typeparam name="T">Type of JSON result expected (character, realm, etc.).</typeparam>
-		/// <param name="region">Region to retrieve the data from.</param>
-		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
-		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
-		/// <param name="headers">Headers to send with the web request.</param>
-		/// <param name="result">Action to apply to the result.</param>
-		/// <returns></returns>
-		public static IEnumerator SendRequestHeaders<T>(BattleNetRegion region, string apiNamespace, string apiPath, Dictionary<string, string> headers, Action<T> result) where T : Object_Json
+		private static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = default, Action<string> action_LastModified = null) where T : Object_Json
 		{
 			yield return CheckAccessToken(region);
 
 			string url = UrlDomain(region) + apiPath;
+
+			Dictionary<string, string> headers = new Dictionary<string, string>()
+			{
+				{ headerApiNamespace, apiNamespace + region.RegionToString() },
+				{ headerAuthorization, "Bearer " + accessToken.token }
+			};
+
+			if (ifModifiedSince != default)
+			{
+				headers.Add(headerIfModifiedSince, ifModifiedSince);
+			}
 
 			UnityWebRequest request = UnityWebRequest.Get(url);
 			foreach (KeyValuePair<string, string> item in headers)
@@ -390,14 +356,28 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 			if (!request.isNetworkError && !request.isHttpError)
 			{
-				string resultContent = request.downloadHandler.text;
-				T json = JsonUtility.FromJson<T>(resultContent);
-
-				Debug.LogFormat("Retrieved {0} : {1}", typeof(T).Name, resultContent);
-
-				if (result != null)
+				if (request.responseCode != 304)
 				{
-					result(json);
+					string resultContent = request.downloadHandler.text;
+					T json = JsonUtility.FromJson<T>(resultContent);
+
+					Debug.LogFormat("Retrieved {0} : {1}", typeof(T).Name, resultContent);
+
+					if (action_Result != null)
+					{
+						action_Result(json);
+					}
+
+				}
+				else
+				{
+					Debug.LogFormat("Requested document has not modified since {0}" + ifModifiedSince);
+				}
+
+				if (action_LastModified != null)
+				{
+					string lastModifiedString = request.GetResponseHeader(headerLastModified);
+					action_LastModified(lastModifiedString);
 				}
 			}
 			else
