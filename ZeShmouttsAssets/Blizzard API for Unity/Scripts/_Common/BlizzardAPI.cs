@@ -37,6 +37,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		private const string namespaceProfile = "profile-";
 		private const string namespaceStatic = "static-";
 
+		private const string characterBasePath = "/profile/wow/character/";
+
 		#endregion
 
 		#region Region tools

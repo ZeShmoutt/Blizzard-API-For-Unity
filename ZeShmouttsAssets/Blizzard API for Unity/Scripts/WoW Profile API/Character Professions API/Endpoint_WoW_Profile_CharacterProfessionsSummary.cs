@@ -1,21 +1,56 @@
-﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
+﻿using System;
+using System.Collections;
+using ZeShmouttsAssets.BlizzardAPI.JSON;
+
+namespace ZeShmouttsAssets.BlizzardAPI
+{
+	/// <summary>
+	/// Interface for working with the Blizzard API inside Unity.
+	/// </summary>
+	public static partial class BlizzardAPI
+	{
+		/// <summary>
+		/// API endpoints related to World of Warcraft profile data (characters, account, etc.).
+		/// Reference : https://develop.battle.net/documentation/world-of-warcraft/profile-apis
+		/// </summary>
+		public static partial class WowProfile
+		{
+			/// <summary>
+			/// Coroutine that retrieves a summary of a WoW character's professions.
+			/// </summary>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <param name="realmSlug">The slug of the realm.</param>
+			/// <param name="characterName">The lowercase name of the character.</param>
+			/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <returns></returns>
+			public static IEnumerator GetCharacterProfessionsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
+			{
+				string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/professions");
+				yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
+			}
+		}
+	}
+}
+
+namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
 	/// JSON structure for a summary of a World of Warcraft character's professions.
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public class WowCharacterProfessionsSummary_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
-		[System.Serializable]
+		[Serializable]
 		public struct Profession
 		{
 			public RefNameIdStruct profession;
 			public ProfessionTier[] tiers;
 		}
 
-		[System.Serializable]
+		[Serializable]
 		public struct ProfessionTier
 		{
 			public int skill_points;
@@ -25,7 +60,7 @@
 			public RefNameIdStruct[] known_recipes;
 		}
 
-		[System.Serializable]
+		[Serializable]
 		public struct ProfessionTierNameId
 		{
 			public string name;

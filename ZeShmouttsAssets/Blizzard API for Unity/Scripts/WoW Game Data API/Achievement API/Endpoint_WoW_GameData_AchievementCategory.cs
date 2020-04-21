@@ -16,16 +16,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowGameData
 		{
 			/// <summary>
-			/// Coroutine that retrieves the medias of a WoW achievement.
+			/// Coroutine that retrieves a WoW achievement category.
 			/// </summary>
-			/// <param name="achievementId">The ID of the achievement.</param>
+			/// <param name="achievementCategoryId">The ID of the achievement category.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetAchievementMedia(int achievementId, Action<WowAchievementMedia_JSON> action_Result, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetAchievementCategory(int achievementCategoryId, Action<WowAchievementCategory_JSON> action_Result, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
-				string path = string.Format("/data/wow/media/achievement/{0}", achievementId);
+				string path = string.Format("/data/wow/achievement-category/{0}", achievementCategoryId);
 				yield return SendRequest(region, namespaceStatic, path, action_Result, action_LastModified: action_LastModified);
 			}
 		}
@@ -35,14 +35,33 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for medias of a World of Warcraft achievement.
+	/// JSON structure for World of Warcraft achievement categories.
 	/// </summary>
 	[Serializable]
-	public class WowAchievementMedia_JSON : Object_Json
+	public class WowAchievementCategory_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
-		public KeyValueStruct[] assets;
 		public int id;
+		public LocalizedString name;
+		public RefNameIdStruct[] achievements;
+		public RefNameIdStruct[] subcategories;
+		public bool is_guild_category;
+
+		[Serializable]
+		public struct PointsTotal
+		{
+			public int quantity;
+			public int points;
+		}
+		[Serializable]
+		public struct AggregatesByFaction
+		{
+			public PointsTotal alliance;
+			public PointsTotal horde;
+		}
+		public AggregatesByFaction aggregates_by_faction;
+
+		public int display_order;
 	}
 }
