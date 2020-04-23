@@ -166,5 +166,14 @@
 		public RealmStruct realm;
 	}
 
+	[System.Serializable]
+	public struct ColorStruct
+	{
+		public int R;
+		public int G;
+		public int B;
+		public int A;
+	}
+
 	#endregion
 }
