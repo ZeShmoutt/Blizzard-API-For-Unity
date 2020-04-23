@@ -23,10 +23,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetAuctions(int connectedRealmId, Action<WowAuctions_JSON> action_Result, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetAuctions(int connectedRealmId, Action<WowAuctions_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
 				string path = string.Format("/data/wow/connected-realm/{0}/auctions", connectedRealmId);
-				yield return SendRequest(region, namespaceDynamic, path, action_Result, action_LastModified: action_LastModified);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
 	}

@@ -24,10 +24,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCharacterMediaSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, Action<string> action_LastModified = null)
+			public static IEnumerator GetCharacterMediaSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterMediaSummary_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/character-media");
-				yield return SendRequest(region, namespaceProfile, path, action_Result, action_LastModified: action_LastModified);
+				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
 	}

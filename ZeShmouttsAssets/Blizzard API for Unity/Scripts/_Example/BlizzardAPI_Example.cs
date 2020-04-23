@@ -13,7 +13,7 @@ public class BlizzardAPI_Example : MonoBehaviour
 	{
 		// Retrieve informations about the World of Warcraft achievement "The Loremaster" (https://www.wowhead.com/achievement=7520/)
 		// When the data has been retrieved, log a message in the console with some of the retrieved infos.
-		StartCoroutine(BlizzardAPI.WowGameData.GetAchievement(7520, SetAchievement, SetLastModified));
+		StartCoroutine(BlizzardAPI.WowGameData.GetAchievement(7520, action_Result: SetAchievement, action_LastModified: SetLastModified));
 	}
 
 	void SetAchievement(WoWAchievement_JSON json)

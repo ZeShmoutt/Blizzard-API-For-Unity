@@ -24,10 +24,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetItemSubclass(int itemClassId, int itemSubclassId, Action<WoWAchievement_JSON> action_Result, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetItemSubclass(int itemClassId, int itemSubclassId, Action<WoWAchievement_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
 				string path = string.Format("/data/wow/item-class/{0}/item-subclass/{1}", itemClassId, itemSubclassId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, action_LastModified: action_LastModified);
+				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
 	}
