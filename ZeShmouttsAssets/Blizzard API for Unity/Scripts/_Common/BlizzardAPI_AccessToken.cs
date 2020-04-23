@@ -148,7 +148,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="region">Region used to get the access token.</param>
 		/// <param name="result">Action to execute with the access token once retrieved.</param>
 		/// <returns></returns>
-		public static IEnumerator CheckAccessToken(BattleNetRegion region, Action<string> result = null)
+		public static IEnumerator CheckAccessToken(BattleNetRegion region = BattleNetRegion.UnitedStates, Action<string> result = null)
 		{
 			DateTime currentDate = DateTime.Now;
 
