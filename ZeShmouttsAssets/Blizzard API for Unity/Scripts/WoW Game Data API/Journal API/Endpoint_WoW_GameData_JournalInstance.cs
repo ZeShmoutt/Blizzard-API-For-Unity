@@ -16,16 +16,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowGameData
 		{
 			/// <summary>
-			/// Coroutine that retrieves a WoW achievement.
+			/// Coroutine that retrieves a WoW dungeon journal instance.
 			/// </summary>
-			/// <param name="achievementId">The ID of the achievement.</param>
+			/// <param name="journalInstanceId">The ID of the journal instance.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetAchievement(int achievementId, Action<WowAchievement_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetJournalInstance(int journalInstanceId, Action<WowJournalInstance_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
-				string path = string.Format("/data/wow/achievement/{0}", achievementId);
+				string path = string.Format("/data/wow/journal-instance/{0}", journalInstanceId);
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
@@ -35,34 +36,33 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft achievements.
+	/// JSON structure for World of Warcraft dungeon journal instances.
 	/// </summary>
 	[Serializable]
-	public class WowAchievement_JSON : Object_Json
+	public class WowJournalInstance_JSON : Object_Json
 	{
-		// Note : missing some stuff. Check with meta-achievements to see whats missing (e.g. "The Loremaster" id:7520).
-
 		public LinkStruct _links;
 
 		public int id;
-		public RefNameIdStruct category;
 		public LocalizedString name;
+		public NameIdStruct map;
+		public NameIdStruct area;
 		public LocalizedString description;
-		public int points;
-		public bool is_account_wide;
+		public RefNameIdStruct[] encounters;
+		public RefNameIdStruct expansion;
+		public NameIdStruct location;
 
 		[Serializable]
-		public struct CriteriaStruct
+		public struct InstanceMode
 		{
-			public HRefStruct key;
-			public int id;
-			public LocalizedString description;
-			public int amount;
+			public TypeNameStruct mode;
+			public int players;
+			public bool is_tracked;
 		}
-		public CriteriaStruct criteria;
-		public RefNameIdStruct next_achievement;
-		public RefIdStruct media;
+		public InstanceMode[] modes;
 
-		public int display_order;
+		public RefIdStruct media;
+		public int minimum_level;
+		public TypeStruct category;
 	}
 }

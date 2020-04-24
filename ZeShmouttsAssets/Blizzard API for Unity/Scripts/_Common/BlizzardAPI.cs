@@ -65,7 +65,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <returns></returns>
 		private static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_Json
 		{
-			yield return CheckAccessToken(region);
+			yield return CheckAccessToken();
 
 			string url = UrlDomain(region) + apiPath;
 

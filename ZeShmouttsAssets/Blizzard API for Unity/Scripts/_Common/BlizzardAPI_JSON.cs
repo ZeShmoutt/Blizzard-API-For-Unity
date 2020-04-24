@@ -57,6 +57,15 @@
 	}
 
 	/// <summary>
+	/// "type" (string).
+	/// </summary>
+	[System.Serializable]
+	public struct TypeStruct
+	{
+		public string type;
+	}
+
+	/// <summary>
 	/// "key" (HRefStruct), "id" (int).
 	/// </summary>
 	[System.Serializable]
@@ -73,6 +82,16 @@
 	public struct RefNameIdStruct
 	{
 		public HRefStruct key;
+		public LocalizedString name;
+		public int id;
+	}
+
+	/// <summary>
+	/// "name" (LocalizedString), "id" (int).
+	/// </summary>
+	[System.Serializable]
+	public struct NameIdStruct
+	{
 		public LocalizedString name;
 		public int id;
 	}

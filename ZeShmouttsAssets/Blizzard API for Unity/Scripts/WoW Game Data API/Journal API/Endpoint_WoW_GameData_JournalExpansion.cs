@@ -16,15 +16,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowGameData
 		{
 			/// <summary>
-			/// Coroutine that retrieves an index of all WoW playable races.
+			/// Coroutine that retrieves a WoW dungeon journal expansions.
 			/// </summary>
+			/// <param name="journalExpansionId">The ID of the journal expansion.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPlayableRacesIndex(Action<WowPlayableRacesIndex_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetJournalExpansion(int journalExpansionId, Action<WowJournalExpansion_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
-				string path = "/data/wow/playable-race/index";
+				string path = string.Format("/data/wow/journal-expansion/{0}", journalExpansionId);
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
@@ -34,13 +36,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for an index of World of Warcraft playable races.
+	/// JSON structure for World of Warcraft dungeon journal expansions.
 	/// </summary>
 	[Serializable]
-	public class WowPlayableRacesIndex_JSON : Object_Json
+	public class WowJournalExpansion_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] races;
+		public int id;
+		public LocalizedString name;
+		public RefNameIdStruct[] dungeons;
+		public RefNameIdStruct[] raids;
 	}
 }
