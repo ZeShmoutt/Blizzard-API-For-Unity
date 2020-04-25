@@ -1,0 +1,16 @@
+{
+    "name": "asdef",
+    "references": [
+        "Unity.EditorCoroutines.Editor"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_2018_4_OR_NEWER"
+    ]
+}
