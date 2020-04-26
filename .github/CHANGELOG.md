@@ -9,12 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
   - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.25.0] - 2020-04-26
+### Added
+ - Added WoW Game Data endpoints support :
+  - Mythic Keystone Affix
+  - Mythic Keystone Dungeon
+
+## Changed
+ - Updated README.md
+
 ## [0.24.0] - 2020-04-26
 ### Added
  - Finally made a decent changelog
  - Added a quick access to the Blizzard API project settings (menu : `Blizzard API/Settings...`)
 
-## Changed
+### Changed
  - Fixed the package version to the actual version number instead of the amount of commits
 
 ## [0.23.0] - 2020-04-26
@@ -37,7 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  - Added WoW Game Data endpoint support :
   - Journal
 
-## Changed
+### Changed
  - Fixed some typos
 
 ## [0.19.0] - 2020-04-23

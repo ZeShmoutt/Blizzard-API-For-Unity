@@ -1,7 +1,7 @@
 {
 	"name": "com.zeshmouttsassets.blizzardapi",
 	"displayName":"Blizzard API for Unity",
-	"version": "0.24.0",
+	"version": "0.25.0",
 	"unity": "2018.4",
 	"unityRelease": "15f1",
 	"description": "A general-purpose collection of scripts for using the Blizzard API inside Unity. In short, an API for an API.",

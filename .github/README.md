@@ -34,3 +34,13 @@ First off, add those two lines with the other `using`s :
 Then, use `StartCoroutine()` (from a `MonoBehaviour`) with the corresponding endpoint coroutine (such as `BlizzardAPI.WowGameData.GetAchievement()`) to retrieve your data.
 
 An example is included in the "\_Example" folder.
+
+## Useful links
+
+For this package :
+ - [License](https://github.com/ZeShmoutt/Blizzard-API-For-Unity/blob/master/.github/LICENSE)
+ - [Changelog](https://github.com/ZeShmoutt/Blizzard-API-For-Unity/blob/master/.github/CHANGELOG.md)
+
+For Blizzard's API :
+ - [Front page](https://develop.battle.net/)
+ - [Documentation](https://develop.battle.net/documentation)

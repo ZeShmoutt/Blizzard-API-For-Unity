@@ -194,5 +194,11 @@
 		public int A;
 	}
 
+	[System.Serializable]
+	public struct SlugStruct
+	{
+		public string slug;
+	}
+
 	#endregion
 }
