@@ -169,7 +169,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// "male" (LocalizedString), "female" (LocalizedString).
 	/// </summary>
 	[Serializable]
-	public struct GenderName
+	public struct GenderedLocalizedString
 	{
 		public LocalizedString male;
 		public LocalizedString female;

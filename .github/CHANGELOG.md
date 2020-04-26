@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.29.0] - 2020-04-26
+### Added
+ - Added WoW Game Data endpoint support :
+   - Playable Specializations
+  
 ## [0.28.0] - 2020-04-26
 ### Added
  - Added WoW Game Data endpoint support :

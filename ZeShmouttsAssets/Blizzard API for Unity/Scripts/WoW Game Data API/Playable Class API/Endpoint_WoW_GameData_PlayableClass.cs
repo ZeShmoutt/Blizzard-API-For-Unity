@@ -45,7 +45,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public int id;
 		public LocalizedString name;
 
-		public GenderName gender_name;
+		public GenderedLocalizedString gender_name;
 
 		public RefNameIdStruct power_type;
 		public RefNameIdStruct[] specializations;

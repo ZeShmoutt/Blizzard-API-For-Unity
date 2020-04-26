@@ -30,6 +30,8 @@
 		private const string regionTaiwan = "tw";
 		private const string regionChina = "cn";
 
+		private const BattleNetRegion DefaultRegion = BattleNetRegion.UnitedStates;
+
 		#endregion
 
 		#region Shortcuts

@@ -16,16 +16,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowGameData
 		{
 			/// <summary>
-			/// Coroutine that retrieves a WoW playable race.
+			/// Coroutine that retrieves an index of all WoW playable specializations.
 			/// </summary>
-			/// <param name="playableRaceId">The ID of the playable race.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPlayableRace(int playableRaceId, Action<WowPlayableRace_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetPlayableSpecializationsIndex(Action<WowPlayableSpecializationsIndex_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/playable-race/{0}", playableRaceId);
+				string path = "/data/wow/playable-specialization/index";
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
@@ -35,18 +35,14 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for an index of World of Warcraft playable races.
+	/// JSON structure for an index of World of Warcraft playable specializations.
 	/// </summary>
 	[Serializable]
-	public class WowPlayableRace_JSON : Object_Json
+	public class WowPlayableSpecializationsIndex_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
-		public int id;
-		public LocalizedString name;
-		public GenderedLocalizedString gender_name;
-		public TypeNameStruct faction;
-		public bool is_selectable;
-		public bool is_allied_race;
+		public RefNameIdStruct[] character_specializations;
+		public RefNameIdStruct[] pet_specializations;
 	}
 }
