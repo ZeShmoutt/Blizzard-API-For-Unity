@@ -148,8 +148,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Open in project settings"))
 			{
-				SettingsService.OpenProjectSettings(BlizzardAppInfosProvider.projectSettingsPath);
+				OpenProjectSettings();
 			}
+		}
+
+		[MenuItem("Blizzard API/Settings...", priority = 0)]
+		public static void OpenProjectSettings()
+		{
+			SettingsService.OpenProjectSettings(BlizzardAppInfosProvider.projectSettingsPath);
 		}
 	}
 }
