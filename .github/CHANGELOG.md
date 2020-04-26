@@ -8,13 +8,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.26.0] - 2020-04-26
+### Added
+ - Added WoW Game Data endpoints support :
+   - Mythic Keystone Leaderboard
+
+### Changed
+ - Fixed some incorrect namespaces in the Mythic Keystone Dungeon endpoint
+ - Fixed some incorrect formatting in the changelog
+  
 ## [0.25.0] - 2020-04-26
 ### Added
  - Added WoW Game Data endpoints support :
    - Mythic Keystone Affix
    - Mythic Keystone Dungeon
 
-## Changed
+### Changed
  - Updated README.md
 
 ## [0.24.0] - 2020-04-26

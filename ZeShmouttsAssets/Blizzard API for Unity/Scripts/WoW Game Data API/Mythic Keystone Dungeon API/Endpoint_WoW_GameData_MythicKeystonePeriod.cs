@@ -27,7 +27,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetMythicKeystonePeriod(int periodId, Action<WowMythicKeystonePeriod_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
 				string path = string.Format("/data/wow/mythic-keystone/period/{0}", periodId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
 	}

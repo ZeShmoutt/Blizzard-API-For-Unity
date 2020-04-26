@@ -1,4 +1,6 @@
-﻿namespace ZeShmouttsAssets.BlizzardAPI.JSON
+﻿using System;
+
+namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	#region Base
 
@@ -11,7 +13,7 @@
 	/// <summary>
 	/// Storage for localized versions of a string in the 12 languages that Blizzard supports.
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct LocalizedString
 	{
 		public string en_US;
@@ -31,7 +33,7 @@
 	/// <summary>
 	/// "href" (string).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct HRefStruct
 	{
 		public string href;
@@ -40,7 +42,7 @@
 	/// <summary>
 	/// "self" (HRefStruct).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct LinkStruct
 	{
 		public HRefStruct self;
@@ -49,7 +51,7 @@
 	/// <summary>
 	/// "type" (string), "name" (LocalizedString).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct TypeNameStruct
 	{
 		public string type;
@@ -59,7 +61,7 @@
 	/// <summary>
 	/// "type" (string).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct TypeStruct
 	{
 		public string type;
@@ -68,7 +70,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "id" (int).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct RefIdStruct
 	{
 		public HRefStruct key;
@@ -78,7 +80,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct RefNameIdStruct
 	{
 		public HRefStruct key;
@@ -89,7 +91,7 @@
 	/// <summary>
 	/// "name" (LocalizedString), "id" (int).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct NameIdStruct
 	{
 		public LocalizedString name;
@@ -99,7 +101,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (string), "id" (int).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct RefStringIdStruct
 	{
 		public HRefStruct key;
@@ -110,7 +112,7 @@
 	/// <summary>
 	/// "key" (string), "value" (string).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct KeyValueStruct
 	{
 		public string key;
@@ -120,7 +122,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int), "slug" (string).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct RealmStruct
 	{
 		public HRefStruct key;
@@ -132,7 +134,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int), "realm" (RealmStruct).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct GuildStruct
 	{
 		public HRefStruct key;
@@ -144,7 +146,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int), "display_string" (LocalizedString).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct TitleStruct
 	{
 		public HRefStruct key;
@@ -156,7 +158,7 @@
 	/// <summary>
 	/// "value" (float), "display_string" (LocalizedString).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct ValueDisplayStruct
 	{
 		public float value;
@@ -166,7 +168,7 @@
 	/// <summary>
 	/// "male" (LocalizedString), "female" (LocalizedString).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct GenderName
 	{
 		public LocalizedString male;
@@ -176,7 +178,7 @@
 	/// <summary>
 	/// "key" (HRefStruct), "name" (string), "id" (int), "realm" (RealmStruct).
 	/// </summary>
-	[System.Serializable]
+	[Serializable]
 	public struct CharacterStruct
 	{
 		public HRefStruct key;
@@ -185,7 +187,7 @@
 		public RealmStruct realm;
 	}
 
-	[System.Serializable]
+	[Serializable]
 	public struct ColorStruct
 	{
 		public int R;
@@ -194,10 +196,18 @@
 		public int A;
 	}
 
-	[System.Serializable]
+	[Serializable]
 	public struct SlugStruct
 	{
 		public string slug;
+	}
+
+	[Serializable]
+	public struct ProfileStruct
+	{
+		public string name;
+		public int id;
+		public RealmStruct realm;
 	}
 
 	#endregion
