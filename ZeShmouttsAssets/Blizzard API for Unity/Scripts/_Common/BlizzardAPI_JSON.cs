@@ -187,27 +187,46 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RealmStruct realm;
 	}
 
+	/// <summary>
+	/// "r" (int), "g" (int), "b" (int), "a" (int).
+	/// </summary>
 	[Serializable]
 	public struct ColorStruct
 	{
-		public int R;
-		public int G;
-		public int B;
-		public int A;
+		public int r;
+		public int g;
+		public int b;
+		public int a;
 	}
 
+	/// <summary>
+	/// "slug" (string).
+	/// </summary>
 	[Serializable]
 	public struct SlugStruct
 	{
 		public string slug;
 	}
 
+	/// <summary>
+	/// "name" (string), "id" (int), "realm" (RealmStruct).
+	/// </summary>
 	[Serializable]
 	public struct ProfileStruct
 	{
 		public string name;
 		public int id;
 		public RealmStruct realm;
+	}
+
+	/// <summary>
+	/// "key" (HRefStruct), "name" (LocalizedString).
+	/// </summary>
+	[Serializable]
+	public struct RefNameStruct
+	{
+		public HRefStruct key;
+		public LocalizedString name;
 	}
 
 	#endregion
