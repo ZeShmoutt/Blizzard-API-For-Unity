@@ -1,19 +1,18 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 ### Added
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
-  - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
+   - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
 ## [0.25.0] - 2020-04-26
 ### Added
  - Added WoW Game Data endpoints support :
-  - Mythic Keystone Affix
-  - Mythic Keystone Dungeon
+   - Mythic Keystone Affix
+   - Mythic Keystone Dungeon
 
 ## Changed
  - Updated README.md
@@ -34,17 +33,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.22.0] - 2020-04-25
 ### Added
  - Added support for Unity's Package Manager
-  - The package can now be imported directly with the git URL
+   - The package can now be imported directly with the git URL
 
 ## [0.21.0] - 2020-04-24
 ### Added
  - Added WoW Game Data endpoint support :
-  - Mounts
+   - Mounts
 
 ## [0.20.0] - 2020-04-24
 ### Added
  - Added WoW Game Data endpoint support :
-  - Journal
+   - Journal
 
 ### Changed
  - Fixed some typos
@@ -64,18 +63,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.16.0] - 2020-04-21
 ### Changed
  - Major refactoring 2 : electric boogaloo
-  - Endpoints are now self-contained in their own files
-  - Any filde outside of the _Common folder can be removed without repercussions
-  - Updated the example to show how to use the `LastModified` action
+   - Endpoints are now self-contained in their own files
+   - Any filde outside of the _Common folder can be removed without repercussions
+   - Updated the example to show how to use the `LastModified` action
 
 ## [0.15.0] - 2020-04-20
 ### Changed
  - Major refactoring to make it easier to use :
-  - All endpoints are accessible from the `BlizzardAPI` class (as in, "I discovered the 'partial' keyword")
-  - Another pass on the summaries
-  - Web requests now use headers instead of cramming everything in the URL
-  - Added an optional `Is-Modified-Since` header in the web request
-  - Added an optional action in the web request that will be applied with the `Last-Modified` response header
+   - All endpoints are accessible from the `BlizzardAPI` class (as in, "I discovered the 'partial' keyword")
+   - Another pass on the summaries
+   - Web requests now use headers instead of cramming everything in the URL
+   - Added an optional `Is-Modified-Since` header in the web request
+   - Added an optional action in the web request that will be applied with the `Last-Modified` response header
 
 ## [0.14.0] - 2020-04-18
 ### Changed
@@ -92,11 +91,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.11.0] - 2020-04-16
 ### Added
  - Added WoW Game Data endpoint support :
-  - Professions
+   - Professions
  - Added WoW Profile endpoints support :
-  - Character Medias
-  - Character Professions
-  - Character Quests
+   - Character Medias
+   - Character Professions
+   - Character Quests
 
 ### Changed
 - Cleaned the summaries for formatting and consistency
@@ -108,7 +107,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.9.0] - 2020-04-16
 ### Added
  - Added WoW Game Data endpoints support :
-  - Spells
+   - Spells
 
 ## [0.8.0] - 2020-04-16
 ### Changed
@@ -121,18 +120,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.6.0] - 2020-04-13
 ### Changed
  - Added WoW Game Data endpoints support :
-  - Guild Crests
-  - Items
-  - Playable Classes
+   - Guild Crests
+   - Items
+   - Playable Classes
 
 ### Changed
-- Changed the Region to an optional parameter for WoW Game Data endpoints (defaults to "en_US")
-- Slightly changed the summary for parameters to match Blizzard's documentation
+ - Changed the Region to an optional parameter for WoW Game Data endpoints (defaults to "en_US")
+ - Slightly changed the summary for parameters to match Blizzard's documentation
 
 ## [0.5.0] - 2020-04-09
 ### Added
  - Added WoW Game Data endpoint support :
-  - Creatures
+   - Creatures
 
 ### Changed
  - Typo corrections
@@ -140,9 +139,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.4.0] - 2020-04-08
 ### Added
  - Added WoW Game Data endpoints support :
-  - Auctions
-  - Azerite Essence
-  - Connected Realms
+   - Auctions
+   - Azerite Essence
+   - Connected Realms
  - Changed "API" class to "BlizzardAPI" for consistency and clarity
  - Refactored a bit to get less copy-pasting
 
@@ -161,7 +160,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### First release
  - Added core methods : access token retrieval, web request, etc.
  - Added WoW Game Data endpoints support :
-  - Achievements
-  - Realms
+   - Achievements
+   - Realms
  - Added WoW Profile endpoint support :
-  - Character Profile
+   - Character Profile
