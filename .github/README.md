@@ -16,15 +16,13 @@ I'd appreciate a lot if you could mention me somewhere if you use it, though.
 
 ## Installation
 
-1. If you don't have one already, follow [this link](https://develop.battle.net/access/), login, and create a client. This will give you an unique client ID and client secret.
-2. Clone/download the repo and put it in your Unity project's assets.
-3. Find the BlizzardAppInfos.cs script, and change the values with your cliend ID and client secret.
+1. If you don't have one already, follow [this link](https://develop.battle.net/access/), register or login, and create a client. This will give you an unique client ID and client secret.
+2. Install the package :
+ - Unity 2019 or newer : Open the Package manager, select  and import the package with the git URL.
+ - Unity 2018 or older : Clone/download the repo and put it in your Unity project's assets.
+3. Go to the Project Settings, section "Blizzard App Infos", and change the values with your cliend ID and client secret.
 
-Later on I'll add some custom editor tools that need coroutines, so you might want to install Unity's editor coroutines package. You can download it from the package manager, by showing preview packages.
-
-## Removing unused API endpoints
-
-Each category (such as World of Warcraft Profile, World of Warcraft game data, Hearthstone, etc.) is in a separate folder. You're free to remove those folders as long as you don't touch the "\_Common" folder.
+Note that this package requires Unity's Editor Coroutines package. You can download it from the Package Manager.
 
 ## How to use
 
@@ -33,6 +31,6 @@ First off, add those two lines with the other `using`s :
 - `using ZeShmouttsAssets.BlizzardAPI;`
 - `using ZeShmouttsAssets.BlizzardAPI.JSON;`
 
-Due to how web requests work, everything is made with coroutines : use `StartCoroutine` (from a `MonoBehaviour`) with the corresponding endpoint coroutine (such as `BlizzardAPI_WowGameData.CGetAchievement`).
+Then, use `StartCoroutine()` (from a `MonoBehaviour`) with the corresponding endpoint coroutine (such as `BlizzardAPI.WowGameData.GetAchievement()`) to retrieve your data.
 
 An example is included in the "\_Example" folder.
