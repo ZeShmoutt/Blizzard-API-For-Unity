@@ -1,9 +1,13 @@
 ﻿using System.IO;
+using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine;
+#if UNITY_2019_OR_NEWER
+using UnityEngine.UIElements;
+#else
 using UnityEngine.Experimental.UIElements;
+#endif
 
 namespace ZeShmouttsAssets.BlizzardAPI
 {
@@ -37,14 +41,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		}
 	}
 
-
 	// Create a new type of Settings Asset.
-	[CreateAssetMenu(fileName = "BlizzardAppInfos", menuName = "ZeShmoutt's Assets/BlizzardAppInfos")]
 	class BlizzardAppInfos : ScriptableObject
 	{
 		public const string settingsFolder = "Assets/ZeShmouttsAssets/Resources/";
-		public const string settingsFilename = "BlizzardAppInfos.asset";
-		public const string settingsPath = settingsFolder + settingsFilename;
+		public const string settingsFilename = "BlizzardAppInfos";
+		public const string settingsExtension = ".asset";
+		public const string settingsPath = settingsFolder + settingsFilename + settingsExtension;
 
 		public string ClientID { get => clientId; }
 		public string ClientSecret { get => clientSecret; }

@@ -4,23 +4,37 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### To do
+ - Update to Unity 2019.x.x
+
 ### Added
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.30.0] - 2020-04-27
+### Added
+ - Added support for the following WoW Game Data endpoint categories :
+   - Power Type
+   - PvP Season
+ - Added an override for `ToString()` for any JSON-based class that will simply return the whole class in a JSON string
+
+### Bug fix
+ - Added a version check on the BlizzardAppInfos to remove the "Experimental" in a namespace for Unity 2019 and newer
+ - Changed the file path variables to fit `Resources.Load()` parameters usage
+  
 ## [0.29.0] - 2020-04-26
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Playable Specializations
   
 ## [0.28.0] - 2020-04-26
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Pets
   
 ## [0.27.0] - 2020-04-26
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Mythic Raid Leaderboard
 
 ### Changed
@@ -28,16 +42,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
   
 ## [0.26.0] - 2020-04-26
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Mythic Keystone Leaderboard
 
-### Changed
+### Bug fix
  - Fixed some incorrect namespaces in the Mythic Keystone Dungeon endpoint
  - Fixed some incorrect formatting in the changelog
   
 ## [0.25.0] - 2020-04-26
 ### Added
- - Added WoW Game Data endpoints support :
+ - Added support for the following WoW Game Data endpoint categories :
    - Mythic Keystone Affix
    - Mythic Keystone Dungeon
 
@@ -64,15 +78,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 
 ## [0.21.0] - 2020-04-24
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Mounts
 
 ## [0.20.0] - 2020-04-24
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Journal
 
-### Changed
+### Bug fix
  - Fixed some typos
 
 ## [0.19.0] - 2020-04-23
@@ -91,7 +105,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 ### Changed
  - Major refactoring 2 : electric boogaloo
    - Endpoints are now self-contained in their own files
-   - Any filde outside of the _Common folder can be removed without repercussions
+   - Any filde outside of the \_Common folder can be removed without repercussions
    - Updated the example to show how to use the `LastModified` action
 
 ## [0.15.0] - 2020-04-20
@@ -101,15 +115,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
    - Another pass on the summaries
    - Web requests now use headers instead of cramming everything in the URL
    - Added an optional `Is-Modified-Since` header in the web request
-   - Added an optional action in the web request that will be applied with the `Last-Modified` response header
+   - Added an optional action in the web request that will be executed with the `Last-Modified` response header
 
 ## [0.14.0] - 2020-04-18
 ### Changed
- - Typo correction for `CGetCharacterMediaSummary()`
+ - Name correction for `CGetCharacterMediaSummary()`
 
 ## [0.13.0] - 2020-04-17
 ### Changed
- - Reorganized the files in the folders
+ - Reorganized the files and folders
 
 ## [0.12.0] - 2020-04-16
 ### Changed
@@ -117,14 +131,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 
 ## [0.11.0] - 2020-04-16
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Professions
- - Added WoW Profile endpoints support :
+ - Added support for the following WoW Profile endpoint categories :
    - Character Medias
    - Character Professions
    - Character Quests
 
-### Changed
+### Bug fix
 - Cleaned the summaries for formatting and consistency
 
 ## [0.10.0] - 2020-04-16
@@ -133,7 +147,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 
 ## [0.9.0] - 2020-04-16
 ### Added
- - Added WoW Game Data endpoints support :
+ - Added support for the following WoW Game Data endpoint category :
    - Spells
 
 ## [0.8.0] - 2020-04-16
@@ -146,26 +160,28 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 
 ## [0.6.0] - 2020-04-13
 ### Changed
- - Added WoW Game Data endpoints support :
+ - Added support for the following WoW Game Data endpoint categories :
    - Guild Crests
    - Items
    - Playable Classes
 
 ### Changed
  - Changed the Region to an optional parameter for WoW Game Data endpoints (defaults to "en_US")
+
+### Bug fix
  - Slightly changed the summary for parameters to match Blizzard's documentation
 
 ## [0.5.0] - 2020-04-09
 ### Added
- - Added WoW Game Data endpoint support :
+ - Added support for the following WoW Game Data endpoint category :
    - Creatures
 
-### Changed
+### Bug fix
  - Typo corrections
 
 ## [0.4.0] - 2020-04-08
 ### Added
- - Added WoW Game Data endpoints support :
+ - Added support for the following WoW Game Data endpoint categories :
    - Auctions
    - Azerite Essence
    - Connected Realms
@@ -186,8 +202,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 ## [0.1.0] - 2020-04-07
 ### First release
  - Added core methods : access token retrieval, web request, etc.
- - Added WoW Game Data endpoints support :
+ - Added support for the following WoW Game Data endpoint categories :
    - Achievements
    - Realms
- - Added WoW Profile endpoint support :
+ - Added support for the following WoW Profile endpoint category :
    - Character Profile

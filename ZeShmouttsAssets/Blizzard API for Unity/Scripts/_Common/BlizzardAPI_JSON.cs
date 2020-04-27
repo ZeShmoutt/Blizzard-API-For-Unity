@@ -4,7 +4,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	#region Base
 
-	public abstract class Object_Json { }
+	public abstract class Object_Json
+	{
+		public override string ToString()
+		{
+			return UnityEngine.JsonUtility.ToJson(this);
+		}
+	}
 
 	#endregion
 
@@ -227,6 +233,16 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	{
 		public HRefStruct key;
 		public LocalizedString name;
+	}
+
+	/// <summary>
+	/// "id" (int), "type" (string).
+	/// </summary>
+	[Serializable]
+	public struct IdTypeStruct
+	{
+		public int id;
+		public string type;
 	}
 
 	#endregion
