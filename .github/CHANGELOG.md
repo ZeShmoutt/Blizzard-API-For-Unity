@@ -11,6 +11,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.31.0] - 2020-04-27
+### Added
+ - Added support for the following WoW Game Data endpoint categories :
+   - PvP Tier
+   - Quest
+  
 ## [0.30.0] - 2020-04-27
 ### Added
  - Added support for the following WoW Game Data endpoint categories :
