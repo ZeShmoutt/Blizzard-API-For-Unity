@@ -18,306 +18,306 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## Diablo III - Game Data
 
 ### D3
- - [ ] Season Index
- - [ ] Season
- - [ ] Season Leaderboard
- - [ ] Era Index
- - [ ] Era
- - [ ] Era Leaderboard
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Season Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Season
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Season Leaderboard
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Era Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Era
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Era Leaderboard
 
 ## Hearthstone - Game Data
 
 ### Cards
- - [ ] Card search
- - [ ] Detailed card search example
- - [ ] Battlegrounds card search
- - [ ] Fetch one card
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Card search
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Detailed card search example
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Battlegrounds card search
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Fetch one card
 
 ### Card Backs
- - [ ] Card Back Search
- - [ ] Fetch one card back
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Card Back Search
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Fetch one card back
 
 ### Decks
- - [ ] Fetch deck
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Fetch deck
 
 ### Metadata
- - [ ] All metadata
- - [ ] Specific metadata
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) All metadata
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Specific metadata
 
 ## StarCraft II - Game Data
 
 ### StarCraft II League API
- - [ ] getLeagueData
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) getLeagueData
 
 ## World of Warcraft - Game Data
 
 ### Achievement API
- - [x] Achievement Category
- - [x] Achievements Index
- - [x] Achievement
- - [x] Achievement Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Achievement Category
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Achievements Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Achievement
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Achievement Media
 
 ### Auction House API
- - [x] Auctions
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Auctions
 
 ### Azerite Essence API
- - [x] Azerite Essences Index
- - [x] Azerite Essence
- - [x] Azerite Essence Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Azerite Essences Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Azerite Essence
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Azerite Essence Media
 
 ### Connected Realm API
- - [x] Connected Realms Index
- - [x] Connected Realm
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Connected Realms Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Connected Realm
 
 ### Creature API
- - [x] Creature Families Index
- - [x] Creature Family
- - [x] Creature Types Index
- - [x] Creature Type
- - [x] Creature
- - [x] Creature Display Media
- - [x] Creature Family Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Families Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Family
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Types Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Type
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Display Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Creature Family Media
 	
 ### Guild Crest API
- - [x] Guild Crest Components Index
- - [x] Guild Crest Border Media
- - [x] Guild Crest Emblem Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Components Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Border Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Emblem Media
 
 ### Item API
- - [x] Item Classes Index
- - [x] Item Class
- - [x] Item Sets Index
- - [x] Item Set
- - [x] Item Subclass
- - [x] Item
- - [x] Item Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Classes Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Class
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Sets Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Set
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Subclass
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Item Media
 
 ### Journal API
- - [x] Journal Expansions Index
- - [x] Journal Expansion
- - [x] Journal Encounters Index
- - [x] Journal Encounter
- - [x] Journal Instances Index
- - [x] Journal Instance
- - [x] Journal Instance Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Expansions Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Expansion
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Encounters Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Encounter
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Instances Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Instance
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Journal Instance Media
 
 ### Mount API
- - [x] Mounts Index
- - [x] Mount
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mounts Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mount
 
 ### Mythic Keystone Affix API
- - [x] Mythic Keystone Affixes Index
- - [x] Mythic Keystone Affix
- - [x] Mythic Keystone Affix Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Affixes Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Affix
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Affix Media
 
 ### Mythic Keystone Dungeon API
- - [x] Mythic Keystone Dungeons Index
- - [x] Mythic Keystone Dungeon
- - [x] Mythic Keystone Index
- - [x] Mythic Keystone Periods Index
- - [x] Mythic Keystone Period
- - [x] Mythic Keystone Seasons Index
- - [x] Mythic Keystone Season
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Dungeons Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Dungeon
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Periods Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Period
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Seasons Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Season
 
 ### Mythic Keystone Leaderboard API
- - [x] Mythic Keystone Leaderboards Index
- - [x] Mythic Keystone Leaderboard	
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Leaderboards Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Keystone Leaderboard	
 
 ### Mythic Raid Leaderboard API
- - [x] Mythic Raid Leaderboard
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Mythic Raid Leaderboard
 
 ### Pet API
- - [x] Pets Index
- - [x] Pet
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Pets Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Pet
 
 ### Playable Class API
- - [x] Playable Classes Index
- - [x] Playable Class
- - [x] Playable Class Media
- - [x] PvP Talent Slots
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Classes Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Class
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Class Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Talent Slots
 
 ### Playable Race API
- - [x] Playable Races Index
- - [x] Playable Race
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Races Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Race
 
 ### Playable Specialization API
- - [x] Playable Specializations Index
- - [x] Playable Specialization
- - [x] Playable Specialization Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Specializations Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Specialization
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Playable Specialization Media
 
 ### Power Type API
- - [x] Power Types Index
- - [x] Power Type
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Power Types Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Power Type
 
 ### Profession API
- - [x] Professions Index
- - [x] Profession
- - [x] Profession Media
- - [x] Profession Skill Tier
- - [x] Recipe
- - [x] Recipe Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Professions Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Profession
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Profession Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Profession Skill Tier
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Recipe
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Recipe Media
 
 ### PvP Season API
- - [x] PvP Seasons Index
- - [x] PvP Season
- - [x] PvP Leaderboards Index
- - [x] PvP Leaderboard
- - [x] PvP Rewards Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Seasons Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Season
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Leaderboards Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Leaderboard
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Rewards Index
 
 ### PvP Tier API
- - [x] PvP Tier Media
- - [x] PvP Tiers Index
- - [x] PvP Tier
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Tier Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Tiers Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Tier
 
 ### Quest API
- - [x] Quests Index
- - [x] Quest
- - [x] Quest Categories Index
- - [x] Quest Category
- - [x] Quest Areas Index
- - [x] Quest Area
- - [x] Quest Types Index
- - [x] Quest Type
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quests Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Categories Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Category
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Areas Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Area
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Types Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Quest Type
 
 ### Realm API
- - [x] Realms Index
- - [x] Realm
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Realms Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Realm
 
 ### Region API
- - [x] Regions Index
- - [x] Region
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Regions Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Region
 
 ### Reputations API
- - [x] Reputation Factions Index
- - [x] Reputation Faction
- - [x] Reputation Tiers Index
- - [x] Reputation Tiers
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Reputation Factions Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Reputation Faction
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Reputation Tiers Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Reputation Tiers
 
 ### Spell API
- - [x] Spell
- - [x] Spell Media
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Spell
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Spell Media
 
 ### Talent API
- - [x] Talents Index
- - [x] Talent
- - [x] PvP Talents Index
- - [x] PvP Talent
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Talents Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Talent
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Talents Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) PvP Talent
 
 ### Title API
- - [x] Titles Index
- - [x] Title
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Titles Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Title
 
 ### WoW Token API
- - [x] WoW Token Index
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) WoW Token Index
 
 ## World of Warcraft - Profile
 
 ### Account Profile API
 **Note :** as this endpoint allows access to an entire WoW account's data, it requires another layer of authentification from the account's owner. 
- - [ ] Account Profile Summary
- - [ ] Protected Character Profile Summary
- - [ ] Account Collections Index
- - [ ] Account Mounts Collection Summary
- - [ ] Account Pets Collection Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Account Profile Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Protected Character Profile Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Account Collections Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Account Mounts Collection Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Account Pets Collection Summary
 
 ### Character Achievements API
- - [ ] Character Achievements Summary
- - [ ] Character Achievement Statistics
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Achievements Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Achievement Statistics
 
 ### Character Appearance API
- - [ ] Character Appearance Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Appearance Summary
 
 ### Character Collections API
- - [ ] Character Collections Index
- - [ ] Character Mounts Collection Summary
- - [ ] Character Pets Collection Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Collections Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Mounts Collection Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Pets Collection Summary
 
 ### Character Encounters API
- - [ ] Character Encounters Summary
- - [ ] Character Dungeons
- - [ ] Character Raids
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Encounters Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Dungeons
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Raids
 
 ### Character Equipment API
- - [ ] Character Equipment Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Equipment Summary
 
 ### Character Hunter Pets API
- - [ ] Character Hunter Pets Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Hunter Pets Summary
 
 ### Character Media API
- - [x] Character Media Summary
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Character Media Summary
 
 ### Character Mythic Keystone Profile API
- - [ ] Character Mythic Keystone Profile Index
- - [ ] Character Mythic Keystone Season Details
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Mythic Keystone Profile Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Mythic Keystone Season Details
 
 ### Character Professions API
- - [x] Character Professions Summary
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Character Professions Summary
 
 ### Character Profile API
- - [x] Character Profile Summary
- - [ ] Character Profile Status
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Character Profile Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Profile Status
 
 ### Character PvP API
- - [ ] Character PvP Bracket Statistics
- - [ ] Character PvP Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character PvP Bracket Statistics
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character PvP Summary
 
 ### Character Quests API
- - [x] Character Quests
- - [x] Character Completed Quests
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Character Quests
+ - ![#00ff00](https://placehold.it/15/f03c15/000000?text=+) Character Completed Quests
 
 ### Character Reputations API
- - [ ] Character Reputations Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Reputations Summary
 
 ### Character Specializations API
- - [ ] Character Specializations Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Specializations Summary
 
 ### Character Statistics API
- - [ ] Character Statistics Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Statistics Summary
 
 ### Character Titles API
- - [ ] Character Titles Summary
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Character Titles Summary
 
 ### Guild API
- - [ ] Guild
- - [ ] Guild Activity
- - [ ] Guild Achievements
- - [ ] Guild Roster
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Activity
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Achievements
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Roster
 
 ## World of Warcraft Classic - Game Data
 
 ### Creature API
- - [ ] Creature Families Index
- - [ ] Creature Family
- - [ ] Creature Types Index
- - [ ] Creature Type
- - [ ] Creature
- - [ ] Creature Display Media
- - [ ] Creature Family Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Families Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Family
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Types Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Type
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Display Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Creature Family Media
 
 ### Guild Crest API
- - [ ] Guild Crest Components Index
- - [ ] Guild Crest Border Media
- - [ ] Guild Crest Emblem Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Components Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Border Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Guild Crest Emblem Media
 
 ### Item API
- - [ ] Item Classes Index
- - [ ] Item Class
- - [ ] Item Subclass
- - [ ] Item
- - [ ] Item Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Item Classes Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Item Class
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Item Subclass
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Item
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Item Media
 
 ### Playable Class API
- - [ ] Playable Classes Index
- - [ ] Playable Class
- - [ ] Playable Class Media
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Playable Classes Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Playable Class
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Playable Class Media
 
 ### Playable Race API
- - [ ] Playable Races Index
- - [ ] Playable Race
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Playable Races Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Playable Race
 
 ### Power Type API
- - [ ] Power Types Index
- - [ ] Power Type
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Power Types Index
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) Power Type
 
 ### WoW Token API
- - [ ] WoW Token Index (CN)
+ - ![#ff0000](https://placehold.it/15/f03c15/000000?text=+) WoW Token Index (CN)
