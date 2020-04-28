@@ -38,9 +38,10 @@ An example is included in the "\_Example" folder.
 ## Useful links
 
 For this package :
- - [License](https://github.com/ZeShmoutt/Blizzard-API-For-Unity/blob/master/.github/LICENSE)
- - [Changelog](https://github.com/ZeShmoutt/Blizzard-API-For-Unity/blob/master/.github/CHANGELOG.md)
+ - [License](.github/LICENSE)
+ - [Changelog](.github/CHANGELOG.md)
+ - [Features lit](.github/TODO.md)
 
 For Blizzard's API :
- - [Front page](https://develop.battle.net/)
+ - [Main page](https://develop.battle.net/)
  - [Documentation](https://develop.battle.net/documentation)
