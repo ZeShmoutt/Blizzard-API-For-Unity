@@ -221,8 +221,8 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Not Done](Todo_NotDone.png) Account Pets Collection Summary
 
 ### Character Achievements API
- - ![Not Done](Todo_NotDone.png) Character Achievements Summary
- - ![Not Done](Todo_NotDone.png) Character Achievement Statistics
+ - ![Done](Todo_Done.png) Character Achievements Summary
+ - ![Done](Todo_Done.png) Character Achievement Statistics
 
 ### Character Appearance API
  - ![Not Done](Todo_NotDone.png) Character Appearance Summary

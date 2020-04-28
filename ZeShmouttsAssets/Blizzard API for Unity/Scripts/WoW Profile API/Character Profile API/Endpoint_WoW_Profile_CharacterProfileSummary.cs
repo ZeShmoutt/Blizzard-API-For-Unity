@@ -16,7 +16,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowProfile
 		{
 			/// <summary>
-			/// Coroutine that retrieves informations about a WoW character.
+			/// Coroutine that retrieves a summary of a WoW character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -36,7 +36,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft characters.
+	/// JSON structure for a summary of a World of Warcraft character.
 	/// </summary>
 	[Serializable]
 	public class WowCharacterProfileSummary_JSON : Object_Json
