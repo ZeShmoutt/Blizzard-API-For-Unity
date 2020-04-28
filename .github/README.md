@@ -38,9 +38,9 @@ An example is included in the "\_Example" folder.
 ## Useful links
 
 For this package :
- - [License](.github/LICENSE)
- - [Changelog](.github/CHANGELOG.md)
- - [Features lit](.github/TODO.md)
+ - [License](LICENSE)
+ - [Changelog](CHANGELOG.md)
+ - [Features list](TODO.md)
 
 For Blizzard's API :
  - [Main page](https://develop.battle.net/)
