@@ -18,306 +18,306 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## Diablo III - Game Data
 
 ### D3
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Season Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Season
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Season Leaderboard
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Era Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Era
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Era Leaderboard
+ - ![Not Done](Todo_NotDone.png) Season Index
+ - ![Not Done](Todo_NotDone.png) Season
+ - ![Not Done](Todo_NotDone.png) Season Leaderboard
+ - ![Not Done](Todo_NotDone.png) Era Index
+ - ![Not Done](Todo_NotDone.png) Era
+ - ![Not Done](Todo_NotDone.png) Era Leaderboard
 
 ## Hearthstone - Game Data
 
 ### Cards
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Card search
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Detailed card search example
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Battlegrounds card search
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Fetch one card
+ - ![Not Done](Todo_NotDone.png) Card search
+ - ![Not Done](Todo_NotDone.png) Detailed card search example
+ - ![Not Done](Todo_NotDone.png) Battlegrounds card search
+ - ![Not Done](Todo_NotDone.png) Fetch one card
 
 ### Card Backs
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Card Back Search
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Fetch one card back
+ - ![Not Done](Todo_NotDone.png) Card Back Search
+ - ![Not Done](Todo_NotDone.png) Fetch one card back
 
 ### Decks
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Fetch deck
+ - ![Not Done](Todo_NotDone.png) Fetch deck
 
 ### Metadata
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) All metadata
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Specific metadata
+ - ![Not Done](Todo_NotDone.png) All metadata
+ - ![Not Done](Todo_NotDone.png) Specific metadata
 
 ## StarCraft II - Game Data
 
 ### StarCraft II League API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) getLeagueData
+ - ![Not Done](Todo_NotDone.png) getLeagueData
 
 ## World of Warcraft - Game Data
 
 ### Achievement API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Achievement Category
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Achievements Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Achievement
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Achievement Media
+ - ![Done](Todo_Done.png) Achievement Category
+ - ![Done](Todo_Done.png) Achievements Index
+ - ![Done](Todo_Done.png) Achievement
+ - ![Done](Todo_Done.png) Achievement Media
 
 ### Auction House API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Auctions
+ - ![Done](Todo_Done.png) Auctions
 
 ### Azerite Essence API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Azerite Essences Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Azerite Essence
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Azerite Essence Media
+ - ![Done](Todo_Done.png) Azerite Essences Index
+ - ![Done](Todo_Done.png) Azerite Essence
+ - ![Done](Todo_Done.png) Azerite Essence Media
 
 ### Connected Realm API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Connected Realms Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Connected Realm
+ - ![Done](Todo_Done.png) Connected Realms Index
+ - ![Done](Todo_Done.png) Connected Realm
 
 ### Creature API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Families Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Family
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Types Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Type
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Display Media
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Creature Family Media
+ - ![Done](Todo_Done.png) Creature Families Index
+ - ![Done](Todo_Done.png) Creature Family
+ - ![Done](Todo_Done.png) Creature Types Index
+ - ![Done](Todo_Done.png) Creature Type
+ - ![Done](Todo_Done.png) Creature
+ - ![Done](Todo_Done.png) Creature Display Media
+ - ![Done](Todo_Done.png) Creature Family Media
 	
 ### Guild Crest API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Guild Crest Components Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Guild Crest Border Media
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Guild Crest Emblem Media
+ - ![Done](Todo_Done.png) Guild Crest Components Index
+ - ![Done](Todo_Done.png) Guild Crest Border Media
+ - ![Done](Todo_Done.png) Guild Crest Emblem Media
 
 ### Item API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Classes Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Class
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Sets Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Set
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Subclass
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Item Media
+ - ![Done](Todo_Done.png) Item Classes Index
+ - ![Done](Todo_Done.png) Item Class
+ - ![Done](Todo_Done.png) Item Sets Index
+ - ![Done](Todo_Done.png) Item Set
+ - ![Done](Todo_Done.png) Item Subclass
+ - ![Done](Todo_Done.png) Item
+ - ![Done](Todo_Done.png) Item Media
 
 ### Journal API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Expansions Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Expansion
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Encounters Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Encounter
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Instances Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Instance
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Journal Instance Media
+ - ![Done](Todo_Done.png) Journal Expansions Index
+ - ![Done](Todo_Done.png) Journal Expansion
+ - ![Done](Todo_Done.png) Journal Encounters Index
+ - ![Done](Todo_Done.png) Journal Encounter
+ - ![Done](Todo_Done.png) Journal Instances Index
+ - ![Done](Todo_Done.png) Journal Instance
+ - ![Done](Todo_Done.png) Journal Instance Media
 
 ### Mount API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mounts Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mount
+ - ![Done](Todo_Done.png) Mounts Index
+ - ![Done](Todo_Done.png) Mount
 
 ### Mythic Keystone Affix API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Affixes Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Affix
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Affix Media
+ - ![Done](Todo_Done.png) Mythic Keystone Affixes Index
+ - ![Done](Todo_Done.png) Mythic Keystone Affix
+ - ![Done](Todo_Done.png) Mythic Keystone Affix Media
 
 ### Mythic Keystone Dungeon API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Dungeons Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Dungeon
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Periods Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Period
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Seasons Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Season
+ - ![Done](Todo_Done.png) Mythic Keystone Dungeons Index
+ - ![Done](Todo_Done.png) Mythic Keystone Dungeon
+ - ![Done](Todo_Done.png) Mythic Keystone Index
+ - ![Done](Todo_Done.png) Mythic Keystone Periods Index
+ - ![Done](Todo_Done.png) Mythic Keystone Period
+ - ![Done](Todo_Done.png) Mythic Keystone Seasons Index
+ - ![Done](Todo_Done.png) Mythic Keystone Season
 
 ### Mythic Keystone Leaderboard API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Leaderboards Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Keystone Leaderboard	
+ - ![Done](Todo_Done.png) Mythic Keystone Leaderboards Index
+ - ![Done](Todo_Done.png) Mythic Keystone Leaderboard	
 
 ### Mythic Raid Leaderboard API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Mythic Raid Leaderboard
+ - ![Done](Todo_Done.png) Mythic Raid Leaderboard
 
 ### Pet API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Pets Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Pet
+ - ![Done](Todo_Done.png) Pets Index
+ - ![Done](Todo_Done.png) Pet
 
 ### Playable Class API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Classes Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Class
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Class Media
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Talent Slots
+ - ![Done](Todo_Done.png) Playable Classes Index
+ - ![Done](Todo_Done.png) Playable Class
+ - ![Done](Todo_Done.png) Playable Class Media
+ - ![Done](Todo_Done.png) PvP Talent Slots
 
 ### Playable Race API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Races Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Race
+ - ![Done](Todo_Done.png) Playable Races Index
+ - ![Done](Todo_Done.png) Playable Race
 
 ### Playable Specialization API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Specializations Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Specialization
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Playable Specialization Media
+ - ![Done](Todo_Done.png) Playable Specializations Index
+ - ![Done](Todo_Done.png) Playable Specialization
+ - ![Done](Todo_Done.png) Playable Specialization Media
 
 ### Power Type API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Power Types Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Power Type
+ - ![Done](Todo_Done.png) Power Types Index
+ - ![Done](Todo_Done.png) Power Type
 
 ### Profession API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Professions Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Profession
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Profession Media
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Profession Skill Tier
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Recipe
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Recipe Media
+ - ![Done](Todo_Done.png) Professions Index
+ - ![Done](Todo_Done.png) Profession
+ - ![Done](Todo_Done.png) Profession Media
+ - ![Done](Todo_Done.png) Profession Skill Tier
+ - ![Done](Todo_Done.png) Recipe
+ - ![Done](Todo_Done.png) Recipe Media
 
 ### PvP Season API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Seasons Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Season
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Leaderboards Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Leaderboard
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Rewards Index
+ - ![Done](Todo_Done.png) PvP Seasons Index
+ - ![Done](Todo_Done.png) PvP Season
+ - ![Done](Todo_Done.png) PvP Leaderboards Index
+ - ![Done](Todo_Done.png) PvP Leaderboard
+ - ![Done](Todo_Done.png) PvP Rewards Index
 
 ### PvP Tier API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Tier Media
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Tiers Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Tier
+ - ![Done](Todo_Done.png) PvP Tier Media
+ - ![Done](Todo_Done.png) PvP Tiers Index
+ - ![Done](Todo_Done.png) PvP Tier
 
 ### Quest API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quests Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Categories Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Category
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Areas Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Area
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Types Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Quest Type
+ - ![Done](Todo_Done.png) Quests Index
+ - ![Done](Todo_Done.png) Quest
+ - ![Done](Todo_Done.png) Quest Categories Index
+ - ![Done](Todo_Done.png) Quest Category
+ - ![Done](Todo_Done.png) Quest Areas Index
+ - ![Done](Todo_Done.png) Quest Area
+ - ![Done](Todo_Done.png) Quest Types Index
+ - ![Done](Todo_Done.png) Quest Type
 
 ### Realm API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Realms Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Realm
+ - ![Done](Todo_Done.png) Realms Index
+ - ![Done](Todo_Done.png) Realm
 
 ### Region API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Regions Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Region
+ - ![Done](Todo_Done.png) Regions Index
+ - ![Done](Todo_Done.png) Region
 
 ### Reputations API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Reputation Factions Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Reputation Faction
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Reputation Tiers Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Reputation Tiers
+ - ![Done](Todo_Done.png) Reputation Factions Index
+ - ![Done](Todo_Done.png) Reputation Faction
+ - ![Done](Todo_Done.png) Reputation Tiers Index
+ - ![Done](Todo_Done.png) Reputation Tiers
 
 ### Spell API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Spell
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Spell Media
+ - ![Done](Todo_Done.png) Spell
+ - ![Done](Todo_Done.png) Spell Media
 
 ### Talent API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Talents Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Talent
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Talents Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) PvP Talent
+ - ![Done](Todo_Done.png) Talents Index
+ - ![Done](Todo_Done.png) Talent
+ - ![Done](Todo_Done.png) PvP Talents Index
+ - ![Done](Todo_Done.png) PvP Talent
 
 ### Title API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Titles Index
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Title
+ - ![Done](Todo_Done.png) Titles Index
+ - ![Done](Todo_Done.png) Title
 
 ### WoW Token API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) WoW Token Index
+ - ![Done](Todo_Done.png) WoW Token Index
 
 ## World of Warcraft - Profile
 
 ### Account Profile API
 **Note :** as this endpoint allows access to an entire WoW account's data, it requires another layer of authentification from the account's owner. 
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Account Profile Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Protected Character Profile Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Account Collections Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Account Mounts Collection Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Account Pets Collection Summary
+ - ![Not Done](Todo_NotDone.png) Account Profile Summary
+ - ![Not Done](Todo_NotDone.png) Protected Character Profile Summary
+ - ![Not Done](Todo_NotDone.png) Account Collections Index
+ - ![Not Done](Todo_NotDone.png) Account Mounts Collection Summary
+ - ![Not Done](Todo_NotDone.png) Account Pets Collection Summary
 
 ### Character Achievements API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Achievements Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Achievement Statistics
+ - ![Not Done](Todo_NotDone.png) Character Achievements Summary
+ - ![Not Done](Todo_NotDone.png) Character Achievement Statistics
 
 ### Character Appearance API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Appearance Summary
+ - ![Not Done](Todo_NotDone.png) Character Appearance Summary
 
 ### Character Collections API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Collections Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Mounts Collection Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Pets Collection Summary
+ - ![Not Done](Todo_NotDone.png) Character Collections Index
+ - ![Not Done](Todo_NotDone.png) Character Mounts Collection Summary
+ - ![Not Done](Todo_NotDone.png) Character Pets Collection Summary
 
 ### Character Encounters API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Encounters Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Dungeons
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Raids
+ - ![Not Done](Todo_NotDone.png) Character Encounters Summary
+ - ![Not Done](Todo_NotDone.png) Character Dungeons
+ - ![Not Done](Todo_NotDone.png) Character Raids
 
 ### Character Equipment API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Equipment Summary
+ - ![Not Done](Todo_NotDone.png) Character Equipment Summary
 
 ### Character Hunter Pets API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Hunter Pets Summary
+ - ![Not Done](Todo_NotDone.png) Character Hunter Pets Summary
 
 ### Character Media API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Character Media Summary
+ - ![Done](Todo_Done.png) Character Media Summary
 
 ### Character Mythic Keystone Profile API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Mythic Keystone Profile Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Mythic Keystone Season Details
+ - ![Not Done](Todo_NotDone.png) Character Mythic Keystone Profile Index
+ - ![Not Done](Todo_NotDone.png) Character Mythic Keystone Season Details
 
 ### Character Professions API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Character Professions Summary
+ - ![Done](Todo_Done.png) Character Professions Summary
 
 ### Character Profile API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Character Profile Summary
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Profile Status
+ - ![Done](Todo_Done.png) Character Profile Summary
+ - ![Not Done](Todo_NotDone.png) Character Profile Status
 
 ### Character PvP API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character PvP Bracket Statistics
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character PvP Summary
+ - ![Not Done](Todo_NotDone.png) Character PvP Bracket Statistics
+ - ![Not Done](Todo_NotDone.png) Character PvP Summary
 
 ### Character Quests API
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Character Quests
- - ![#6aa84f](https://placehold.it/15/6aa84f/000000?text=+) Character Completed Quests
+ - ![Done](Todo_Done.png) Character Quests
+ - ![Done](Todo_Done.png) Character Completed Quests
 
 ### Character Reputations API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Reputations Summary
+ - ![Not Done](Todo_NotDone.png) Character Reputations Summary
 
 ### Character Specializations API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Specializations Summary
+ - ![Not Done](Todo_NotDone.png) Character Specializations Summary
 
 ### Character Statistics API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Statistics Summary
+ - ![Not Done](Todo_NotDone.png) Character Statistics Summary
 
 ### Character Titles API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Character Titles Summary
+ - ![Not Done](Todo_NotDone.png) Character Titles Summary
 
 ### Guild API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Activity
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Achievements
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Roster
+ - ![Not Done](Todo_NotDone.png) Guild
+ - ![Not Done](Todo_NotDone.png) Guild Activity
+ - ![Not Done](Todo_NotDone.png) Guild Achievements
+ - ![Not Done](Todo_NotDone.png) Guild Roster
 
 ## World of Warcraft Classic - Game Data
 
 ### Creature API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Families Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Family
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Types Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Type
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Display Media
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Creature Family Media
+ - ![Not Done](Todo_NotDone.png) Creature Families Index
+ - ![Not Done](Todo_NotDone.png) Creature Family
+ - ![Not Done](Todo_NotDone.png) Creature Types Index
+ - ![Not Done](Todo_NotDone.png) Creature Type
+ - ![Not Done](Todo_NotDone.png) Creature
+ - ![Not Done](Todo_NotDone.png) Creature Display Media
+ - ![Not Done](Todo_NotDone.png) Creature Family Media
 
 ### Guild Crest API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Crest Components Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Crest Border Media
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Guild Crest Emblem Media
+ - ![Not Done](Todo_NotDone.png) Guild Crest Components Index
+ - ![Not Done](Todo_NotDone.png) Guild Crest Border Media
+ - ![Not Done](Todo_NotDone.png) Guild Crest Emblem Media
 
 ### Item API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Item Classes Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Item Class
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Item Subclass
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Item
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Item Media
+ - ![Not Done](Todo_NotDone.png) Item Classes Index
+ - ![Not Done](Todo_NotDone.png) Item Class
+ - ![Not Done](Todo_NotDone.png) Item Subclass
+ - ![Not Done](Todo_NotDone.png) Item
+ - ![Not Done](Todo_NotDone.png) Item Media
 
 ### Playable Class API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Playable Classes Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Playable Class
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Playable Class Media
+ - ![Not Done](Todo_NotDone.png) Playable Classes Index
+ - ![Not Done](Todo_NotDone.png) Playable Class
+ - ![Not Done](Todo_NotDone.png) Playable Class Media
 
 ### Playable Race API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Playable Races Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Playable Race
+ - ![Not Done](Todo_NotDone.png) Playable Races Index
+ - ![Not Done](Todo_NotDone.png) Playable Race
 
 ### Power Type API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Power Types Index
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) Power Type
+ - ![Not Done](Todo_NotDone.png) Power Types Index
+ - ![Not Done](Todo_NotDone.png) Power Type
 
 ### WoW Token API
- - ![#cc0000](https://placehold.it/15/cc0000/000000?text=+) WoW Token Index (CN)
+ - ![Not Done](Todo_NotDone.png) WoW Token Index (CN)
