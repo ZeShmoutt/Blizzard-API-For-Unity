@@ -11,7 +11,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
   - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 0/1
 - World of Warcraft
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/101
-  - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 11/34
+  - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 14/34
 - World of Warcraft Classic
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 0/23
 
@@ -233,9 +233,9 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Pets Collection Summary
 
 ### Character Encounters API
- - ![Not Done](Todo_NotDone.png) Character Encounters Summary
- - ![Not Done](Todo_NotDone.png) Character Dungeons
- - ![Not Done](Todo_NotDone.png) Character Raids
+ - ![Done](Todo_Done.png) Character Encounters Summary
+ - ![Done](Todo_Done.png) Character Dungeons
+ - ![Done](Todo_Done.png) Character Raids
 
 ### Character Equipment API
  - ![Not Done](Todo_NotDone.png) Character Equipment Summary

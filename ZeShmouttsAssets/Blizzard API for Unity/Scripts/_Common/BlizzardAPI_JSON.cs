@@ -182,14 +182,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	}
 
 	/// <summary>
-	/// "key" (HRefStruct), "name" (string), "id" (int), "realm" (RealmStruct).
+	/// "key" (HRefStruct), "name" (string), "id" (long), "realm" (RealmStruct).
 	/// </summary>
 	[Serializable]
 	public struct CharacterStruct
 	{
 		public HRefStruct key;
 		public string name;
-		public int id;
+		public long id;
 		public RealmStruct realm;
 	}
 
