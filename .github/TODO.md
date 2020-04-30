@@ -11,7 +11,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
   - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 0/1
 - World of Warcraft
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/101
-  - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 5/34
+  - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 8/34
 - World of Warcraft Classic
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 0/23
 
@@ -225,7 +225,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Achievement Statistics
 
 ### Character Appearance API
- - ![Not Done](Todo_NotDone.png) Character Appearance Summary
+ - ![Done](Todo_Done.png) Character Appearance Summary
 
 ### Character Collections API
  - ![Not Done](Todo_NotDone.png) Character Collections Index
