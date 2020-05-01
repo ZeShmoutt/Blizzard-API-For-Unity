@@ -97,6 +97,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int internal_slot_id;
 			public int[] subclass;
 		}
-		public CharacterAppearance[] items;
+		public ItemAppearance[] items;
 	}
 }
