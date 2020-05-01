@@ -266,7 +266,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Completed Quests
 
 ### Character Reputations API
- - ![Not Done](Todo_NotDone.png) Character Reputations Summary
+ - ![Done](Todo_Done.png) Character Reputations Summary
 
 ### Character Specializations API
  - ![Not Done](Todo_NotDone.png) Character Specializations Summary
