@@ -255,7 +255,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 
 ### Character Profile API
  - ![Done](Todo_Done.png) Character Profile Summary
- - ![Not Done](Todo_NotDone.png) Character Profile Status
+ - ![Done](Todo_Done.png) Character Profile Status
 
 ### Character PvP API
  - ![Not Done](Todo_NotDone.png) Character PvP Bracket Statistics
