@@ -165,9 +165,29 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// "value" (float), "display_string" (LocalizedString).
 	/// </summary>
 	[Serializable]
-	public struct ValueDisplayStruct
+	public struct ValueFloatDisplayStruct
 	{
 		public float value;
+		public string display_string;
+	}
+
+	/// <summary>
+	/// "value" (int), "display_string" (LocalizedString).
+	/// </summary>
+	[Serializable]
+	public struct ValueIntDisplayStruct
+	{
+		public int value;
+		public string display_string;
+	}
+
+	/// <summary>
+	/// "value" (TypeNameStruct), "display_string" (LocalizedString).
+	/// </summary>
+	[Serializable]
+	public struct ValueTypeDisplayStruct
+	{
+		public TypeNameStruct value;
 		public string display_string;
 	}
 
@@ -243,6 +263,16 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	{
 		public int id;
 		public string type;
+	}
+
+	/// <summary>
+	/// "display_string" (LocalizedString), "color" (ColorStruct).
+	/// </summary>
+	[Serializable]
+	public struct DisplayStringColorStruct
+	{
+		public LocalizedString display_string;
+		public ColorStruct color;
 	}
 
 	#endregion
