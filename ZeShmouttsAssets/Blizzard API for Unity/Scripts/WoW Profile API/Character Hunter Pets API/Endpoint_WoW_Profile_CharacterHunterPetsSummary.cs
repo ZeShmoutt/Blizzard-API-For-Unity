@@ -16,7 +16,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class WowProfile
 		{
 			/// <summary>
-			/// Coroutine that retrieves a sumamry of a WoW character's Hunter pets. Will return a 404 error if the character isn't a Hunter.
+			/// Coroutine that retrieves a sumamry of a WoW character's Hunter pets.
+			/// Will return an HTTP 404 Not Found error if the character isn't a Hunter.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>

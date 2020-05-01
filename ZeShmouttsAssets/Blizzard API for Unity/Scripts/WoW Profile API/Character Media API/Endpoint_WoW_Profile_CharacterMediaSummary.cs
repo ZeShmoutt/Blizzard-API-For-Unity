@@ -52,6 +52,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public RealmStruct realm;
 		}
 		public CharacterStruct character;
+
 		public string avatar_url;
 		public string bust_url;
 		public string render_url;
