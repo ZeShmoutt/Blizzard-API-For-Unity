@@ -247,8 +247,8 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Media Summary
 
 ### Character Mythic Keystone Profile API
- - ![Not Done](Todo_NotDone.png) Character Mythic Keystone Profile Index
- - ![Not Done](Todo_NotDone.png) Character Mythic Keystone Season Details
+ - ![Done](Todo_Done.png) Character Mythic Keystone Profile Index
+ - ![Done](Todo_Done.png) Character Mythic Keystone Season Details
 
 ### Character Professions API
  - ![Done](Todo_Done.png) Character Professions Summary
