@@ -241,7 +241,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Equipment Summary
 
 ### Character Hunter Pets API
- - ![Not Done](Todo_NotDone.png) Character Hunter Pets Summary
+ - ![Done](Todo_Done.png) Character Hunter Pets Summary
 
 ### Character Media API
  - ![Done](Todo_Done.png) Character Media Summary
