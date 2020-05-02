@@ -275,7 +275,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Character Statistics Summary
 
 ### Character Titles API
- - ![Not Done](Todo_NotDone.png) Character Titles Summary
+ - ![Done](Todo_Done.png) Character Titles Summary
 
 ### Guild API
  - ![Not Done](Todo_NotDone.png) Guild
