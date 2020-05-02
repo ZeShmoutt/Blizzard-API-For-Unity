@@ -138,7 +138,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	}
 
 	/// <summary>
-	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int), "realm" (RealmStruct).
+	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int), "realm" (RealmStruct), "faction" (TypeNameStruct).
 	/// </summary>
 	[Serializable]
 	public struct GuildStruct
@@ -147,6 +147,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public string name;
 		public int id;
 		public RealmStruct realm;
+		public TypeNameStruct faction;
 	}
 
 	/// <summary>
