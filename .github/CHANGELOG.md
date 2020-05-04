@@ -11,6 +11,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
   
+## [0.49.0] - 2020-05-02
+### Added
+ - Added `BlizzardAPI.CustomRequest<T>()`, allowing custom API requests using URLs found in data provided by other requests (e.g. indexes)
+ - Added "raw" versions of `BlizzardAPI.SendRequest()` and `BlizzardAPI.CustomRequest()` that apply their actions to the JSON string without converting it
+
+### Changed
+ - Fixed a typo in `WowAchievementCategoriesIndex_JSON`
+  
 ## [0.48.0] - 2020-05-02
 ### Added
  - Added support for the following WoW Profile endpoint category :

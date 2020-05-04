@@ -22,7 +22,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetAchievementCategoriesIndex(Action<WowAchievementCategoriesIndex_Json> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetAchievementCategoriesIndex(Action<WowAchievementCategoriesIndex_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
 			{
 				string path = "/data/wow/achievement-category/index";
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
@@ -37,7 +37,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// JSON structure for an index of World of Warcraft achievement categories.
 	/// </summary>
 	[Serializable]
-	public class WowAchievementCategoriesIndex_Json : Object_Json
+	public class WowAchievementCategoriesIndex_JSON : Object_Json
 	{
 		public LinkStruct _links;
 
