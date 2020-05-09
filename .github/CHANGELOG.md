@@ -3,7 +3,11 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2020-05-02
+## [1.0.1] - 2020-05-09
+### Bug fix
+ - Fixed a very annoying error with .NET 4.0 and `System.Web`
+
+## [1.0.0] - 2020-05-09
 ### Unity version
  - Updated to Unity 2019.3.10f1
    - Still compatible with older versions, but some features may be disabled
