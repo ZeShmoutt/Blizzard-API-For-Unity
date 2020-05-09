@@ -91,13 +91,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		[SettingsProvider]
 		public static SettingsProvider CreateBlizzardAppInfosProvider()
 		{
-			if (IsSettingsAvailable())
+			if (!IsSettingsAvailable())
 			{
-				var provider = new BlizzardAppInfosProvider(projectSettingsPath, SettingsScope.Project);
-				provider.keywords = GetSearchKeywordsFromGUIContentProperties<Styles>();
-				return provider;
+				BlizzardAppInfos_Editor.GetOrCreateSettings();
 			}
-			return null;
+
+			var provider = new BlizzardAppInfosProvider(projectSettingsPath, SettingsScope.Project);
+			provider.keywords = GetSearchKeywordsFromGUIContentProperties<Styles>();
+			return provider;
 		}
 	}
 }
