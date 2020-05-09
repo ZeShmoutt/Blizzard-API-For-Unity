@@ -25,6 +25,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		private const string namespaceDynamic = "dynamic-";
 		private const string namespaceProfile = "profile-";
 		private const string namespaceStatic = "static-";
+		private const string namespaceClassicDynamic = "dynamic-classic-";
+		private const string namespaceClassicProfile = "profile-classic-";
+		private const string namespaceClassicStatic = "static-classic-";
 
 		private const string headerApiNamespace = "Battlenet-Namespace";
 		private const string headerAuthorization = "Authorization";
@@ -148,7 +151,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 			Uri uri = new Uri(url);
 			string queryString = uri.Query;
-			var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
+			var queryDictionary = HttpUtility.ParseQueryString(queryString);
 			string apiNamespace = queryDictionary["namespace"];
 
 			string truncatedUrl = url.Substring(0, url.Length - queryString.Length);
