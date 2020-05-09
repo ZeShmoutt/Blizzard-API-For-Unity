@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_PlayableClassMedia = basePath_Wow_gameData + basePath_media + "/playable-class/{0}";
+			internal const string apiPath_PlayableClassMedia = basePath_Wow_gameData + "/media/playable-class/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a playable class by ID.

@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_MythicKeystoneAffixMedia = basePath_Wow_gameData + basePath_media + "/keystone-affix/{0}";
+			internal const string apiPath_MythicKeystoneAffixMedia = basePath_Wow_gameData + "/media/keystone-affix/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a mythic keystone affix by ID.

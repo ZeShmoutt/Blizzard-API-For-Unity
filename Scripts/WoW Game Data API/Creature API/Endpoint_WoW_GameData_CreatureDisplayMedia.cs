@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_CreatureDisplayMedia = basePath_Wow_gameData + basePath_media + "/creature-display/{0}";
+			internal const string apiPath_CreatureDisplayMedia = basePath_Wow_gameData + "/media/creature-display/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a creature display by ID.

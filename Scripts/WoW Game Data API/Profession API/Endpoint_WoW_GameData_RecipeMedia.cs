@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_RecipeMedia = basePath_Wow_gameData + basePath_media + "/recipe/{0}";
+			internal const string apiPath_RecipeMedia = basePath_Wow_gameData + "/media/recipe/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a recipe by ID.

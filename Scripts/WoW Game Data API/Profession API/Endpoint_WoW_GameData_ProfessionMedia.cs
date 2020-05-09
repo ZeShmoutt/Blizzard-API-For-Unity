@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_ProfessionMedia = basePath_Wow_gameData + basePath_media + "/profession/{0}";
+			internal const string apiPath_ProfessionMedia = basePath_Wow_gameData + "/media/profession/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a profession by ID.

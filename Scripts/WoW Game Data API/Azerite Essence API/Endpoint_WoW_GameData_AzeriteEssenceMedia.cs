@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_AzeriteEssenceMedia = basePath_Wow_gameData + basePath_media + "/azerite-essence/{0}";
+			internal const string apiPath_AzeriteEssenceMedia = basePath_Wow_gameData + "/media/azerite-essence/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for an azerite essence by ID.

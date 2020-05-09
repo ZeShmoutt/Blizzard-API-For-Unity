@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_PvPTierMedia = basePath_Wow_gameData + basePath_media + "/pvp-tier/{0}";
+			internal const string apiPath_PvPTierMedia = basePath_Wow_gameData + "/media/pvp-tier/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a PvP tier by ID.

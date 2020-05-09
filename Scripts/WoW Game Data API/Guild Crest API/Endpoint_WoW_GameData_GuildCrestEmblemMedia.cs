@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_GuildCrestEmblemMedia = basePath_Wow_gameData + basePath_media + "/guild-crest/emblem/{0}";
+			internal const string apiPath_GuildCrestEmblemMedia = basePath_Wow_gameData + "/media/guild-crest/emblem/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a guild crest emblem by ID.

@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_AchievementMedia = basePath_Wow_gameData + basePath_media + "/achievement/{0}";
+			internal const string apiPath_AchievementMedia = basePath_Wow_gameData + "/media/achievement/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for an achievement by ID.
