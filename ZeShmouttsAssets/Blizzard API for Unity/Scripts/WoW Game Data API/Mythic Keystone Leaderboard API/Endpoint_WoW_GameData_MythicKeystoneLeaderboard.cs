@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,22 +19,42 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_MythicKeystoneLeaderboard = basePath_Wow_gameData + "/connected-realm/{0}/mythic-leaderboard/{1}/period/{2}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW weekly Mythic Keystone leaderboard by period.
+			/// Coroutine that retrieves a weekly Mythic Keystone Leaderboard by period.
 			/// </summary>
-			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="connectedRealmId">The ID of the connected realm.</param>
 			/// <param name="dungeonId">The ID of the dungeon.</param>
 			/// <param name="period">The unique identifier for the leaderboard period.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicKeystoneLeaderboard(BattleNetRegion region, int connectedRealmId, int dungeonId, int period, Action<WowMythicKeystoneLeaderboard_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetMythicKeystoneLeaderboard(int connectedRealmId, int dungeonId, int period, Action<Json_Wow_MythicKeystoneLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/connected-realm/{0}/mythic-leaderboard/{1}/period/{2}", connectedRealmId, dungeonId, period);
+				string path = string.Format(apiPath_MythicKeystoneLeaderboard, connectedRealmId, dungeonId, period);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a weekly Mythic Keystone Leaderboard by period, as a raw JSON string.
+			/// </summary>
+			/// <param name="connectedRealmId">The ID of the connected realm.</param>
+			/// <param name="dungeonId">The ID of the dungeon.</param>
+			/// <param name="period">The unique identifier for the leaderboard period.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetMythicKeystoneLeaderboardRaw(int connectedRealmId, int dungeonId, int period, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_MythicKeystoneLeaderboard, connectedRealmId, dungeonId, period);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -38,11 +62,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft weekly Mythic Keystone leaderboard.
+	/// JSON structure for World of Warcraft, representing a weekly Mythic Keystone Leaderboard.
 	/// </summary>
 	[Serializable]
-	public class WowMythicKeystoneLeaderboard_JSON : Object_Json
+	public class Json_Wow_MythicKeystoneLeaderboard : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public NameIdStruct map;
@@ -80,5 +105,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int map_challenge_mode_id;
 		public LocalizedString name;
+		// {{JSON_END}}
 	}
 }

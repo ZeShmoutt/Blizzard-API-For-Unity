@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,21 +19,40 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_PvPLeaderboard = basePath_Wow_gameData + "/pvp-season/{0}/pvp-leaderboard/{1}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW PvP leaderboard of a specific PvP bracket for a PvP season.
+			/// Coroutine that retrieves the PvP leaderboard of a specific PvP bracket for a PvP season.
 			/// </summary>
-			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="pvpSeasonId">The ID of the PvP season.</param>
-			/// <param name="pvpBracket">The PvP bracket type ('2v2', '3v3', or 'rbg').</param>
+			/// <param name="pvpBracket">"The PvP bracket type ("2v2", "3v3", or "rbg")."</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPvPLeaderboard(BattleNetRegion region, int pvpSeasonId, string pvpBracket, Action<WowPvPLeaderboard_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetPvPLeaderboard(int pvpSeasonId, string pvpBracket, Action<Json_Wow_PvPLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/pvp-season/{0}/pvp-leaderboard/{1}", pvpSeasonId, pvpBracket);
+				string path = string.Format(apiPath_PvPLeaderboard, pvpSeasonId, pvpBracket);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves the PvP leaderboard of a specific PvP bracket for a PvP season, as a raw JSON string.
+			/// </summary>
+			/// <param name="pvpSeasonId">The ID of the PvP season.</param>
+			/// <param name="pvpBracket">"The PvP bracket type ("2v2", "3v3", or "rbg")."</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetPvPLeaderboardRaw(int pvpSeasonId, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_PvPLeaderboard, pvpSeasonId, pvpBracket);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -37,11 +60,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft PvP leaderboards.
+	/// JSON structure for World of Warcraft, representing a PvP leaderboard.
 	/// </summary>
 	[Serializable]
-	public class WowPvPLeaderboard_JSON : Object_Json
+	public class Json_Wow_PvPLeaderboard : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public RefIdStruct season;
@@ -67,5 +91,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public RefIdStruct tier;
 		}
 		public PvPLeaderboardEntry[] entries;
+		// {{JSON_END}}
 	}
 }

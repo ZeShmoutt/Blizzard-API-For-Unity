@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,19 +19,36 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_JournalInstancesIndex = basePath_Wow_gameData + "/journal-instance/index";
+
 			/// <summary>
-			/// Coroutine that retrieves an index of all WoW dungeon journal instances.
+			/// Coroutine that retrieves an index of journal instances.
 			/// </summary>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetJournalInstancesIndex(Action<WowJournalInstancesIndex_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetJournalInstancesIndex(Action<Json_Wow_JournalInstancesIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = "/data/wow/journal-instance/index";
+				string path = apiPath_JournalInstancesIndex;
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves an index of journal instances, as a raw JSON string.
+			/// </summary>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetJournalInstancesIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = apiPath_JournalInstancesIndex;
+				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -35,13 +56,15 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for an index of World of Warcraft dungeon journal instances.
+	/// JSON structure for World of Warcraft, representing an index of journal instances.
 	/// </summary>
 	[Serializable]
-	public class WowJournalInstancesIndex_JSON : Object_Json
+	public class Json_Wow_JournalInstancesIndex : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public RefNameIdStruct[] instances;
+		// {{JSON_END}}
 	}
 }

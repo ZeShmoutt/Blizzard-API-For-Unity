@@ -6,7 +6,7 @@ using ZeShmouttsAssets.BlizzardAPI.JSON;
 
 public class BlizzardAPI_Example : MonoBehaviour
 {
-	private WowAchievement_JSON achievement;
+	private Json_Wow_Achievement achievement;
 	private DateTime lastModified;
 
 	void Start()
@@ -16,7 +16,7 @@ public class BlizzardAPI_Example : MonoBehaviour
 		StartCoroutine(BlizzardAPI.WowGameData.GetAchievement(7520, action_Result: SetAchievement, action_LastModified: SetLastModified));
 	}
 
-	void SetAchievement(WowAchievement_JSON json)
+	void SetAchievement(Json_Wow_Achievement json)
 	{
 		achievement = json;
 

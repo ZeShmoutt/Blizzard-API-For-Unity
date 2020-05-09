@@ -3,13 +3,24 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased
-### To do
- - Update to Unity 2019.x.x
+## [1.0.0] - 2020-05-02
+### Unity version
+ - Updated to Unity 2019.3.10f1
+   - Still compatible with older versions, but some features may be disabled
 
 ### Added
+ - Added an editor-only window to test any endpoint directly in-editor (menu : `Blizzard API/API Testing tool`)
+   - Can also save JSON in a folder directly
+   - Requires `EditorCoroutines` package and Unity 2019
  - Added an editor-only window to quickly retrieve an OAuth access token (menu : `Blizzard API/Get Access Token`)
    - This is mostly useful in Blizzard's documentation, by providing an access token to test endpoints
+   - Requires `EditorCoroutines` package and Unity 2019
+ - Added "raw" version of all current endpoints, that apply their actions to the JSON string without converting it
+
+### Changed
+ - Endpoint files are now automatically generated from a CSV
+   - Summary consistency is now at its highest peak
+ - Updated README.md
   
 ## [0.49.0] - 2020-05-02
 ### Added

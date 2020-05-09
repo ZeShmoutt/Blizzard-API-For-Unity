@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,19 +19,68 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_Realm = basePath_Wow_gameData + "/realm/{0}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW realm.
+			/// Coroutine that retrieves a single realm by slug or ID.
 			/// </summary>
-			/// <param name="realmSlug">The realm's data-friendly name. Use GetRealmsIndex to get a list of realms and their slugs.</param>
+			/// <param name="realmSlug">The slug of the realm.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetRealm(string realmSlug, Action<WowRealm_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetRealm(string realmSlug, Action<Json_Wow_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/realm/{0}", realmSlug);
+				string path = string.Format(apiPath_Realm, realmSlug);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a single realm by slug or ID.
+			/// </summary>
+			/// <param name="realmId">The ID of the realm.</param>
+			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetRealm(int realmId, Action<Json_Wow_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_Realm, realmId);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
+			/// <summary>
+			/// Coroutine that retrieves a single realm by slug or ID, as a raw JSON string.
+			/// </summary>
+			/// <param name="realmSlug">The slug of the realm.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetRealmRaw(string realmSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_Realm, realmSlug);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
+			/// <summary>
+			/// Coroutine that retrieves a single realm by slug or ID, as a raw JSON string.
+			/// </summary>
+			/// <param name="realmId">The ID of the realm.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetRealmRaw(int realmId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_Realm, realmId);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -35,11 +88,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft realm.
+	/// JSON structure for World of Warcraft, representing a realm.
 	/// </summary>
 	[Serializable]
-	public class WowRealm_JSON : Object_Json
+	public class Json_Wow_Realm : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public int id;
@@ -59,5 +113,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RealmType type;
 		public bool is_tournament;
 		public string slug;
+		// {{JSON_END}}
 	}
 }

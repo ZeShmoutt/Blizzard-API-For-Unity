@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,23 +19,40 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-			/// <summary>
-			/// Coroutine that retrieves a WoW character's PvP bracket statistics.
-			/// Returns a 404 Not Found for characters that have not yet completed a PvP match for the specified bracket.
+						/// <summary>
+			/// Coroutine that retrieves the PvP bracket statistics for a character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
 			/// <param name="characterName">The lowercase name of the character.</param>
-			/// <param name="pvpBracket">The PvP bracket type ('2v2', '3v3', or 'rbg').</param>
-			/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+			/// <param name="pvpBracket">"The PvP bracket type ("2v2", "3v3", or "rbg")."</param>
+			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCharacterPvPBracketStatistics(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<WowCharacterPvPBracketStatistics_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetCharacterPvPBracketStatistics(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<Json_Wow_CharacterPvPBracketStatistics> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/pvp-bracket/", pvpBracket);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/pvp-bracket/{0}", pvpBracket);
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves the PvP bracket statistics for a character, as a raw JSON string.
+			/// </summary>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <param name="realmSlug">The slug of the realm.</param>
+			/// <param name="characterName">The lowercase name of the character.</param>
+			/// <param name="pvpBracket">"The PvP bracket type ("2v2", "3v3", or "rbg")."</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <returns></returns>
+			public static IEnumerator GetCharacterPvPBracketStatisticsRaw(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			{
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/pvp-bracket/{0}", pvpBracket);
+				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -39,11 +60,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for a World of Warcraft character's PvP bracket statistics.
+	/// JSON structure for World of Warcraft, representing the PvP bracket statistics for a character.
 	/// </summary>
 	[Serializable]
-	public class WowCharacterPvPBracketStatistics_JSON : Object_Json
+	public class Json_Wow_CharacterPvPBracketStatistics : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public CharacterStruct character;
@@ -62,5 +84,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		}
 		public MatchStatistics season_match_statistics;
 		public MatchStatistics weekly_match_statistics;
+		// {{JSON_END}}
 	}
 }

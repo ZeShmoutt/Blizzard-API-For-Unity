@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,20 +19,38 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_MythicKeystoneLeaderboardsIndex = basePath_Wow_gameData + "/connected-realm/{0}/mythic-leaderboard/index";
+
 			/// <summary>
-			/// Coroutine that retrieves an index of WoW Mythic Keystone leaderboards for a connected realm.
+			/// Coroutine that retrieves an index of Mythic Keystone Leaderboard dungeon instances for a connected realm.
 			/// </summary>
-			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="connectedRealmId">The ID of the connected realm.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicKeystoneLeaderboardsIndex(BattleNetRegion region, int connectedRealmId, Action<WowMythicKeystoneLeaderboardsIndex_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetMythicKeystoneLeaderboardsIndex(int connectedRealmId, Action<Json_Wow_MythicKeystoneLeaderboardsIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/connected-realm/{0}/mythic-leaderboard/index", connectedRealmId);
+				string path = string.Format(apiPath_MythicKeystoneLeaderboardsIndex, connectedRealmId);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves an index of Mythic Keystone Leaderboard dungeon instances for a connected realm, as a raw JSON string.
+			/// </summary>
+			/// <param name="connectedRealmId">The ID of the connected realm.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetMythicKeystoneLeaderboardsIndexRaw(int connectedRealmId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_MythicKeystoneLeaderboardsIndex, connectedRealmId);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -36,13 +58,15 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft Mythic Keystone leaderboards.
+	/// JSON structure for World of Warcraft, representing an index of Mythic Keystone Leaderboard dungeon instances.
 	/// </summary>
 	[Serializable]
-	public class WowMythicKeystoneLeaderboardsIndex_JSON : Object_Json
+	public class Json_Wow_MythicKeystoneLeaderboardsIndex : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public RefNameIdStruct[] current_leaderboards;
+		// {{JSON_END}}
 	}
 }

@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,21 +19,38 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-			/// <summary>
-			/// Coroutine that retrieves a summary of a WoW character's specializations.
+						/// <summary>
+			/// Coroutine that retrieves a summary of a character's specializations.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
 			/// <param name="characterName">The lowercase name of the character.</param>
-			/// <param name="action_Result">Action to execute with the character data once retrieved and converted.</param>
+			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCharacterSpecializationsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<WowCharacterSpecializationsSummary_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetCharacterSpecializationsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterSpecializationsSummary> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = string.Concat(characterBasePath, realmSlug, "/", characterName, "/specializations");
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/specializations";
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a summary of a character's specializations, as a raw JSON string.
+			/// </summary>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <param name="realmSlug">The slug of the realm.</param>
+			/// <param name="characterName">The lowercase name of the character.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <returns></returns>
+			public static IEnumerator GetCharacterSpecializationsSummaryRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			{
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/specializations";
+				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -37,11 +58,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for a summary of a World of Warcraft character's specializations.
+	/// JSON structure for World of Warcraft, representing a summary of a character's specializations.
 	/// </summary>
 	[Serializable]
-	public class WowCharacterSpecializationsSummary_JSON : Object_Json
+	public class Json_Wow_CharacterSpecializationsSummary : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		[Serializable]
@@ -89,5 +111,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RefNameIdStruct active_specialization;
 
 		public CharacterStruct character;
+		// {{JSON_END}}
 	}
 }

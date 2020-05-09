@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,8 +19,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_PlayableSpecialization = basePath_Wow_gameData + "/playable-specialization/{0}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW playable specialization.
+			/// Coroutine that retrieves a playable specialization by ID.
 			/// </summary>
 			/// <param name="specId">The ID of the playable specialization.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
@@ -24,11 +30,27 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPlayableSpecialization(int specId, Action<WowPlayableSpecialization_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetPlayableSpecialization(int specId, Action<Json_Wow_PlayableSpecialization> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/playable-specialization/{0}", specId);
+				string path = string.Format(apiPath_PlayableSpecialization, specId);
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a playable specialization by ID, as a raw JSON string.
+			/// </summary>
+			/// <param name="specId">The ID of the playable specialization.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetPlayableSpecializationRaw(int specId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_PlayableSpecialization, specId);
+				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -36,11 +58,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft playable specializations.
+	/// JSON structure for World of Warcraft, representing a playable specialization.
 	/// </summary>
 	[Serializable]
-	public class WowPlayableSpecialization_JSON : Object_Json
+	public class Json_Wow_PlayableSpecialization : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public int id;
@@ -84,5 +107,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public SpellTooltip spell_tooltip;
 		}
 		public PvpTalent[] pvp_talents;
+		// {{JSON_END}}
 	}
 }

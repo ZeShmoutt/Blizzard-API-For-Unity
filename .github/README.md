@@ -4,15 +4,24 @@ A general-purpose collection of scripts for using the Blizzard API inside Unity.
 
 The Blizzard API can be used to retrieve informations about most Blizzard games and player profiles (with the proper credentials). For more informations, check out https://develop.battle.net/.
 
-This repo aims to provide tools and shortcuts to use the Blizzard API in your Unity projects.
-
-**WORK IN PROGRESS.**
+This package aims to provide tools and shortcuts to use the Blizzard API in your Unity projects.
 
 ## Uses and restrictions
 
 As per the MIT license, this is pretty much unrestricted in use and modification.
 
 I'd appreciate a lot if you could mention me somewhere if you use it, though.
+
+## Links
+
+For this package :
+ - [License](LICENSE)
+ - [Changelog](CHANGELOG.md)
+ - [Features list](TODO.md)
+
+For Blizzard's API :
+ - [Main page](https://develop.battle.net/)
+ - [Documentation](https://develop.battle.net/documentation)
 
 ## Installation
 
@@ -34,14 +43,3 @@ First off, add those two lines with the other `using`s :
 Then, use `StartCoroutine()` (from a `MonoBehaviour`) with the corresponding endpoint coroutine (such as `BlizzardAPI.WowGameData.GetAchievement()`) to retrieve your data.
 
 An example is included in the "\_Example" folder.
-
-## Useful links
-
-For this package :
- - [License](LICENSE)
- - [Changelog](CHANGELOG.md)
- - [Features list](TODO.md)
-
-For Blizzard's API :
- - [Main page](https://develop.battle.net/)
- - [Documentation](https://develop.battle.net/documentation)

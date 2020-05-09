@@ -12,7 +12,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	/// </summary>
 	public static partial class BlizzardAPI
 	{
-		#region Constants
+		#region URL constants
 
 		private const string urlStart = "https://";
 
@@ -26,12 +26,19 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		private const string namespaceProfile = "profile-";
 		private const string namespaceStatic = "static-";
 
-		private const string characterBasePath = "/profile/wow/character/";
-
 		private const string headerApiNamespace = "Battlenet-Namespace";
 		private const string headerAuthorization = "Authorization";
 		private const string headerIfModifiedSince = "If-Modified-Since";
 		private const string headerLastModified = "Last-Modified";
+
+		#endregion
+
+		#region Common API paths
+
+		private const string basePath_media = "/media";
+		private const string basePath_Wow_gameData = "/data/wow";
+		private const string basePath_Wow_character = "/profile/wow/character/";
+		private const string basePath_Wow_guild = "/data/wow/guild/";
 
 		#endregion
 
@@ -63,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_Json
+		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_JSON
 		{
 			if (action_Result != null)
 			{
@@ -112,7 +119,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
 		/// <returns></returns>
-		public static IEnumerator CustomRequest<T>(string url, Dictionary<string, string> additionalHeaders, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_Json
+		public static IEnumerator CustomRequest<T>(string url, Dictionary<string, string> additionalHeaders, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_JSON
 		{
 			if (action_Result != null)
 			{

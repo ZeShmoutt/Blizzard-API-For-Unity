@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,8 +19,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_MythicKeystoneSeason = basePath_Wow_gameData + "/wow/mythic-keystone/season/{0}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW Mythic Keystone season.
+			/// Coroutine that retrieves a Mythic Keystone season by ID.
 			/// </summary>
 			/// <param name="seasonId">The ID of the Mythic Keystone season.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
@@ -24,11 +30,27 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicKeystoneSeason(int seasonId, Action<WowMythicKeystoneSeason_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetMythicKeystoneSeason(int seasonId, Action<Json_Wow_MythicKeystoneSeason> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/mythic-keystone/season/{0}", seasonId);
+				string path = string.Format(apiPath_MythicKeystoneSeason, seasonId);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a Mythic Keystone season by ID, as a raw JSON string.
+			/// </summary>
+			/// <param name="seasonId">The ID of the Mythic Keystone season.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetMythicKeystoneSeasonRaw(int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_MythicKeystoneSeason, seasonId);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -36,15 +58,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft Mythic Keystone seasons.
+	/// JSON structure for World of Warcraft, representing a Mythic Keystone season.
 	/// </summary>
 	[Serializable]
-	public class WowMythicKeystoneSeason_JSON : Object_Json
+	public class Json_Wow_MythicKeystoneSeason : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 		public int id;
 		public long start_timestamp;
 		public long end_timestamp;
 		public RefIdStruct[] periods;
+		// {{JSON_END}}
 	}
 }

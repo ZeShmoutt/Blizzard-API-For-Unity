@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,21 +19,40 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_MythicRaidLeaderboard = basePath_Wow_gameData + "/leaderboard/hall-of-fame/{0}/{1}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW Mythic Raid leaderboard for a given raid and faction.
+			/// Coroutine that retrieves the leaderboard for a given raid and faction.
 			/// </summary>
 			/// <param name="raid">The raid for a leaderboard.</param>
-			/// <param name="faction">Player faction ("alliance" or "horde").</param>
+			/// <param name="faction">"Player faction ("alliance" or "horde")."</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicRaidLeaderboard(string raid, string faction, Action<WowMythicRaidLeaderboard_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetMythicRaidLeaderboard(string raid, string faction, Action<Json_Wow_MythicRaidLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/leaderboard/hall-of-fame/{0}/{1}", raid, faction);
+				string path = string.Format(apiPath_MythicRaidLeaderboard, raid, faction);
 				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves the leaderboard for a given raid and faction, as a raw JSON string.
+			/// </summary>
+			/// <param name="raid">The raid for a leaderboard.</param>
+			/// <param name="faction">"Player faction ("alliance" or "horde")."</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetMythicRaidLeaderboardRaw(string raid, string faction, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_MythicRaidLeaderboard, raid, faction);
+				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -37,11 +60,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft Mythic Raid leaderboards.
+	/// JSON structure for World of Warcraft, representing a raid leaderboard.
 	/// </summary>
 	[Serializable]
-	public class WowMythicRaidLeaderboard_JSON : Object_Json
+	public class Json_Wow_MythicRaidLeaderboard : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public string slug;
@@ -66,5 +90,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int rank;
 		}
 		public LeaderboardEntry[] entries;
+		// {{JSON_END}}
 	}
 }

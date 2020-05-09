@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,19 +19,38 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
+			internal const string apiPath_Profession = basePath_Wow_gameData + "/profession/{0}";
+
 			/// <summary>
-			/// Coroutine that retrieves a WoW profession.
+			/// Coroutine that retrieves a profession by ID.
 			/// </summary>
 			/// <param name="professionId">The ID of the profession.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetProfession(int professionId, Action<WowProfession_JSON> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = BattleNetRegion.UnitedStates)
+			public static IEnumerator GetProfession(int professionId, Action<Json_Wow_Profession> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string path = string.Format("/data/wow/profession/{0}", professionId);
+				string path = string.Format(apiPath_Profession, professionId);
 				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
+			/// <summary>
+			/// Coroutine that retrieves a profession by ID, as a raw JSON string.
+			/// </summary>
+			/// <param name="professionId">The ID of the profession.</param>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetProfessionRaw(int professionId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = string.Format(apiPath_Profession, professionId);
+				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
 		}
 	}
 }
@@ -35,11 +58,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for a World of Warcraft profession.
+	/// JSON structure for World of Warcraft, representing a profession.
 	/// </summary>
 	[Serializable]
-	public class WowProfession_JSON : Object_Json
+	public class Json_Wow_Profession : Object_JSON
 	{
+		// {{JSON_START}}
 		public LinkStruct _links;
 
 		public int id;
@@ -49,5 +73,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RefIdStruct media;
 
 		public RefNameIdStruct[] skill_tiers;
+		// {{JSON_END}}
 	}
 }

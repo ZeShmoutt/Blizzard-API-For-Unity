@@ -4,7 +4,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	#region Base
 
-	public abstract class Object_Json
+	public abstract class Object_JSON
 	{
 		public override string ToString()
 		{
