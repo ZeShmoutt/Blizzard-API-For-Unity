@@ -72,6 +72,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public TypeNameStruct type;
 		public RefIdStruct media;
 
+		public int minimum_skill_level;
+		public int maximum_skill_level;
+
 		public RefNameIdStruct[] skill_tiers;
 		// {{JSON_END}}
 	}
