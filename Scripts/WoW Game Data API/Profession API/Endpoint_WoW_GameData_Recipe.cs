@@ -80,6 +80,16 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public Reagent[] reagents;
 
 		public int rank;
+
+		[Serializable]
+		public struct CraftedQuantity
+		{
+			public int value;
+			public int minimum;
+			public int maximum;
+		}
+		public CraftedQuantity crafted_quantity;
+
 		// {{JSON_END}}
 	}
 }

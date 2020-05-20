@@ -3,8 +3,12 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2020-05-16
+### Added
+ - Added the new field `crafted_quantity` for the WoW Recipe JSON
+
 ## [1.0.4] - 2020-05-16
-### Bug fix
+### Added
  - Added the missing fields `minimum_skill_level` and `maximum_skill_level` for the WoW Profession JSON (only used by Archaeology, the last profession that doesn't use skill tiers)
 
 ## [1.0.3] - 2020-05-09
