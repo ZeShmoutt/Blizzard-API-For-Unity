@@ -13,7 +13,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/101
   - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 29/34
 - World of Warcraft Classic
-  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 0/23
+  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 22/23
 
 ## Diablo III - Game Data
 
