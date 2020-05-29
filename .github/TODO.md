@@ -284,38 +284,38 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## World of Warcraft Classic - Game Data
 
 ### Creature API
- - ![Not Done](Todo_NotDone.png) Creature Families Index
- - ![Not Done](Todo_NotDone.png) Creature Family
- - ![Not Done](Todo_NotDone.png) Creature Types Index
- - ![Not Done](Todo_NotDone.png) Creature Type
- - ![Not Done](Todo_NotDone.png) Creature
- - ![Not Done](Todo_NotDone.png) Creature Display Media
- - ![Not Done](Todo_NotDone.png) Creature Family Media
+ - ![Done](Todo_Done.png) Creature Families Index
+ - ![Done](Todo_Done.png) Creature Family
+ - ![Done](Todo_Done.png) Creature Types Index
+ - ![Done](Todo_Done.png) Creature Type
+ - ![Done](Todo_Done.png) Creature
+ - ![Done](Todo_Done.png) Creature Display Media
+ - ![Done](Todo_Done.png) Creature Family Media
 
 ### Guild Crest API
- - ![Not Done](Todo_NotDone.png) Guild Crest Components Index
- - ![Not Done](Todo_NotDone.png) Guild Crest Border Media
- - ![Not Done](Todo_NotDone.png) Guild Crest Emblem Media
+ - ![Done](Todo_Done.png) Guild Crest Components Index
+ - ![Done](Todo_Done.png) Guild Crest Border Media
+ - ![Done](Todo_Done.png) Guild Crest Emblem Media
 
 ### Item API
- - ![Not Done](Todo_NotDone.png) Item Classes Index
- - ![Not Done](Todo_NotDone.png) Item Class
- - ![Not Done](Todo_NotDone.png) Item Subclass
- - ![Not Done](Todo_NotDone.png) Item
- - ![Not Done](Todo_NotDone.png) Item Media
+ - ![Done](Todo_Done.png) Item Classes Index
+ - ![Done](Todo_Done.png) Item Class
+ - ![Done](Todo_Done.png) Item Subclass
+ - ![Done](Todo_Done.png) Item
+ - ![Done](Todo_Done.png) Item Media
 
 ### Playable Class API
- - ![Not Done](Todo_NotDone.png) Playable Classes Index
- - ![Not Done](Todo_NotDone.png) Playable Class
- - ![Not Done](Todo_NotDone.png) Playable Class Media
+ - ![Done](Todo_Done.png) Playable Classes Index
+ - ![Done](Todo_Done.png) Playable Class
+ - ![Done](Todo_Done.png) Playable Class Media
 
 ### Playable Race API
- - ![Not Done](Todo_NotDone.png) Playable Races Index
- - ![Not Done](Todo_NotDone.png) Playable Race
+ - ![Done](Todo_Done.png) Playable Races Index
+ - ![Done](Todo_Done.png) Playable Race
 
 ### Power Type API
- - ![Not Done](Todo_NotDone.png) Power Types Index
- - ![Not Done](Todo_NotDone.png) Power Type
+ - ![Done](Todo_Done.png) Power Types Index
+ - ![Done](Todo_Done.png) Power Type
 
 ### WoW Token API
  - ![Not Done](Todo_NotDone.png) WoW Token Index (CN)

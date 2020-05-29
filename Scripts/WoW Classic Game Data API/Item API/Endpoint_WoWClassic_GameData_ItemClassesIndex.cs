@@ -1,0 +1,70 @@
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
+using System.Collections;
+using ZeShmouttsAssets.BlizzardAPI.JSON;
+
+namespace ZeShmouttsAssets.BlizzardAPI
+{
+	/// <summary>
+	/// Interface for working with the Blizzard API inside Unity.
+	/// </summary>
+	public static partial class BlizzardAPI
+	{
+		/// <summary>
+		/// API endpoints related to World of Warcraft Classic game data (items, spells, etc.).
+		/// Reference : https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis
+		/// </summary>
+		public static partial class WowClassicGameData
+		{
+			internal const string apiPath_ItemClassesIndex = basePath_Wow_gameData + "/item-class/index";
+
+			/// <summary>
+			/// Coroutine that retrieves an index of item classes.
+			/// </summary>
+			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetItemClassesIndex(Action<Json_WowClassic_ItemClassesIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = apiPath_ItemClassesIndex;
+				yield return SendRequest(region, namespaceClassicStatic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
+			/// <summary>
+			/// Coroutine that retrieves an index of item classes, as a raw JSON string.
+			/// </summary>
+			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
+			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
+			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="region">The region of the data to retrieve.</param>
+			/// <returns></returns>
+			public static IEnumerator GetItemClassesIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			{
+				string path = apiPath_ItemClassesIndex;
+				yield return SendRequest(region, namespaceClassicStatic, path, action_Result, ifModifiedSince, action_LastModified);
+			}
+
+		}
+	}
+}
+
+namespace ZeShmouttsAssets.BlizzardAPI.JSON
+{
+	/// <summary>
+	/// JSON structure for World of Warcraft (Classic), representing an index of item classes.
+	/// </summary>
+	[Serializable]
+	public class Json_WowClassic_ItemClassesIndex : Object_JSON
+	{
+		// {{JSON_START}}
+		public LinkStruct _links;
+
+		public RefNameIdStruct[] item_classes;
+		// {{JSON_END}}
+	}
+}

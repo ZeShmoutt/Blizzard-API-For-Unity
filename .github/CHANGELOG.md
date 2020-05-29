@@ -3,6 +3,16 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2020-05-29
+### Added
+ - Added support for the following WoW Classic Game Data endpoint categories :
+   - Creature
+   - Guild Crest
+   - Item
+   - Playable Class
+   - Playable Race
+   - Power Type
+
 ## [1.0.6] - 2020-05-27
 ### Added
  - Added the missing fields `alliance_crafted_item` and `horde_crafted_item` for the WoW Recipe JSON
