@@ -1,6 +1,6 @@
 # Blizzard API for Unity
 
-A general-purpose collection of scripts for using the Blizzard API inside Unity. In short, an API for an API.
+A library for using the Blizzard API inside Unity.
 
 The Blizzard API can be used to retrieve informations about most Blizzard games and player profiles (with the proper credentials). For more informations, check out https://develop.battle.net/.
 
@@ -32,6 +32,8 @@ For Blizzard's API :
 3. Go to the Project Settings, section "Blizzard App Infos", and change the values with your cliend ID and client secret.
 
 Note that this package requires Unity's Editor Coroutines package. You can download it from the Package Manager.
+
+-----
 
 ## How to use
 
