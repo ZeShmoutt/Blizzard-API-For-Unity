@@ -16,13 +16,64 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			switch (domain)
 			{
 				case 0:
-					StartWowClassicGameDataAPICall(method, methodParameters);
+					StartHearthstoneGameDataAPICall(method, methodParameters);
 					break;
 				case 1:
-					StartWowGameDataAPICall(method, methodParameters);
+					StartWowClassicGameDataAPICall(method, methodParameters);
 					break;
 				case 2:
+					StartWowGameDataAPICall(method, methodParameters);
+					break;
+				case 3:
 					StartWowProfileAPICall(method, methodParameters);
+					break;
+				default:
+					break;
+			}
+		}
+
+		private static void StartHearthstoneGameDataAPICall(int method, object[] methodParameters)
+		{
+			switch (method)
+			{
+				case 0:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataAll((Action<Json_Hearthstone_MetadataList>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 1:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataArenaIds((Action<Int32[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 2:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataCardBackCategories((Action<Json_Hearthstone_Metadata_CardBackCategory[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 3:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataClasses((Action<Json_Hearthstone_Metadata_Class[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 4:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataFilterableFields((Action<String[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 5:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataGameModes((Action<Json_Hearthstone_Metadata_GameMode[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 6:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataKeywords((Action<Json_Hearthstone_Metadata_Keyword[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 7:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataMinionTypes((Action<Json_Hearthstone_Metadata_MinionType[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 8:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataNumericFields((Action<String[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 9:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataRarities((Action<Json_Hearthstone_Metadata_Rarity[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 10:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataSetGroups((Action<Json_Hearthstone_Metadata_SetGroup[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 11:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataSets((Action<Json_Hearthstone_Metadata_Set[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 12:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataTypes((Action<Json_Hearthstone_Metadata_Type[]>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				default:
 					break;

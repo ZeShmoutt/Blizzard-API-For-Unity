@@ -6,7 +6,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 - Diablo III
   - [Game Data](https://develop.battle.net/documentation/diablo-3/game-data-apis) : 0/6
 - Hearthstone
-  - [Game Data](https://develop.battle.net/documentation/hearthstone/game-data-apis) : 0/7
+  - [Game Data](https://develop.battle.net/documentation/hearthstone/game-data-apis) : 2/7
 - StarCraft II
   - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 0/1
 - World of Warcraft
@@ -39,8 +39,8 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Not Done](Todo_NotDone.png) Fetch deck
 
 ### Metadata
- - ![Not Done](Todo_NotDone.png) All metadata
- - ![Not Done](Todo_NotDone.png) Specific metadata
+ - ![Done](Todo_Done.png) All metadata
+ - ![Done](Todo_Done.png) Specific metadata
 
 ## StarCraft II - Game Data
 

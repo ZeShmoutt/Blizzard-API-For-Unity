@@ -6,6 +6,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 	public abstract class Object_JSON
 	{
+		/// <summary>
+		/// Converts the object to a JSON string.
+		/// </summary>
+		/// <returns>Returns a JSON-formatted string.</returns>
 		public override string ToString()
 		{
 			return UnityEngine.JsonUtility.ToJson(this);
@@ -17,23 +21,87 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	#region Common structs
 
 	/// <summary>
-	/// Storage for localized versions of a string in the 12 languages that Blizzard supports.
+	/// Storage for localized versions of a string in the 15 languages that Blizzard supports.
+	/// Note : not all games support all languages.
 	/// </summary>
 	[Serializable]
 	public struct LocalizedString
 	{
+		/// <summary>
+		/// English (United States).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string en_US;
+		/// <summary>
+		/// Spanish (Mexico).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string es_MX;
+		/// <summary>
+		/// Portuguese (Brazil).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string pt_BR;
+		/// <summary>
+		/// German.
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string de_DE;
+		/// <summary>
+		/// English (United Kingdoms).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string en_GB;
+		/// <summary>
+		/// Spanish (Spain).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string es_ES;
+		/// <summary>
+		/// French.
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string fr_FR;
+		/// <summary>
+		/// Italian.
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string it_IT;
+		/// <summary>
+		/// Russian.
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string ru_RU;
+		/// <summary>
+		/// Korean.
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string ko_KR;
+		/// <summary>
+		/// Chinese (traditional).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string zh_TW;
+		/// <summary>
+		/// Chinese (simplified).
+		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// </summary>
 		public string zh_CN;
+		/// <summary>
+		/// Japanese.
+		/// Used in : Hearthstone.
+		/// </summary>
+		public string ja_JP;
+		/// <summary>
+		/// Polish.
+		/// Used in : Hearthstone.
+		/// </summary>
+		public string pl_PL;
+		/// <summary>
+		/// Thai.
+		/// Used in : Hearthstone.
+		/// </summary>
+		public string th_TH;
 	}
 
 	/// <summary>

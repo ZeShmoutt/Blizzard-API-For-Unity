@@ -3,6 +3,15 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2020-06-05
+### Added
+ - Added support for the following Hearthstone Game Data endpoint category :
+   - Metadata
+ - Added support for additional languages in the `LocalizedString` struct :
+   - Japanese : `ja_JP`
+   - Polish : `pl_PL`
+   - Thai : `th_TH`
+
 ## [1.1.0] - 2020-05-29
 ### Added
  - Added support for the following WoW Classic Game Data endpoint categories :

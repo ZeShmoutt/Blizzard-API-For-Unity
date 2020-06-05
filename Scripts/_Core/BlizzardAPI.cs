@@ -101,7 +101,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			yield return CheckAccessToken();
 
 			string url = UrlDomain(region) + apiPath;
-			Dictionary<string, string> headers = CreateHeaders(apiNamespace + RegionToString(region), ifModifiedSince);
+
+			Dictionary<string, string> headers;
+			if (!string.IsNullOrEmpty(apiNamespace))
+			{
+				headers = CreateHeaders(apiNamespace + RegionToString(region), ifModifiedSince);
+			}
+			else
+			{
+				headers = CreateHeaders(null, ifModifiedSince);
+			}
 
 			yield return APIRequest(url, headers, action_Result, action_LastModified);
 		}
@@ -109,6 +118,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		#endregion
 
 		#region Custom request by URL
+
+		internal const string urlNamespaceParameter = "namespace";
 
 		/// <summary>
 		/// Send a request to Blizzard with the specified URL, converts the result to a JSON-based class, and execute an action on the result.
@@ -152,10 +163,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			Uri uri = new Uri(url);
 			string queryString = uri.Query;
 			var queryDictionary = HttpUtility.ParseQueryString(queryString);
-			string apiNamespace = queryDictionary["namespace"];
+			string apiNamespace = queryDictionary[urlNamespaceParameter] != null ? queryDictionary[urlNamespaceParameter] : null;
 
 			string truncatedUrl = url.Substring(0, url.Length - queryString.Length);
 			Dictionary<string, string> headers = CreateHeaders(apiNamespace, ifModifiedSince);
+			if (additionalHeaders != null && additionalHeaders.Count > 0)
+			{
+				foreach (var item in additionalHeaders)
+				{
+					headers.Add(item.Key, item.Value);
+				}
+			}
 
 			yield return APIRequest(truncatedUrl, headers, action_Result, action_LastModified);
 		}
@@ -172,11 +190,15 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <returns></returns>
 		private static Dictionary<string, string> CreateHeaders(string apiNamespace, string ifModifiedSince)
 		{
-			Dictionary<string, string> headers = new Dictionary<string, string>()
+			Dictionary<string, string> headers = new Dictionary<string, string>
 			{
-				{ headerApiNamespace, apiNamespace },
 				{ headerAuthorization, "Bearer " + accessToken.token }
 			};
+
+			if (!string.IsNullOrEmpty(apiNamespace))
+			{
+				headers.Add(headerApiNamespace, apiNamespace);
+			}
 
 			if (!string.IsNullOrEmpty(ifModifiedSince))
 			{
