@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -16,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_GameModes = "gameModes";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to game modes.
 			/// </summary>
@@ -27,9 +31,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataGameModes(Action<Json_Hearthstone_Metadata_GameMode[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadata(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadata(apiPath_Metadata_GameModes, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to game modes, as a raw JSON string.
 			/// </summary>
@@ -40,7 +44,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataGameModesRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadataRaw(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadataRaw(apiPath_Metadata_GameModes, action_Result, ifModifiedSince, action_LastModified, region);
 			}
 		}
 	}

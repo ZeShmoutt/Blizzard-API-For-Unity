@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -16,9 +20,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_Keywords = "keywords";
-
+			
 			/// <summary>
-			/// Coroutine that retrieves metadata related to keywords.
+			/// Coroutine that retrieves metadata related to card keywords.
 			/// </summary>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
@@ -29,9 +33,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			{
 				yield return GetMetadata(apiPath_Metadata_Keywords, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
-			/// Coroutine that retrieves metadata related to keywords, as a raw JSON string.
+			/// Coroutine that retrieves metadata related to card keywords, as a raw JSON string.
 			/// </summary>
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
@@ -49,7 +53,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for Hearthstone, representing keyword metadata.
+	/// JSON structure for Hearthstone, representing card keyword metadata.
 	/// </summary>
 	[Serializable]
 	public class Json_Hearthstone_Metadata_Keyword : Object_JSON

@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -16,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_SetGroups = "setGroups";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card set groups.
 			/// </summary>
@@ -29,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			{
 				yield return GetMetadata(apiPath_Metadata_SetGroups, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card set groups, as a raw JSON string.
 			/// </summary>
@@ -49,7 +53,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for Hearthstone, representing set group metadata.
+	/// JSON structure for Hearthstone, representing card set group metadata.
 	/// </summary>
 	[Serializable]
 	public class Json_Hearthstone_Metadata_SetGroup : Object_JSON

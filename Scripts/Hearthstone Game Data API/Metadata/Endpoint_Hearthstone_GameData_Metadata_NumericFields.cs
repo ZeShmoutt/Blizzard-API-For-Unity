@@ -1,5 +1,10 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
+using ZeShmouttsAssets.BlizzardAPI.JSON;
 
 namespace ZeShmouttsAssets.BlizzardAPI
 {
@@ -15,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_NumericFields = "numericFields";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to numeric values on cards.
 			/// </summary>
@@ -26,9 +31,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataNumericFields(Action<string[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadata(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadata(apiPath_Metadata_NumericFields, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to numeric values on cards, as a raw JSON string.
 			/// </summary>
@@ -39,7 +44,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataNumericFieldsRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadataRaw(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadataRaw(apiPath_Metadata_NumericFields, action_Result, ifModifiedSince, action_LastModified, region);
 			}
 		}
 	}

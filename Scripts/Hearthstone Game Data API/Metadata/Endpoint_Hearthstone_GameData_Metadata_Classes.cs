@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -16,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_Classes = "classes";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card classes.
 			/// </summary>
@@ -29,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			{
 				yield return GetMetadata(apiPath_Metadata_Classes, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card classes, as a raw JSON string.
 			/// </summary>

@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -16,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_Rarities = "rarities";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card rarities.
 			/// </summary>
@@ -29,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			{
 				yield return GetMetadata(apiPath_Metadata_Rarities, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to card rarities, as a raw JSON string.
 			/// </summary>

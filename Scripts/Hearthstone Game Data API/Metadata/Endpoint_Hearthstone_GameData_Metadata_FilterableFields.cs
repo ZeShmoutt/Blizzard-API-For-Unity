@@ -1,5 +1,10 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
+using ZeShmouttsAssets.BlizzardAPI.JSON;
 
 namespace ZeShmouttsAssets.BlizzardAPI
 {
@@ -15,9 +20,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_FilterableFields = "filterableFields";
-
+			
 			/// <summary>
-			/// Coroutine that retrieves metadata related to values that can be used to filter cards.
+			/// Coroutine that retrieves metadata related to fields that can be used to filter cards.
 			/// </summary>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
@@ -26,11 +31,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataFilterableFields(Action<string[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadata(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadata(apiPath_Metadata_FilterableFields, action_Result, ifModifiedSince, action_LastModified, region);
 			}
-
+			
 			/// <summary>
-			/// Coroutine that retrieves metadata related to values that can be used to filter cards, as a raw JSON string.
+			/// Coroutine that retrieves metadata related to fields that can be used to filter cards, as a raw JSON string.
 			/// </summary>
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
@@ -39,7 +44,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetMetadataFilterableFieldsRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				yield return GetMetadataRaw(apiPath_Metadata_Types, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadataRaw(apiPath_Metadata_FilterableFields, action_Result, ifModifiedSince, action_LastModified, region);
 			}
 		}
 	}
