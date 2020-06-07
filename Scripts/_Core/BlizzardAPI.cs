@@ -159,14 +159,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static IEnumerator CustomRequest(string url, Dictionary<string, string> additionalHeaders, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 		{
 			yield return CheckAccessToken();
-
-			Uri uri = new Uri(url);
-			string queryString = uri.Query;
-			var queryDictionary = HttpUtility.ParseQueryString(queryString);
-			string apiNamespace = queryDictionary[urlNamespaceParameter] != null ? queryDictionary[urlNamespaceParameter] : null;
-
-			string truncatedUrl = url.Substring(0, url.Length - queryString.Length);
-			Dictionary<string, string> headers = CreateHeaders(apiNamespace, ifModifiedSince);
+			
+			Dictionary<string, string> headers = CreateHeaders(null, ifModifiedSince);
 			if (additionalHeaders != null && additionalHeaders.Count > 0)
 			{
 				foreach (var item in additionalHeaders)
@@ -175,7 +169,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				}
 			}
 
-			yield return APIRequest(truncatedUrl, headers, action_Result, action_LastModified);
+			yield return APIRequest(url, headers, action_Result, action_LastModified);
 		}
 
 		#endregion

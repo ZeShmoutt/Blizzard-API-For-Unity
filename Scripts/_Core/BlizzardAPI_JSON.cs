@@ -49,7 +49,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public string de_DE;
 		/// <summary>
 		/// English (United Kingdoms).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string en_GB;
 		/// <summary>

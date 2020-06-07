@@ -3,6 +3,16 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2020-06-07
+### Added
+ - Added support for the following Hearthstone Game Data endpoint category :
+   - Cards
+
+### Changed
+ - Added special support for Hearthstone card searchs in the testing window
+ - Custom requests by URL no longer attempt to find a namespace in the request parameters
+   - Use the `additionalHeaders` parameter instead, with the key "Battlenet-Namespace"
+
 ## [1.2.1] - 2020-06-07
 ### Changed
  - Hearthstone Metadata endpoint files are now automatically generated from a CSV
