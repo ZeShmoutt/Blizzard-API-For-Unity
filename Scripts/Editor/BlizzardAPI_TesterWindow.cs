@@ -42,23 +42,24 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		#region Variables
 
-		int domainId;
-		int methodId;
+		private int domainId;
+		private int methodId;
 
-		int[] parametersInt;
-		string[] parametersString;
-		BattleNetRegion[] parametersRegion;
-		HearthstoneCardSearch parameterCardSearch;
-		bool[] parameterCardSearchEnabled;
-		object[] parameters;
+		private int[] parametersInt;
+		private string[] parametersString;
+		private BattleNetRegion[] parametersRegion;
+		private HearthstoneCardSearch parameterCardSearch;
+		private HearthstoneCardBackSearch parameterCardBackSearch;
+		private bool[] parameterSearchEnabled;
+		private object[] parameters;
 
-		Type[] domains;
-		MethodInfo[] methodInfos;
-		ParameterInfo[] parametersInfos;
-		MethodInfo selectedMethod;
+		private Type[] domains;
+		private MethodInfo[] methodInfos;
+		private ParameterInfo[] parametersInfos;
+		private MethodInfo selectedMethod;
 
-		int callbackJsonId;
-		int callbackStringId;
+		private int callbackJsonId;
+		private int callbackStringId;
 
 		#endregion
 
@@ -67,9 +68,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		[MenuItem("Blizzard API/API Testing Tool", priority = 2)]
 		public static void ShowWindow()
 		{
-			var window = GetWindow<BlizzardAPI_TesterWindow>(false, "Blizzard API Tester", true);
-			window.domains = typeof(BlizzardAPI).GetNestedTypes(BindingFlags.Static | BindingFlags.Public);
-			window.OnDomainChanged(0);
+			GetWindow<BlizzardAPI_TesterWindow>(false, "Blizzard API Tester", true);
+		}
+
+		private void OnEnable()
+		{
+			domains = typeof(BlizzardAPI).GetNestedTypes(BindingFlags.Static | BindingFlags.Public);
+			OnDomainChanged(0);
 		}
 
 		private void OnGUI()
@@ -175,6 +180,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				{
 					DrawHearthstoneCardSearchParameter(i);
 				}
+				else if (parametersInfos[i].ParameterType == typeof(HearthstoneCardBackSearch))
+				{
+					DrawHearthstoneCardBackSearchParameter(i);
+				}
 				else if (IsActionDelegate(parametersInfos[i].ParameterType))
 				{
 					Type[] actionTypes = parametersInfos[i].ParameterType.GenericTypeArguments;
@@ -214,17 +223,17 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 			EditorGUI.indentLevel++;
 
-			DrawCardSearchParameter(0, "Set", ref parameterCardSearch.set, DrawStringField, null);
-			DrawCardSearchParameter(1, "Class", ref parameterCardSearch.@class, DrawEnumField, HearthstoneCardSearch.CardClass.All);
+			DrawCardSearchParameter(0, "Set", ref parameterCardSearch.set, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardSet.All);
+			DrawCardSearchParameter(1, "Class", ref parameterCardSearch.@class, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardClass.All);
 			DrawCardSearchParameter(2, "Mana cost", ref parameterCardSearch.manaCost, DrawIntField);
 			DrawCardSearchParameter(3, "Attack", ref parameterCardSearch.attack, DrawIntField);
 			DrawCardSearchParameter(4, "Health", ref parameterCardSearch.health, DrawIntField);
-			DrawCardSearchParameter(5, "Collectible", ref parameterCardSearch.collectible, DrawEnumField, HearthstoneCardSearch.CardCollectability.All);
-			DrawCardSearchParameter(6, "Rarity", ref parameterCardSearch.rarity, DrawEnumField, HearthstoneCardSearch.CardRarity.All);
-			DrawCardSearchParameter(7, "Type", ref parameterCardSearch.type, DrawEnumField, HearthstoneCardSearch.CardType.All);
-			if (parameterCardSearch.type == HearthstoneCardSearch.CardType.Minion)
+			DrawCardSearchParameter(5, "Collectible", ref parameterCardSearch.collectible, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardCollectability.All);
+			DrawCardSearchParameter(6, "Rarity", ref parameterCardSearch.rarity, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardRarity.All);
+			DrawCardSearchParameter(7, "Type", ref parameterCardSearch.type, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardType.All);
+			if (parameterCardSearch.type == BlizzardAPI.HearthstoneGameData.CardType.Minion)
 			{
-				DrawCardSearchParameter(8, "Minion type", ref parameterCardSearch.minionType, DrawEnumField, HearthstoneCardSearch.MinionType.All);
+				DrawCardSearchParameter(8, "Minion type", ref parameterCardSearch.minionType, DrawEnumField, BlizzardAPI.HearthstoneGameData.MinionType.All);
 			}
 			else
 			{
@@ -235,14 +244,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				EditorGUILayout.LabelField("N/A", EditorStyles.miniLabel);
 				EditorGUILayout.EndHorizontal();
 				GUI.enabled = guiEnabled;
-				parameterCardSearch.minionType = HearthstoneCardSearch.MinionType.All;
+				parameterCardSearch.minionType = BlizzardAPI.HearthstoneGameData.MinionType.All;
 			}
-			DrawCardSearchParameter(9, "Keyword", ref parameterCardSearch.keyword, DrawEnumField, HearthstoneCardSearch.CardKeyword.All);
-			DrawCardSearchParameter(10, "Game mode", ref parameterCardSearch.gameMode, DrawEnumField, HearthstoneCardSearch.CardGameMode.Constructed);
+			DrawCardSearchParameter(9, "Keyword", ref parameterCardSearch.keyword, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardKeyword.All);
+			DrawCardSearchParameter(10, "Game mode", ref parameterCardSearch.gameMode, DrawEnumField, BlizzardAPI.HearthstoneGameData.GameMode.StandardWildFormats);
 			DrawCardSearchParameter(11, "Page", ref parameterCardSearch.page, DrawIntField, -1);
 			DrawCardSearchParameter(12, "Page size", ref parameterCardSearch.pageSize, DrawIntField, -1);
-			DrawCardSearchParameter(13, "Sort type", ref parameterCardSearch.sort, DrawEnumField, HearthstoneCardSearch.SortType.SortByManaCost);
-			DrawCardSearchParameter(14, "Sort order", ref parameterCardSearch.order, DrawEnumField, HearthstoneCardSearch.SortOrder.Ascending);
+			DrawCardSearchParameter(13, "Sort type", ref parameterCardSearch.sort, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardSortType.SortByManaCost);
+			DrawCardSearchParameter(14, "Sort order", ref parameterCardSearch.order, DrawEnumField, BlizzardAPI.HearthstoneGameData.SortOrder.Ascending);
 
 			EditorGUI.indentLevel--;
 
@@ -253,11 +262,34 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			EditorGUILayout.Space();
 		}
 
+		private void DrawHearthstoneCardBackSearchParameter(int parameterIndex)
+		{
+			EditorGUILayout.BeginVertical(GUI.skin.box);
+
+			EditorGUILayout.LabelField("Search parameters", EditorStyles.largeLabel);
+
+			EditorGUI.indentLevel++;
+
+			DrawCardSearchParameter(0, "Category", ref parameterCardBackSearch.category, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardBackCategory.All);
+			DrawCardSearchParameter(1, "Page", ref parameterCardBackSearch.page, DrawIntField, -1);
+			DrawCardSearchParameter(2, "Page size", ref parameterCardBackSearch.pageSize, DrawIntField, -1);
+			DrawCardSearchParameter(3, "Sort type", ref parameterCardBackSearch.sort, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardBackSortType.SortByDate);
+			DrawCardSearchParameter(4, "Sort order", ref parameterCardBackSearch.order, DrawEnumField, BlizzardAPI.HearthstoneGameData.SortOrder.Ascending);
+
+			EditorGUI.indentLevel--;
+
+			parameters[parameterIndex] = parameterCardBackSearch;
+
+			EditorGUILayout.EndVertical();
+
+			EditorGUILayout.Space();
+		}
+
 		private void DrawCardSearchParameter<T>(int index, string name, ref T parameter, Func<T, T> drawFunction, T disabledValue)
 		{
 			EditorGUILayout.BeginHorizontal();
-			parameterCardSearchEnabled[index] = EditorGUILayout.ToggleLeft(name, parameterCardSearchEnabled[index]);
-			if (parameterCardSearchEnabled[index])
+			parameterSearchEnabled[index] = EditorGUILayout.ToggleLeft(name, parameterSearchEnabled[index]);
+			if (parameterSearchEnabled[index])
 			{
 				parameter = drawFunction(parameter);
 			}
@@ -273,8 +305,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		private void DrawCardSearchParameter<T>(int index, string name, ref T[] parameter, Func<T, T> drawFunction)
 		{
 			EditorGUILayout.BeginHorizontal();
-			parameterCardSearchEnabled[index] = EditorGUILayout.ToggleLeft(name, parameterCardSearchEnabled[index]);
-			if (parameterCardSearchEnabled[index])
+			parameterSearchEnabled[index] = EditorGUILayout.ToggleLeft(name, parameterSearchEnabled[index]);
+			if (parameterSearchEnabled[index])
 			{
 				if (parameter == null || parameter.Length != 1)
 				{
@@ -353,7 +385,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			parametersString = new string[parametersInfos.Length];
 			parametersRegion = new BattleNetRegion[parametersInfos.Length];
 			parameterCardSearch = new HearthstoneCardSearch();
-			parameterCardSearchEnabled = new bool[15];
+			parameterCardBackSearch = new HearthstoneCardBackSearch();
+			parameterSearchEnabled = new bool[15];
 			parameters = new object[parametersInfos.Length];
 			callbackJsonId = 0;
 			callbackStringId = 0;

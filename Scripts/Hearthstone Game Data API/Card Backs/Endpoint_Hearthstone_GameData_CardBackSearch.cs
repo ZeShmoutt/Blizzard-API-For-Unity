@@ -15,35 +15,35 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class HearthstoneGameData
 		{
-			internal const string apiPath_FetchOneCard = "/hearthstone/cards/{0}";
+			internal const string apiPath_CardBackSearch = "/hearthstone/cardbacks";
 
 			/// <summary>
-			/// Coroutine that retrieves a single card by ID.
+			/// Coroutine that retrieves a list of card backs specified by the search parameters.
 			/// </summary>
-			/// <param name="cardId">The ID of the card.</param>
+			/// <param name="searchParameters">Filters used to retrieve specific card backs. Can be set to null to retrieve all card backs.</param>
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchOneCard(int cardId, Action<Json_Hearthstone_Card> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator CardBackSearch(HearthstoneCardBackSearch searchParameters, Action<Json_Hearthstone_CardBacksList> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchOneCard, cardId));
+				string url = string.Concat(UrlDomain(region), apiPath_CardBackSearch, searchParameters != null ? searchParameters.ToURLParameters() : string.Empty);
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
-			/// Coroutine that retrieves a single card by ID, as a raw JSON string.
+			/// Coroutine that retrieves a list of card backs specified by the search parameters, as a raw JSON string.
 			/// </summary>
-			/// <param name="cardId">The ID of the card.</param>
+			/// <param name="searchParameters">Filters used to retrieve specific card backs. Can be set to null to retrieve all card backs.</param>
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchOneCardRaw(int cardId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator CardBackSearchRaw(HearthstoneCardBackSearch searchParameters, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
 			{
-				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchOneCard, cardId));
+				string url = string.Concat(UrlDomain(region), apiPath_CardBackSearch, searchParameters != null ? searchParameters.ToURLParameters() : string.Empty);
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
@@ -53,34 +53,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for Hearthstone, representing a single card.
+	/// JSON structure for Hearthstone, representing a list of cards.
 	/// </summary>
 	[Serializable]
-	public class Json_Hearthstone_Card : Object_JSON
+	public class Json_Hearthstone_CardBacksList : Object_JSON
 	{
 		// {{JSON_START}}
-		public int id;
-		public int collectible;
-		public string slug;
-		public int classId;
-		public int[] multiClassIds;
-		public int cardTypeId;
-		public int cardSetId;
-		public int rarityId;
-		public string artistName;
-		public int health;
-		public int attack;
-		public int manaCost;
-		public int armor;
-		public int durability;
-		public LocalizedString name;
-		public LocalizedString text;
-		public LocalizedString image;
-		public LocalizedString imageGold;
-		public LocalizedString flavorText;
-		public string cropImage;
-		public int[] childIds;
-		public int[] keywordIds;
+		public Json_Hearthstone_CardBack[] cardBacks;
+		public int cardCount;
+		public int pageCount;
+		public int page;
 		// {{JSON_END}}
 	}
 }
