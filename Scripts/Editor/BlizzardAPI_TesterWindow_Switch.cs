@@ -156,6 +156,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				case 21:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPowerTypesIndex((Action<Json_WowClassic_PowerTypesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
+				case 22:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetWoWTokenIndex((Action<Json_WowClassic_WoWTokenIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2]));
+					break;
 				default:
 					break;
 			}
