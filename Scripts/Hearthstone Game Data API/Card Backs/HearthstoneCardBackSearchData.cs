@@ -10,7 +10,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <summary>
 		/// The card back's category. The default value is 'All'.
 		/// </summary>
-		public BlizzardAPI.HearthstoneGameData.CardBackCategory category = BlizzardAPI.HearthstoneGameData.CardBackCategory.Achievements;
+		public BlizzardAPI.HearthstoneGameData.CardBackCategory category = BlizzardAPI.HearthstoneGameData.CardBackCategory.All;
 
 		/// <summary>
 		/// A page number. Ignored if set to '-1'.
@@ -40,7 +40,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		{
 			List<string> parts = new List<string>();
 
-			if (category != BlizzardAPI.HearthstoneGameData.CardBackCategory.Achievements)
+			if (category != BlizzardAPI.HearthstoneGameData.CardBackCategory.All)
 			{
 				parts.Add("class=" + BlizzardAPI.HearthstoneGameData.CardBackCategoryParameters[category]);
 			}
