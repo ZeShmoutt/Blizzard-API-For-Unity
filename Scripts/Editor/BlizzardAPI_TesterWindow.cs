@@ -164,17 +164,12 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				}
 				else if (parametersInfos[i].ParameterType == typeof(Action<string>))
 				{
-					EditorGUILayout.BeginHorizontal();
-					EditorGUILayout.PrefixLabel(parametersInfos[i].Name);
-
 					EditorGUI.BeginChangeCheck();
-					callbackStringId = EditorGUILayout.Popup(callbackStringId, callbackMethodsString.Select(x => x.Key).ToArray());
+					callbackStringId = EditorGUILayout.Popup(parametersInfos[i].Name, callbackStringId, callbackMethodsString.Select(x => x.Key).ToArray());
 					if (EditorGUI.EndChangeCheck())
 					{
 						parameters[i] = CreateAction(typeof(string), callbackMethodsString[callbackStringId].Value);
 					}
-
-					EditorGUILayout.EndHorizontal();
 				}
 				else if (parametersInfos[i].ParameterType == typeof(HearthstoneCardSearch))
 				{
@@ -184,22 +179,30 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				{
 					DrawHearthstoneCardBackSearchParameter(i);
 				}
+				else if (parametersInfos[i].ParameterType.IsEnum)
+				{
+					Type enumType = parametersInfos[i].ParameterType;
+					string[] names = Enum.GetNames(enumType);
+					int[] values = (int[])Enum.GetValues(enumType);
+
+					if (!values.Contains(parametersInt[i]))
+					{
+						parametersInt[i] = Mathf.Min(values);
+					}
+					parametersInt[i] = EditorGUILayout.IntPopup(parametersInfos[i].Name, parametersInt[i], names, values);
+					parameters[i] = parametersInt[i];
+				}
 				else if (IsActionDelegate(parametersInfos[i].ParameterType))
 				{
 					Type[] actionTypes = parametersInfos[i].ParameterType.GenericTypeArguments;
 					if (actionTypes.Length == 1 && actionTypes[0].IsSubclassOf(typeof(Object_JSON)))
 					{
-						EditorGUILayout.BeginHorizontal();
-						EditorGUILayout.PrefixLabel(parametersInfos[i].Name);
-
 						EditorGUI.BeginChangeCheck();
-						callbackJsonId = EditorGUILayout.Popup(callbackJsonId, callbackMethodsJson.Select(x => x.Key).ToArray());
+						callbackJsonId = EditorGUILayout.Popup(parametersInfos[i].Name, callbackJsonId, callbackMethodsJson.Select(x => x.Key).ToArray());
 						if (EditorGUI.EndChangeCheck())
 						{
 							parameters[i] = CreateAction(actionTypes[0], callbackMethodsJson[callbackJsonId].Value);
 						}
-
-						EditorGUILayout.EndHorizontal();
 					}
 					else
 					{

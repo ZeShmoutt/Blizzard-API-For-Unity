@@ -8,7 +8,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 - Hearthstone
   - [Game Data](https://develop.battle.net/documentation/hearthstone/game-data-apis) : 7/7
 - StarCraft II
-  - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 0/1
+  - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 1/1
 - World of Warcraft
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/101
   - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 29/34
@@ -45,7 +45,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## StarCraft II - Game Data
 
 ### StarCraft II League API
- - ![Not Done](Todo_NotDone.png) getLeagueData
+ - ![Done](Todo_Done.png) getLeagueData
 
 ## World of Warcraft - Game Data
 

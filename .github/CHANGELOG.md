@@ -3,6 +3,18 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2020-06-08
+### Added
+ - Added support for the following StarCraft II Game Data endpoint category :
+   - League
+
+### Removed
+ - Removed the `HttpUtility` class, now that it isn't needed anymore (see : [1.3.0], Changed #2)
+
+### Bug fixes
+ - Fixed the very slightly longer length of the `action` enum popups in the API Testing Tool
+ - Added support for enums in the API Testing Tool
+
 ## [1.6.0] - 2020-06-08
 ### Added
  - Added support for the following Hearthstone Game Data endpoint category :
