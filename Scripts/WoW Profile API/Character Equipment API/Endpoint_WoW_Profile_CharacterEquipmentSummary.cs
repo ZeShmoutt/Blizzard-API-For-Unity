@@ -19,7 +19,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			internal const string apiPath_CharacterEquipmentSummary = "/equipment";
+
+			/// <summary>
 			/// Coroutine that retrieves a summary of the items equipped by a character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
@@ -31,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterEquipmentSummary(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterEquipmentSummary> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/equipment";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterEquipmentSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -47,7 +49,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterEquipmentSummaryRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/equipment";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterEquipmentSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

@@ -19,7 +19,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			internal const string apiPath_CharacterAchievementStatistics = "/achievements/statistics";
+
+			/// <summary>
 			/// Coroutine that retrieves a character's statistics as they pertain to achievements.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
@@ -31,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterAchievementStatistics(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterAchievementStatistics> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/achievements/statistics";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterAchievementStatistics;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -47,7 +49,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterAchievementStatisticsRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/achievements/statistics";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterAchievementStatistics;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

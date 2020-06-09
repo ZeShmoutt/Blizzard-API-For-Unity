@@ -19,7 +19,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			internal const string apiPath_CharacterProfessionsSummary = "/professions";
+
+			/// <summary>
 			/// Coroutine that retrieves a summary of professions for a character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
@@ -31,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterProfessionsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterProfessionsSummary> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/professions";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterProfessionsSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -47,7 +49,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterProfessionsSummaryRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/professions";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterProfessionsSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

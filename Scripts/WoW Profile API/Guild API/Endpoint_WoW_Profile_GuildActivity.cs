@@ -19,7 +19,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			internal const string apiPath_GuildActivity = "/activity";
+
+			/// <summary>
 			/// Coroutine that retrieves a single guild's activity by name and realm.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
@@ -31,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetGuildActivity(BattleNetRegion region, string realmSlug, string nameSlug, Action<Json_Wow_GuildActivity> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + "/activity";
+				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildActivity;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -47,7 +49,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetGuildActivityRaw(BattleNetRegion region, string realmSlug, string nameSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + "/activity";
+				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildActivity;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

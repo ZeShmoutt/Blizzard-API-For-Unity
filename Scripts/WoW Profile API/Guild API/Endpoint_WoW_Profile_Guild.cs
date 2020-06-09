@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			/// <summary>
 			/// Coroutine that retrieves a single guild by its name and realm.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>

@@ -19,7 +19,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			internal const string apiPath_CharacterPvPBracketStatistics = "/pvp-bracket/{0}";
+
+			/// <summary>
 			/// Coroutine that retrieves the PvP bracket statistics for a character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
@@ -32,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterPvPBracketStatistics(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<Json_Wow_CharacterPvPBracketStatistics> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/pvp-bracket/{0}", pvpBracket);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterPvPBracketStatistics, pvpBracket);
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -49,7 +51,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterPvPBracketStatisticsRaw(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/pvp-bracket/{0}", pvpBracket);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterPvPBracketStatistics, pvpBracket);
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

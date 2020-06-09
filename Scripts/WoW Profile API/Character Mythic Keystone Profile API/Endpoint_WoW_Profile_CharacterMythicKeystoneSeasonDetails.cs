@@ -19,8 +19,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
-			/// Coroutine that retrieves the Mythic Keystone season details for a character.\n                        /// Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.
+			internal const string apiPath_CharacterMythicKeystoneSeasonDetails = "/mythic-keystone-profile/season/{0}";
+
+			/// <summary>
+			/// Coroutine that retrieves the Mythic Keystone season details for a character.
+			/// Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -32,12 +35,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterMythicKeystoneSeasonDetails(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<Json_Wow_CharacterMythicKeystoneSeasonDetails> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/mythic-keystone-profile/season/{0}", seasonId);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
-			/// Coroutine that retrieves the Mythic Keystone season details for a character.\n                        /// Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season, as a raw JSON string.
+			/// Coroutine that retrieves the Mythic Keystone season details for a character, as a raw JSON string.
+			/// Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -49,7 +53,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterMythicKeystoneSeasonDetailsRaw(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format("/mythic-keystone-profile/season/{0}", seasonId);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -60,7 +64,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft, representing the Mythic Keystone season details for a character.\n                        /// Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.
+	/// JSON structure for World of Warcraft, representing the Mythic Keystone season details for a character@Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season..
 	/// </summary>
 	[Serializable]
 	public class Json_Wow_CharacterMythicKeystoneSeasonDetails : Object_JSON

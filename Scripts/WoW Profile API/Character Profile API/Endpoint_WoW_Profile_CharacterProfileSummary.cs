@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
+			/// <summary>
 			/// Coroutine that retrieves a profile summary for a character.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>

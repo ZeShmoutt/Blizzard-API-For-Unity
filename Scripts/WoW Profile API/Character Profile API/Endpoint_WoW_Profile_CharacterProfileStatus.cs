@@ -19,8 +19,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
-			/// Coroutine that retrieves the status and a unique ID for a character.\n			/// See the documentation for use cases.
+			internal const string apiPath_CharacterProfileStatus = "/status";
+
+			/// <summary>
+			/// Coroutine that retrieves the status and a unique ID for a character.
+			/// See the documentation for use cases.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -31,12 +34,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterProfileStatus(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterProfileStatus> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/status";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterProfileStatus;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
-			/// Coroutine that retrieves the status and a unique ID for a character.\n			/// See the documentation for use cases, as a raw JSON string.
+			/// Coroutine that retrieves the status and a unique ID for a character, as a raw JSON string.
+			/// See the documentation for use cases.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -47,7 +51,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterProfileStatusRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/status";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterProfileStatus;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -58,7 +62,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 namespace ZeShmouttsAssets.BlizzardAPI.JSON
 {
 	/// <summary>
-	/// JSON structure for World of Warcraft, representing the status and a unique ID for a character.\n			/// See the documentation for use cases.
+	/// JSON structure for World of Warcraft, representing the status and a unique ID for a character@See the documentation for use cases..
 	/// </summary>
 	[Serializable]
 	public class Json_Wow_CharacterProfileStatus : Object_JSON

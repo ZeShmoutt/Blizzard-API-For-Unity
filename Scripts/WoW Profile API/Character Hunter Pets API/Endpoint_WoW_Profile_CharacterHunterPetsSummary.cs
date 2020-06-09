@@ -19,8 +19,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-						/// <summary>
-			/// Coroutine that retrieves a summary of a WoW character's Hunter pets.\n                        /// Returns a 404 Not Found for characters that aren't Hunters.
+			internal const string apiPath_CharacterHunterPetsSummary = "/hunter-pets";
+
+			/// <summary>
+			/// Coroutine that retrieves a summary of a WoW character's Hunter pets.
+			/// Returns a 404 Not Found for characters that aren't Hunters.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -31,12 +34,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterHunterPetsSummary(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterHunterPetsSummary> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/hunter-pets";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterHunterPetsSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
-			/// Coroutine that retrieves a summary of a WoW character's Hunter pets.\n                        /// Returns a 404 Not Found for characters that aren't Hunters, as a raw JSON string.
+			/// Coroutine that retrieves a summary of a WoW character's Hunter pets, as a raw JSON string.
+			/// Returns a 404 Not Found for characters that aren't Hunters.
 			/// </summary>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <param name="realmSlug">The slug of the realm.</param>
@@ -47,7 +51,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetCharacterHunterPetsSummaryRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + "/hunter-pets";
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + apiPath_CharacterHunterPetsSummary;
 				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
