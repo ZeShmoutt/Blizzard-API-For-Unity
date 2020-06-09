@@ -15,41 +15,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class SC2GameData
 		{
-			public enum Queue
-			{
-				WoL_1v1 = 1,
-				WoL_2v2 = 2,
-				WoL_3v3 = 3,
-				WoL_4v4 = 4,
-				HotS_1v1 = 101,
-				HotS_2v2 = 102,
-				HotS_3v3 = 103,
-				HotS_4v4 = 104,
-				LotV_1v1 = 201,
-				LotV_2v2 = 202,
-				LotV_3v3 = 203,
-				LotV_4v4 = 204,
-				LotV_Archon = 206
-			}
-
-			public enum TeamType
-			{
-				Arranged = 0,
-				Random = 1
-			}
-
-			public enum League
-			{
-				Bronze = 0,
-				Silver = 1,
-				Gold = 2,
-				Platinum = 3,
-				Diamond = 4,
-				Master = 5,
-				Grandmaster = 6
-			}
-
-			internal const string apiPath_LeagueData = "/data/sc2/league/{0}/{1}/{2}/{3}";
+			internal const string apiPath_LeagueData = basePath_Sc2_gameData + "/league/{0}/{1}/{2}/{3}";
 
 			/// <summary>
 			/// Coroutine that retrieves data for the specified season, queue, team, and league.
@@ -65,8 +31,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetLeagueData(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<Json_SC2_LeagueData> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string url = string.Concat(UrlDomain(region), string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league));
-				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
+				string path = string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -83,8 +49,8 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetLeagueDataRaw(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string url = string.Concat(UrlDomain(region), string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league));
-				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
+				string path = string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 		}
 	}
@@ -126,7 +92,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int member_count;
 		}
 		public DataTier[] tier;
-
 		// {{JSON_END}}
 	}
 }

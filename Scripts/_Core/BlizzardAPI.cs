@@ -39,9 +39,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		#region Common API paths
 
 		private const string basePath_media = "/media";
-		private const string basePath_Wow_gameData = "/data/wow";
+		private const string basePath_data = "/data";
+
+		private const string basePath_D3_gameData = basePath_data + "/d3";
+
+		private const string basePath_Hearthstone_gameData = "/hearthstone";
+
+		private const string basePath_Sc2_gameData = basePath_data + "/sc2";
+
+		private const string basePath_Wow_gameData = basePath_data + "/wow";
 		private const string basePath_Wow_character = "/profile/wow/character/";
-		private const string basePath_Wow_guild = "/data/wow/guild/";
+		private const string basePath_Wow_guild = basePath_data + "/wow/guild/";
 
 		#endregion
 
@@ -159,7 +167,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static IEnumerator CustomRequest(string url, Dictionary<string, string> additionalHeaders, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 		{
 			yield return CheckAccessToken();
-			
+
 			Dictionary<string, string> headers = CreateHeaders(null, ifModifiedSince);
 			if (additionalHeaders != null && additionalHeaders.Count > 0)
 			{
