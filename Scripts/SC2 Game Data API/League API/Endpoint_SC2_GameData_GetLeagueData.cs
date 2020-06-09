@@ -1,4 +1,8 @@
-﻿using System;
+// ╔════════════════════════════════════╗
+// ║ This file has been auto-generated. ║
+// ╚════════════════════════════════════╝
+
+using System;
 using System.Collections;
 using ZeShmouttsAssets.BlizzardAPI.JSON;
 
@@ -15,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class SC2GameData
 		{
-			internal const string apiPath_LeagueData = basePath_Sc2_gameData + "/league/{0}/{1}/{2}/{3}";
+			internal const string apiPath_GetLeagueData = basePath_SC2_gameData + "/league/{0}/{1}/{2}/{3}";
 
 			/// <summary>
 			/// Coroutine that retrieves data for the specified season, queue, team, and league.
@@ -29,9 +33,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <returns></returns>
-			public static IEnumerator GetLeagueData(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<Json_SC2_LeagueData> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetLeagueData(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<Json_SC2_GetLeagueData> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league);
+				string path = string.Format(apiPath_GetLeagueData, seasonId, queue, teamType, league);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -49,9 +53,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <returns></returns>
 			public static IEnumerator GetLeagueDataRaw(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
-				string path = string.Format(apiPath_LeagueData, seasonId, (int)queue, (int)teamType, (int)league);
+				string path = string.Format(apiPath_GetLeagueData, seasonId, queue, teamType, league);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
 			}
+
 		}
 	}
 }
@@ -62,7 +67,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// JSON structure for StarCraft II, representing data about a league.
 	/// </summary>
 	[Serializable]
-	public class Json_SC2_LeagueData : Object_JSON
+	public class Json_SC2_GetLeagueData : Object_JSON
 	{
 		// {{JSON_START}}
 		public LinkStruct _links;

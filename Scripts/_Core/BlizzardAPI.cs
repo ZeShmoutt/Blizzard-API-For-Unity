@@ -45,7 +45,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		private const string basePath_Hearthstone_gameData = "/hearthstone";
 
-		private const string basePath_Sc2_gameData = basePath_data + "/sc2";
+		private const string basePath_SC2_gameData = basePath_data + "/sc2";
 
 		private const string basePath_Wow_gameData = basePath_data + "/wow";
 		private const string basePath_Wow_character = "/profile/wow/character/";
