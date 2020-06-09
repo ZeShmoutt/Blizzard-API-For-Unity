@@ -3,6 +3,11 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2020-06-09
+### API update
+ - Updated TODO.md according to Blizzard's changelog :
+   - [World of Warcraft API Patch Notes - 2020/06/09](https://us.forums.blizzard.com/en/blizzard/t/world-of-warcraft-api-patch-notes-20200609/8902)
+
 ## [1.7.0] - 2020-06-08
 ### Added
  - Added support for the following StarCraft II Game Data endpoint category :
