@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
 
 ## [1.10.0] - 2020-06-10
 ### Added
- - Added support for the new endpoints in the WoW Game Data / Pet category (cf [\[1.7.1\]](#[1.7.1]-2020-06-09)) :
+ - Added support for the new endpoints in the WoW Game Data / Pet category (cf [\[1.7.1\]](#171---2020-06-09)) :
    - Pet Media
    - Pet Abilities Index
    - Pet Ability
@@ -42,7 +42,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
    - League
 
 ### Removed
- - Removed the `HttpUtility` class, now that it isn't needed anymore (cf : [\[1.3.0\]](#[1.3.0]-2020-06-07))
+ - Removed the `HttpUtility` class, now that it isn't needed anymore (cf : [\[1.3.0\]](#130---2020-06-07))
 
 ### Bug fixes
  - Fixed the very slightly longer length of the `action` enum popups in the API Testing Tool
