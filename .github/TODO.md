@@ -4,7 +4,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 
 **Summary :**
 - Diablo III
-  - [Game Data](https://develop.battle.net/documentation/diablo-3/game-data-apis) : 0/6
+  - [Game Data](https://develop.battle.net/documentation/diablo-3/game-data-apis) : 6/6
 - Hearthstone
   - [Game Data](https://develop.battle.net/documentation/hearthstone/game-data-apis) : 7/7
 - StarCraft II
@@ -18,12 +18,12 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## Diablo III - Game Data
 
 ### D3
- - ![Not Done](Todo_NotDone.png) Season Index
- - ![Not Done](Todo_NotDone.png) Season
- - ![Not Done](Todo_NotDone.png) Season Leaderboard
- - ![Not Done](Todo_NotDone.png) Era Index
- - ![Not Done](Todo_NotDone.png) Era
- - ![Not Done](Todo_NotDone.png) Era Leaderboard
+ - ![Done](Todo_Done.png) Season Index
+ - ![Done](Todo_Done.png) Season
+ - ![Done](Todo_Done.png) Season Leaderboard
+ - ![Done](Todo_Done.png) Era Index
+ - ![Done](Todo_Done.png) Era
+ - ![Done](Todo_Done.png) Era Leaderboard
 
 ## Hearthstone - Game Data
 

@@ -21,7 +21,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	#region Common structs
 
 	/// <summary>
-	/// Storage for localized versions of a string in the 15 languages that Blizzard supports.
+	/// Storage for localized versions of a string in the languages that Blizzard supports.
 	/// Note : not all games support all languages.
 	/// </summary>
 	[Serializable]
@@ -29,57 +29,62 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	{
 		/// <summary>
 		/// English (United States).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string en_US;
 		/// <summary>
 		/// Spanish (Mexico).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string es_MX;
 		/// <summary>
 		/// Portuguese (Brazil).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string pt_BR;
 		/// <summary>
 		/// German.
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string de_DE;
 		/// <summary>
 		/// English (United Kingdoms).
-		/// Used in : World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string en_GB;
 		/// <summary>
 		/// Spanish (Spain).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string es_ES;
 		/// <summary>
 		/// French.
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string fr_FR;
 		/// <summary>
 		/// Italian.
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string it_IT;
 		/// <summary>
+		/// Polish.
+		/// Used in :Diablo III, Hearthstone.
+		/// </summary>
+		public string pl_PL;
+		/// <summary>
 		/// Russian.
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string ru_RU;
 		/// <summary>
 		/// Korean.
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string ko_KR;
 		/// <summary>
 		/// Chinese (traditional).
-		/// Used in : Hearthstone, World of Warcraft, World of Warcraft (Classic).
+		/// Used in : Diablo III, Hearthstone, World of Warcraft, World of Warcraft (Classic).
 		/// </summary>
 		public string zh_TW;
 		/// <summary>
@@ -92,11 +97,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		/// Used in : Hearthstone.
 		/// </summary>
 		public string ja_JP;
-		/// <summary>
-		/// Polish.
-		/// Used in : Hearthstone.
-		/// </summary>
-		public string pl_PL;
 		/// <summary>
 		/// Thai.
 		/// Used in : Hearthstone.

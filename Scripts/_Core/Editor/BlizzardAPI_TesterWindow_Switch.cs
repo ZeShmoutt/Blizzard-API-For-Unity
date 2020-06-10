@@ -16,19 +16,49 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			switch (domain)
 			{
 				case 0:
-					StartHearthstoneGameDataAPICall(method, methodParameters);
+					StartD3GameDataAPICall(method, methodParameters);
 					break;
 				case 1:
-					StartSC2GameDataAPICall(method, methodParameters);
+					StartHearthstoneGameDataAPICall(method, methodParameters);
 					break;
 				case 2:
-					StartWowClassicGameDataAPICall(method, methodParameters);
+					StartSC2GameDataAPICall(method, methodParameters);
 					break;
 				case 3:
-					StartWowGameDataAPICall(method, methodParameters);
+					StartWowClassicGameDataAPICall(method, methodParameters);
 					break;
 				case 4:
+					StartWowGameDataAPICall(method, methodParameters);
+					break;
+				case 5:
 					StartWowProfileAPICall(method, methodParameters);
+					break;
+				default:
+					break;
+			}
+		}
+
+		private static void StartD3GameDataAPICall(int method, object[] methodParameters)
+		{
+			switch (method)
+			{
+				case 0:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetEra((int)methodParameters[0], (Action<Json_D3_Era>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 1:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetEraIndex((Action<Json_D3_EraIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 2:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetEraLeaderboard((int)methodParameters[0], (string)methodParameters[1], (Action<Json_D3_EraLeaderboard>)methodParameters[2], (string)methodParameters[3], (Action<string>)methodParameters[4], (BattleNetRegion)methodParameters[5]));
+					break;
+				case 3:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetSeason((int)methodParameters[0], (Action<Json_D3_Season>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 4:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetSeasonIndex((Action<Json_D3_SeasonIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 5:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.D3GameData.GetSeasonLeaderboard((int)methodParameters[0], (string)methodParameters[1], (Action<Json_D3_SeasonLeaderboard>)methodParameters[2], (string)methodParameters[3], (Action<string>)methodParameters[4], (BattleNetRegion)methodParameters[5]));
 					break;
 				default:
 					break;
@@ -103,7 +133,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			switch (method)
 			{
 				case 0:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.SC2GameData.GetLeagueData((BattleNetRegion)methodParameters[0], (int)methodParameters[1], (BlizzardAPI.SC2GameData.Queue)methodParameters[2], (BlizzardAPI.SC2GameData.TeamType)methodParameters[3], (BlizzardAPI.SC2GameData.League)methodParameters[4], (Action<Json_SC2_LeagueData>)methodParameters[5], (string)methodParameters[6], (Action<string>)methodParameters[7]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.SC2GameData.GetLeagueData((BattleNetRegion)methodParameters[0], (int)methodParameters[1], (BlizzardAPI.SC2GameData.Queue)methodParameters[2], (BlizzardAPI.SC2GameData.TeamType)methodParameters[3], (BlizzardAPI.SC2GameData.League)methodParameters[4], (Action<Json_SC2_GetLeagueData>)methodParameters[5], (string)methodParameters[6], (Action<string>)methodParameters[7]));
 					break;
 				default:
 					break;

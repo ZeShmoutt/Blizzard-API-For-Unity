@@ -3,6 +3,17 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2020-06-09
+### Added
+ - Added support for the following Diablo III Game Data endpoint category :
+   - Season & Era
+
+### Changed
+ - StarCraft II endpoint files are now automatically generated from a CSV
+   - Moved the related enum into their own files to avoid problems with that
+ - Slightly changed how WowProfile files are generated, especially the summary formatting
+ - Moved the `Editor` folder inside the `_Core` folder
+
 ## [1.7.0] - 2020-06-09
 ### API update
  - Updated TODO.md according to Blizzard's changelog :
