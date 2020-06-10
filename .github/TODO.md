@@ -128,10 +128,10 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ### Pet API
  - ![Done](Todo_Done.png) Pets Index
  - ![Done](Todo_Done.png) Pet
- - ![Not Done](Todo_NotDone.png) Pet Media
- - ![Not Done](Todo_NotDone.png) Pet Abilities Index
- - ![Not Done](Todo_NotDone.png) Pet Ability
- - ![Not Done](Todo_NotDone.png) Pet Ability Media
+ - ![Done](Todo_Done.png) Pet Media
+ - ![Done](Todo_Done.png) Pet Abilities Index
+ - ![Done](Todo_Done.png) Pet Ability
+ - ![Done](Todo_Done.png) Pet Ability Media
 
 ### Playable Class API
  - ![Done](Todo_Done.png) Playable Classes Index

@@ -133,6 +133,17 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	}
 
 	/// <summary>
+	/// "id" (int), "type" (string), "name" (LocalizedString).
+	/// </summary>
+	[Serializable]
+	public struct IdTypeNameStruct
+	{
+		public int id;
+		public string type;
+		public LocalizedString name;
+	}
+
+	/// <summary>
 	/// "type" (string).
 	/// </summary>
 	[Serializable]

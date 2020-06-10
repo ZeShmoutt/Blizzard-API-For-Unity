@@ -3,6 +3,14 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - 2020-06-10
+### Added
+ - Added support for the new endpoints in the WoW Game Data / Pet category (cf [\[1.7.1\]](#[1.7.1]-2020-06-09)) :
+   - Pet Media
+   - Pet Abilities Index
+   - Pet Ability
+   - Pet Ability Media
+
 ## [1.9.0] - 2020-06-10
 ### Added
  - Added support for the following WoW Classic Game Data endpoint categories :
@@ -23,7 +31,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
  - Slightly changed how WowProfile files are generated, especially the summary formatting
  - Moved the `Editor` folder inside the `_Core` folder
 
-## [1.7.0] - 2020-06-09
+## [1.7.1] - 2020-06-09
 ### API update
  - Updated TODO.md according to Blizzard's changelog :
    - [World of Warcraft API Patch Notes - 2020/06/09](https://us.forums.blizzard.com/en/blizzard/t/world-of-warcraft-api-patch-notes-20200609/8902)
@@ -34,7 +42,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), 
    - League
 
 ### Removed
- - Removed the `HttpUtility` class, now that it isn't needed anymore (see : [1.3.0], Changed #2)
+ - Removed the `HttpUtility` class, now that it isn't needed anymore (cf : [\[1.3.0\]](#[1.3.0]-2020-06-07))
 
 ### Bug fixes
  - Fixed the very slightly longer length of the `action` enum popups in the API Testing Tool
