@@ -10,7 +10,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 - StarCraft II
   - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 1/1
 - World of Warcraft
-  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/107
+  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 105/107
   - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 29/34
 - World of Warcraft Classic
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 29/31
