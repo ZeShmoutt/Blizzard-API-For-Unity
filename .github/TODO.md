@@ -13,7 +13,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
   - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 101/107
   - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 29/34
 - World of Warcraft Classic
-  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 23/31
+  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 29/31
 
 ## Diablo III - Game Data
 
@@ -290,8 +290,8 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ## World of Warcraft Classic - Game Data
 
 ### Connected Realm API
- - ![Not Done](Todo_NotDone.png) Connected Realms Index
- - ![Not Done](Todo_NotDone.png) Connected Realm
+ - ![Done](Todo_Done.png) Connected Realms Index
+ - ![Done](Todo_Done.png) Connected Realm
  - ![Not Done](Todo_NotDone.png) Connected Realms Search
 
 ### Creature API
@@ -329,13 +329,13 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Power Type
 
 ### Realm API
- - ![Not Done](Todo_NotDone.png) Realms Index
- - ![Not Done](Todo_NotDone.png) Realm
+ - ![Done](Todo_Done.png) Realms Index
+ - ![Done](Todo_Done.png) Realm
  - ![Not Done](Todo_NotDone.png) Realm Search
 
 ### Region API
- - ![Not Done](Todo_NotDone.png) Regions Index
- - ![Not Done](Todo_NotDone.png) Region
+ - ![Done](Todo_Done.png) Regions Index
+ - ![Done](Todo_Done.png) Region
 
 ### WoW Token API
  - ![Done](Todo_Done.png) WoW Token Index (CN)

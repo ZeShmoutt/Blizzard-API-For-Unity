@@ -3,6 +3,15 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] - 2020-06-10
+### Added
+ - Added support for the following WoW Classic Game Data endpoint categories :
+   - Connected Realm
+     - Except `Connected Realms Search`
+   - Realm
+     - Except `Realm Search`
+   - Region
+
 ## [1.8.0] - 2020-06-09
 ### Added
  - Added support for the following Diablo III Game Data endpoint category :

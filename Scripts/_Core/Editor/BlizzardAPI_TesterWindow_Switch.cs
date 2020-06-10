@@ -145,72 +145,93 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			switch (method)
 			{
 				case 0:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreature((int)methodParameters[0], (Action<Json_WowClassic_Creature>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetConnectedRealm((int)methodParameters[0], (Action<Json_WowClassic_ConnectedRealm>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 1:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureDisplayMedia((int)methodParameters[0], (Action<Json_WowClassic_CreatureDisplayMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetConnectedRealmsIndex((Action<Json_WowClassic_ConnectedRealmsIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 2:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamiliesIndex((Action<Json_WowClassic_CreatureFamiliesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreature((int)methodParameters[0], (Action<Json_WowClassic_Creature>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 3:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamily((int)methodParameters[0], (Action<Json_WowClassic_CreatureFamily>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureDisplayMedia((int)methodParameters[0], (Action<Json_WowClassic_CreatureDisplayMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 4:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamilyMedia((int)methodParameters[0], (Action<Json_WowClassic_CreatureFamilyMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamiliesIndex((Action<Json_WowClassic_CreatureFamiliesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 5:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureType((int)methodParameters[0], (Action<Json_WowClassic_CreatureType>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamily((int)methodParameters[0], (Action<Json_WowClassic_CreatureFamily>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 6:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureTypesIndex((Action<Json_WowClassic_CreatureTypesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureFamilyMedia((int)methodParameters[0], (Action<Json_WowClassic_CreatureFamilyMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 7:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestBorderMedia((int)methodParameters[0], (Action<Json_WowClassic_GuildCrestBorderMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureType((int)methodParameters[0], (Action<Json_WowClassic_CreatureType>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 8:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestComponentsIndex((Action<Json_WowClassic_GuildCrestComponentsIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetCreatureTypesIndex((Action<Json_WowClassic_CreatureTypesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 9:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestEmblemMedia((int)methodParameters[0], (Action<Json_WowClassic_GuildCrestEmblemMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestBorderMedia((int)methodParameters[0], (Action<Json_WowClassic_GuildCrestBorderMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 10:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItem((int)methodParameters[0], (Action<Json_WowClassic_Item>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestComponentsIndex((Action<Json_WowClassic_GuildCrestComponentsIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 11:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemClass((int)methodParameters[0], (Action<Json_WowClassic_ItemClass>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetGuildCrestEmblemMedia((int)methodParameters[0], (Action<Json_WowClassic_GuildCrestEmblemMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 12:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemClassesIndex((Action<Json_WowClassic_ItemClassesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItem((int)methodParameters[0], (Action<Json_WowClassic_Item>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 13:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemMedia((int)methodParameters[0], (Action<Json_WowClassic_ItemMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemClass((int)methodParameters[0], (Action<Json_WowClassic_ItemClass>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 14:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemSubclass((int)methodParameters[0], (int)methodParameters[1], (Action<Json_WowClassic_ItemSubclass>)methodParameters[2], (string)methodParameters[3], (Action<string>)methodParameters[4], (BattleNetRegion)methodParameters[5]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemClassesIndex((Action<Json_WowClassic_ItemClassesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 15:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClass((int)methodParameters[0], (Action<Json_WowClassic_PlayableClass>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemMedia((int)methodParameters[0], (Action<Json_WowClassic_ItemMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 16:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassMedia((int)methodParameters[0], (Action<Json_WowClassic_PlayableClassMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetItemSubclass((int)methodParameters[0], (int)methodParameters[1], (Action<Json_WowClassic_ItemSubclass>)methodParameters[2], (string)methodParameters[3], (Action<string>)methodParameters[4], (BattleNetRegion)methodParameters[5]));
 					break;
 				case 17:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassesIndex((Action<Json_WowClassic_PlayableClassesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClass((int)methodParameters[0], (Action<Json_WowClassic_PlayableClass>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 18:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableRace((int)methodParameters[0], (Action<Json_WowClassic_PlayableRace>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassMedia((int)methodParameters[0], (Action<Json_WowClassic_PlayableClassMedia>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 19:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableRacesIndex((Action<Json_WowClassic_PlayableRacesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassesIndex((Action<Json_WowClassic_PlayableClassesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 20:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPowerType((int)methodParameters[0], (Action<Json_WowClassic_PowerType>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableRace((int)methodParameters[0], (Action<Json_WowClassic_PlayableRace>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
 					break;
 				case 21:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPowerTypesIndex((Action<Json_WowClassic_PowerTypesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableRacesIndex((Action<Json_WowClassic_PlayableRacesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
 					break;
 				case 22:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPowerType((int)methodParameters[0], (Action<Json_WowClassic_PowerType>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 23:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPowerTypesIndex((Action<Json_WowClassic_PowerTypesIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 24:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetRealm((string)methodParameters[0], (Action<Json_WowClassic_Realm>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 25:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetRealm((int)methodParameters[0], (Action<Json_WowClassic_Realm>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 26:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetRealmsIndex((Action<Json_WowClassic_RealmsIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 27:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetRegion((int)methodParameters[0], (Action<Json_WowClassic_Region>)methodParameters[1], (string)methodParameters[2], (Action<string>)methodParameters[3], (BattleNetRegion)methodParameters[4]));
+					break;
+				case 28:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetRegionsIndex((Action<Json_WowClassic_RegionsIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2], (BattleNetRegion)methodParameters[3]));
+					break;
+				case 29:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetWoWTokenIndex((Action<Json_WowClassic_WoWTokenIndex>)methodParameters[0], (string)methodParameters[1], (Action<string>)methodParameters[2]));
 					break;
 				default:
