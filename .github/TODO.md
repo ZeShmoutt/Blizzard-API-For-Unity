@@ -10,10 +10,10 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 - StarCraft II
   - [Game Data](https://develop.battle.net/documentation/starcraft-2/game-data-apis) : 1/1
 - World of Warcraft
-  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 105/107
+  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) : 105/114
   - [Profile](https://develop.battle.net/documentation/world-of-warcraft/profile-apis) : 29/34
 - World of Warcraft Classic
-  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 29/31
+  - [Game Data](https://develop.battle.net/documentation/world-of-warcraft-classic/game-data-apis) : 29/34
 
 ## Diablo III - Game Data
 
@@ -61,6 +61,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ### Azerite Essence API
  - ![Done](Todo_Done.png) Azerite Essences Index
  - ![Done](Todo_Done.png) Azerite Essence
+ - ![Not Done](Todo_NotDone.png) Azerite Essence Search
  - ![Done](Todo_Done.png) Azerite Essence Media
 
 ### Connected Realm API
@@ -74,6 +75,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Creature Types Index
  - ![Done](Todo_Done.png) Creature Type
  - ![Done](Todo_Done.png) Creature
+ - ![Not Done](Todo_NotDone.png) Creature Search
  - ![Done](Todo_Done.png) Creature Display Media
  - ![Done](Todo_Done.png) Creature Family Media
 	
@@ -90,19 +92,25 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Item Subclass
  - ![Done](Todo_Done.png) Item
  - ![Done](Todo_Done.png) Item Media
+ - ![Not Done](Todo_NotDone.png) Item Search
 
 ### Journal API
  - ![Done](Todo_Done.png) Journal Expansions Index
  - ![Done](Todo_Done.png) Journal Expansion
  - ![Done](Todo_Done.png) Journal Encounters Index
  - ![Done](Todo_Done.png) Journal Encounter
+ - ![Not Done](Todo_NotDone.png) Journal Encounter Search
  - ![Done](Todo_Done.png) Journal Instances Index
  - ![Done](Todo_Done.png) Journal Instance
  - ![Done](Todo_Done.png) Journal Instance Media
 
+### Media API
+ - ![Not Done](Todo_NotDone.png) Media Search
+
 ### Mount API
  - ![Done](Todo_Done.png) Mounts Index
  - ![Done](Todo_Done.png) Mount
+ - ![Not Done](Todo_NotDone.png) Mount Search
 
 ### Mythic Keystone Affix API
  - ![Done](Todo_Done.png) Mythic Keystone Affixes Index
@@ -200,6 +208,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
 ### Spell API
  - ![Done](Todo_Done.png) Spell
  - ![Done](Todo_Done.png) Spell Media
+ - ![Not Done](Todo_NotDone.png) Spell Search
 
 ### Talent API
  - ![Done](Todo_Done.png) Talents Index
@@ -300,6 +309,7 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Creature Types Index
  - ![Done](Todo_Done.png) Creature Type
  - ![Done](Todo_Done.png) Creature
+ - ![Not Done](Todo_NotDone.png) Creature Search
  - ![Done](Todo_Done.png) Creature Display Media
  - ![Done](Todo_Done.png) Creature Family Media
 
@@ -314,6 +324,10 @@ This is a to-do list of all endpoints in Blizzard's API, and whether or not they
  - ![Done](Todo_Done.png) Item Subclass
  - ![Done](Todo_Done.png) Item
  - ![Done](Todo_Done.png) Item Media
+ - ![Not Done](Todo_NotDone.png) Item Search
+
+### Media API
+ - ![Not Done](Todo_NotDone.png) Media Search
 
 ### Playable Class API
  - ![Done](Todo_Done.png) Playable Classes Index

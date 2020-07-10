@@ -3,6 +3,11 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.10.1] - 2020-06-09
+### API update
+ - Updated TODO.md according to Blizzard's changelog :
+   - [World of Warcraft API Patch Notes - 2020/07/08](https://us.forums.blizzard.com/en/blizzard/t/world-of-warcraft-api-patch-notes-20200708/10310)
+
 ## [1.10.0] - 2020-06-10
 ### Added
  - Added support for the new endpoints in the WoW Game Data / Pet category (cf [\[1.7.1\]](#171---2020-06-09)) :
