@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITORCOROUTINES
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +11,30 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 {
 	public partial class BlizzardAPI_TesterWindow : EditorWindow
 	{
+		#region Initialization
+
+		private const string MENU_PATH = "Blizzard API/API Testing Tool";
+
+		[MenuItem(MENU_PATH, true)]
+		public static bool EnableMenuItem()
+		{
+#if UNITY_EDITORCOROUTINES
+			return true;
+#else
+			return false;
+#endif
+		}
+
+		[MenuItem(MENU_PATH, false, priority = 2)]
+		public static void ShowWindow()
+		{
+#if UNITY_EDITORCOROUTINES
+			GetWindow<BlizzardAPI_TesterWindow>(false, "Blizzard API Tester", true);
+#endif
+		}
+
+		#endregion
+
 		#region Constants
 
 		private static readonly GUIContent labelTitle = new GUIContent("Blizzard API Testing Tool");
@@ -35,8 +58,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			new KeyValuePair<string, string>("Log in console", "ResultCallbackDebug")
 		};
 
-		private const string filePath = "/ZeShmouttsAssets/Editor/Retrieved JSON/";
-		private const string fileExtension = ".json";
+		private const string FILE_PATH = "/ZeShmouttsAssets/Editor/Retrieved JSON/";
+		private const string FILE_EXTENSION = ".json";
 
 		#endregion
 
@@ -63,13 +86,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		#endregion
 
-		#region Editor Window basics
-
-		[MenuItem("Blizzard API/API Testing Tool", priority = 2)]
-		public static void ShowWindow()
-		{
-			GetWindow<BlizzardAPI_TesterWindow>(false, "Blizzard API Tester", true);
-		}
+		#region Editor window basics
 
 		private void OnEnable()
 		{
@@ -79,6 +96,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		private void OnGUI()
 		{
+#if UNITY_EDITORCOROUTINES
 			EditorGUILayout.LabelField(labelTitle, EditorStyles.largeLabel);
 			DrawDomainChoice();
 			EditorGUILayout.Space();
@@ -86,6 +104,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			DrawParametersFields();
 			EditorGUILayout.Space();
 			DrawSendRequestButton();
+#else
+			EditorGUILayout.HelpBox("EditorCoroutines package is not installed.", MessageType.Warning);
+#endif
 		}
 
 		#endregion
@@ -415,8 +436,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		private static void SaveToFile(string fileName, string content)
 		{
-			Directory.CreateDirectory(Application.dataPath + filePath);
-			string assetPath = filePath + fileName + fileExtension;
+			Directory.CreateDirectory(Application.dataPath + FILE_PATH);
+			string assetPath = FILE_PATH + fileName + FILE_EXTENSION;
 			File.WriteAllText(Application.dataPath + assetPath, content);
 
 			AssetDatabase.Refresh();
@@ -465,4 +486,3 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		#endregion
 	}
 }
-#endif

@@ -6,7 +6,5 @@
 	"unityRelease": "15f1",
 	"description": "A general-purpose collection of scripts for using the Blizzard API inside Unity. In short, an API for an API.",
 	"keywords": ["blizzard", "api", "battle.net", "warcraft", "starcraft", "diablo", "hearthstone", "overwatch"],
-	"dependencies": {
-		"com.unity.editorcoroutines": "0.1.0"
-	}
+	"dependencies": { }
 }

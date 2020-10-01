@@ -2,6 +2,7 @@
 // ║ This file has been auto-generated. ║
 // ╚════════════════════════════════════╝
 
+#if UNITY_EDITORCOROUTINES
 using System;
 using Unity.EditorCoroutines.Editor;
 using UnityEditor;
@@ -666,3 +667,4 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		}
 	}
 }
+#endif
