@@ -44,17 +44,17 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		[MenuItem("Blizzard API/Settings...", priority = 0)]
 		public static void OpenProjectSettings()
 		{
-			SettingsService.OpenProjectSettings(BlizzardAppInfosProvider.projectSettingsPath);
+			SettingsService.OpenProjectSettings(BlizzardAppInfosProvider.PROJECT_SETTINGS_PATH);
 		}
 	}
 
 	// Lots of shameless copy-pasting to add it to the project settings window.
-	class BlizzardAppInfosProvider : SettingsProvider
+	internal class BlizzardAppInfosProvider : SettingsProvider
 	{
-		public const string projectSettingsPath = "Project/Blizzard App Infos";
+		public const string PROJECT_SETTINGS_PATH = "Project/Blizzard App Infos";
 		private SerializedObject blizzardAppInfosSettings;
 
-		class Styles
+		private class Styles
 		{
 			public static GUIContent clientId = new GUIContent("Client ID");
 			public static GUIContent clientSecret = new GUIContent("Client Secret");
@@ -96,7 +96,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 				BlizzardAppInfos_Editor.GetOrCreateSettings();
 			}
 
-			var provider = new BlizzardAppInfosProvider(projectSettingsPath, SettingsScope.Project);
+			var provider = new BlizzardAppInfosProvider(PROJECT_SETTINGS_PATH, SettingsScope.Project);
 			provider.keywords = GetSearchKeywordsFromGUIContentProperties<Styles>();
 			return provider;
 		}
