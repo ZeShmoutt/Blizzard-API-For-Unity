@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_MythicKeystoneAffix = basePath_Wow_gameData + "/keystone-affix/{0}";
+			internal const string apiPath_MythicKeystoneAffix = BASEPATH_WOW_GAMEDATA + "/keystone-affix/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves a mythic keystone affix by ID.
@@ -30,10 +30,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicKeystoneAffix(int keystoneAffixId, Action<Json_Wow_MythicKeystoneAffix> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMythicKeystoneAffix(int keystoneAffixId, Action<Json_Wow_MythicKeystoneAffix> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_MythicKeystoneAffix, keystoneAffixId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -45,10 +45,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicKeystoneAffixRaw(int keystoneAffixId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMythicKeystoneAffixRaw(int keystoneAffixId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_MythicKeystoneAffix, keystoneAffixId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

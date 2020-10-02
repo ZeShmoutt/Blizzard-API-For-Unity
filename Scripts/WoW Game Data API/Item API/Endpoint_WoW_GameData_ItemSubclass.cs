@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_ItemSubclass = basePath_Wow_gameData + "/item-class/{0}/item-subclass/{1}";
+			internal const string apiPath_ItemSubclass = BASEPATH_WOW_GAMEDATA + "/item-class/{0}/item-subclass/{1}";
 
 			/// <summary>
 			/// Coroutine that retrieves an item subclass by ID.
@@ -31,10 +31,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetItemSubclass(int itemClassId, int itemSubclassId, Action<Json_Wow_ItemSubclass> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetItemSubclass(int itemClassId, int itemSubclassId, Action<Json_Wow_ItemSubclass> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_ItemSubclass, itemClassId, itemSubclassId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -47,10 +47,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetItemSubclassRaw(int itemClassId, int itemSubclassId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetItemSubclassRaw(int itemClassId, int itemSubclassId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_ItemSubclass, itemClassId, itemSubclassId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

@@ -24,13 +24,13 @@
 	{
 		#region Constants
 
-		private const string regionUnitedStates = "us";
-		private const string regionEurope = "eu";
-		private const string regionKorea = "kr";
-		private const string regionTaiwan = "tw";
-		private const string regionChina = "cn";
+		private const string REGION_UNITED_STATES = "us";
+		private const string REGION_EUROPE = "eu";
+		private const string REGION_KOREA = "kr";
+		private const string REGION_TAIWAN = "tw";
+		private const string REGION_CHINA = "cn";
 
-		private const BattleNetRegion DefaultRegion = BattleNetRegion.UnitedStates;
+		private const BattleNetRegion DEFAULT_REGION = BattleNetRegion.UnitedStates;
 
 		#endregion
 
@@ -46,9 +46,9 @@
 			switch (region)
 			{
 				case BattleNetRegion.China:
-					return string.Concat(urlStart, urlDomainCN);
+					return string.Concat(URL_START, URL_DOMAIN_CN);
 				default:
-					return string.Concat(urlStart, RegionToString(region), urlDomain);
+					return string.Concat(URL_START, RegionToString(region), URL_DOMAIN);
 			}
 		}
 
@@ -62,15 +62,15 @@
 			switch (region)
 			{
 				case BattleNetRegion.UnitedStates:
-					return regionUnitedStates;
+					return REGION_UNITED_STATES;
 				case BattleNetRegion.Europe:
-					return regionEurope;
+					return REGION_EUROPE;
 				case BattleNetRegion.Korea:
-					return regionKorea;
+					return REGION_KOREA;
 				case BattleNetRegion.Taiwan:
-					return regionTaiwan;
+					return REGION_TAIWAN;
 				case BattleNetRegion.China:
-					return regionChina;
+					return REGION_CHINA;
 				default:
 					return "";
 			}
@@ -85,15 +85,15 @@
 		{
 			switch (regionString)
 			{
-				case regionUnitedStates:
+				case REGION_UNITED_STATES:
 					return BattleNetRegion.UnitedStates;
-				case regionEurope:
+				case REGION_EUROPE:
 					return BattleNetRegion.Europe;
-				case regionKorea:
+				case REGION_KOREA:
 					return BattleNetRegion.Korea;
-				case regionTaiwan:
+				case REGION_TAIWAN:
 					return BattleNetRegion.Taiwan;
-				case regionChina:
+				case REGION_CHINA:
 					return BattleNetRegion.China;
 				default:
 					return BattleNetRegion.UnitedStates;

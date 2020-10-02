@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowClassicGameData
 		{
-			internal const string apiPath_Realm = basePath_Wow_gameData + "/realm/{0}";
+			internal const string apiPath_Realm = BASEPATH_WOW_GAMEDATA + "/realm/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves a single realm by slug or ID.
@@ -30,10 +30,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetRealm(string realmSlug, Action<Json_WowClassic_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetRealm(string realmSlug, Action<Json_WowClassic_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Realm, realmSlug);
-				yield return SendRequest(region, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -45,10 +45,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetRealm(int realmId, Action<Json_WowClassic_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetRealm(int realmId, Action<Json_WowClassic_Realm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Realm, realmId);
-				yield return SendRequest(region, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -60,10 +60,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetRealmRaw(string realmSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetRealmRaw(string realmSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Realm, realmSlug);
-				yield return SendRequest(region, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -75,10 +75,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetRealmRaw(int realmId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetRealmRaw(int realmId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Realm, realmId);
-				yield return SendRequest(region, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

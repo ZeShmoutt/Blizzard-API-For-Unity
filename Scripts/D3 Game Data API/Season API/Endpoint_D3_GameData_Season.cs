@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class D3GameData
 		{
-			internal const string apiPath_Season = basePath_D3_gameData + "/season/{0}";
+			internal const string apiPath_Season = BASEPATH_D3_GAMEDATA + "/season/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves a leaderboard list for the specified season.
@@ -30,7 +30,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetSeason(int seasonId, Action<Json_D3_Season> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetSeason(int seasonId, Action<Json_D3_Season> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Season, seasonId);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
@@ -45,7 +45,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetSeasonRaw(int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetSeasonRaw(int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Season, seasonId);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);

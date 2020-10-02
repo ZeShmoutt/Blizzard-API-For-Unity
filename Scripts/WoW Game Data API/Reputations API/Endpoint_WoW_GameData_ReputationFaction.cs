@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_ReputationFaction = basePath_Wow_gameData + "/reputation-faction/{0}";
+			internal const string apiPath_ReputationFaction = BASEPATH_WOW_GAMEDATA + "/reputation-faction/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves a single reputation faction by ID.
@@ -30,10 +30,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetReputationFaction(int reputationFactionId, Action<Json_Wow_ReputationFaction> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetReputationFaction(int reputationFactionId, Action<Json_Wow_ReputationFaction> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_ReputationFaction, reputationFactionId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -45,10 +45,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetReputationFactionRaw(int reputationFactionId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetReputationFactionRaw(int reputationFactionId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_ReputationFaction, reputationFactionId);
-				yield return SendRequest(region, namespaceStatic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

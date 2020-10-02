@@ -4,11 +4,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 {
 	public static class AppInfos
 	{
-		public static string BlizzardClientID { get => GetAppInfos().ClientID; }
-		public static string BlizzardClientSecret { get => GetAppInfos().ClientSecret; }
+		public static string BlizzardClientID => GetAppInfos().ClientID;
+		public static string BlizzardClientSecret => GetAppInfos().ClientSecret;
 
 		private static BlizzardAppInfos appInfos;
-		private const string path = BlizzardAppInfos.settingsFilename;
+		private const string PATH = BlizzardAppInfos.SETTINGS_FILENAME;
 
 		private static BlizzardAppInfos GetAppInfos()
 		{
@@ -18,7 +18,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			}
 			else
 			{
-				BlizzardAppInfos foundAppInfos = Resources.Load<BlizzardAppInfos>(path);
+				BlizzardAppInfos foundAppInfos = Resources.Load<BlizzardAppInfos>(PATH);
 				if (foundAppInfos != null)
 				{
 					appInfos = foundAppInfos;
@@ -33,15 +33,15 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	}
 
 	// Create a new type of Settings Asset.
-	class BlizzardAppInfos : ScriptableObject
+	internal class BlizzardAppInfos : ScriptableObject
 	{
-		public const string settingsFolder = "Assets/ZeShmouttsAssets/Resources/";
-		public const string settingsFilename = "BlizzardAppInfos";
-		public const string settingsExtension = ".asset";
-		public const string settingsPath = settingsFolder + settingsFilename + settingsExtension;
+		public const string SETTINGS_FOLDER = "Assets/ZeShmouttsAssets/Resources/";
+		public const string SETTINGS_FILENAME = "BlizzardAppInfos";
+		public const string SETTINGS_EXTENSION = ".asset";
+		public const string SETTINGS_PATH = SETTINGS_FOLDER + SETTINGS_FILENAME + SETTINGS_EXTENSION;
 
-		public string ClientID { get => clientId; }
-		public string ClientSecret { get => clientSecret; }
+		public string ClientID => clientId;
+		public string ClientSecret => clientSecret;
 
 		[SerializeField]
 		private string clientId = "";

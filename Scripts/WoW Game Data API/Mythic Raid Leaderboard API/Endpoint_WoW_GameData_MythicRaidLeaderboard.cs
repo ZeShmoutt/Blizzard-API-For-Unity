@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_MythicRaidLeaderboard = basePath_Wow_gameData + "/leaderboard/hall-of-fame/{0}/{1}";
+			internal const string apiPath_MythicRaidLeaderboard = BASEPATH_WOW_GAMEDATA + "/leaderboard/hall-of-fame/{0}/{1}";
 
 			/// <summary>
 			/// Coroutine that retrieves the leaderboard for a given raid and faction.
@@ -31,10 +31,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicRaidLeaderboard(string raid, string faction, Action<Json_Wow_MythicRaidLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMythicRaidLeaderboard(string raid, string faction, Action<Json_Wow_MythicRaidLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_MythicRaidLeaderboard, raid, faction);
-				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -47,10 +47,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMythicRaidLeaderboardRaw(string raid, string faction, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMythicRaidLeaderboardRaw(string raid, string faction, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_MythicRaidLeaderboard, raid, faction);
-				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

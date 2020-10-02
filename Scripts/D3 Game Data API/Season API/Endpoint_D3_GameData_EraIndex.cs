@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class D3GameData
 		{
-			internal const string apiPath_EraIndex = basePath_D3_gameData + "/era/";
+			internal const string apiPath_EraIndex = BASEPATH_D3_GAMEDATA + "/era/";
 
 			/// <summary>
 			/// Coroutine that retrieves an index of available eras.
@@ -29,7 +29,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEraIndex(Action<Json_D3_EraIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEraIndex(Action<Json_D3_EraIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = apiPath_EraIndex;
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
@@ -43,7 +43,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEraIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEraIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = apiPath_EraIndex;
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);

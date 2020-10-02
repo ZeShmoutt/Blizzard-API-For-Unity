@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class D3GameData
 		{
-			internal const string apiPath_Era = basePath_D3_gameData + "/era/{0}";
+			internal const string apiPath_Era = BASEPATH_D3_GAMEDATA + "/era/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves a leaderboard list for the specified era.
@@ -30,7 +30,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEra(int seasonId, Action<Json_D3_Era> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEra(int seasonId, Action<Json_D3_Era> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Era, seasonId);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
@@ -45,7 +45,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEraRaw(int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEraRaw(int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_Era, seasonId);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);

@@ -32,7 +32,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterProfileSummary(BattleNetRegion region, string realmSlug, string characterName, Action<Json_Wow_CharacterProfileSummary> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -48,7 +48,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterProfileSummaryRaw(BattleNetRegion region, string realmSlug, string characterName, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

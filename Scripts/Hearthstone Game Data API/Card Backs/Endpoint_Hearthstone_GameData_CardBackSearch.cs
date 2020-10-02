@@ -26,7 +26,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator CardBackSearch(HearthstoneCardBackSearch searchParameters, Action<Json_Hearthstone_CardBacksList> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator CardBackSearch(HearthstoneCardBackSearch searchParameters, Action<Json_Hearthstone_CardBacksList> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), apiPath_CardBackSearch, searchParameters != null ? searchParameters.ToURLParameters() : string.Empty);
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
@@ -41,7 +41,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator CardBackSearchRaw(HearthstoneCardBackSearch searchParameters, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator CardBackSearchRaw(HearthstoneCardBackSearch searchParameters, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), apiPath_CardBackSearch, searchParameters != null ? searchParameters.ToURLParameters() : string.Empty);
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);

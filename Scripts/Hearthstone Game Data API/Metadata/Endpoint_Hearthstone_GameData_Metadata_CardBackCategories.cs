@@ -29,7 +29,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMetadataCardBackCategories(Action<Json_Hearthstone_Metadata_CardBackCategory[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMetadataCardBackCategories(Action<Json_Hearthstone_Metadata_CardBackCategory[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				yield return GetMetadata(apiPath_Metadata_CardBackCategories, action_Result, ifModifiedSince, action_LastModified, region);
 			}
@@ -42,7 +42,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMetadataCardBackCategoriesRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetMetadataCardBackCategoriesRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				yield return GetMetadataRaw(apiPath_Metadata_CardBackCategories, action_Result, ifModifiedSince, action_LastModified, region);
 			}

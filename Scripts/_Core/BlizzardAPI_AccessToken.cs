@@ -13,11 +13,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	{
 		#region Constants
 
-		private const string oauthTokenURL = ".battle.net/oauth/token";
-		private const string oauthAuthorizeURL = ".battle.net/oauth/authorize";
+		private const string OAUTH_TOKEN_URL = ".battle.net/oauth/token";
+		private const string OAUTH_AUTHORIZE_URL = ".battle.net/oauth/authorize";
 
-		private const string prefsTokenGeneral = "BlizzardOAuthTokenGeneral";
-		private const string prefsTokenProfile = "BlizzardOAuthTokenProfile";
+		private const string PREFS_TOKEN_GENERAL = "BlizzardOAuthTokenGeneral";
+		private const string PREFS_TOKEN_PROFILE = "BlizzardOAuthTokenProfile";
 
 		#endregion
 
@@ -155,7 +155,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			if (accessToken != null && accessToken.token.Length <= 0 && accessToken.expiration >= currentDate)
 			{
 				// If we already have a valid access token in the cache, update it and skip the rest
-				SetPrefsToken(prefsTokenGeneral, accessToken);
+				SetPrefsToken(PREFS_TOKEN_GENERAL, accessToken);
 				Debug.LogFormat("Cached token still valid : '{0}' (expires {1})", accessToken.token, accessToken.expiration.ToString());
 
 				if (result != null)
@@ -171,7 +171,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				accessToken = null;
 
 				// If the token is invalid, try to fetch it from the PlayerPrefs first
-				AccessToken storedToken = GetPrefsToken(prefsTokenGeneral);
+				AccessToken storedToken = GetPrefsToken(PREFS_TOKEN_GENERAL);
 
 				if (storedToken != null && storedToken.token.Length > 0 && storedToken.expiration > currentDate)
 				{
@@ -191,7 +191,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 					Debug.Log("Invalid access token, retrieving a new token...");
 
 					// The stored token is also invalid, fetch an entirely new token, cache it, and store it
-					string url = string.Concat(urlStart, RegionToString(region), oauthTokenURL);
+					string url = string.Concat(URL_START, RegionToString(region), OAUTH_TOKEN_URL);
 
 					Dictionary<string, string> form = new Dictionary<string, string>()
 					{
@@ -210,7 +210,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 						accessToken = new AccessToken(json);
 
-						SetPrefsToken(prefsTokenGeneral, accessToken);
+						SetPrefsToken(PREFS_TOKEN_GENERAL, accessToken);
 						Debug.LogFormat("Access token granted : '{0}' ; expires {1}", accessToken.token, accessToken.expiration.ToString());
 
 						if (result != null)

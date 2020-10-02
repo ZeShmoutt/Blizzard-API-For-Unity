@@ -10,18 +10,18 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 	{
 		internal static BlizzardAppInfos GetOrCreateSettings()
 		{
-			var settings = AssetDatabase.LoadAssetAtPath<BlizzardAppInfos>(BlizzardAppInfos.settingsPath);
+			var settings = AssetDatabase.LoadAssetAtPath<BlizzardAppInfos>(BlizzardAppInfos.SETTINGS_PATH);
 			if (settings == null)
 			{
 				string dataPath = Application.dataPath;
-				string dirPath = string.Join("/", dataPath.Substring(0, dataPath.IndexOf("Assets")), BlizzardAppInfos.settingsFolder);
+				string dirPath = string.Join("/", dataPath.Substring(0, dataPath.IndexOf("Assets")), BlizzardAppInfos.SETTINGS_FOLDER);
 				if (!Directory.Exists(dirPath))
 				{
 					Directory.CreateDirectory(dirPath);
 				}
 
 				settings = ScriptableObject.CreateInstance<BlizzardAppInfos>();
-				AssetDatabase.CreateAsset(settings, BlizzardAppInfos.settingsPath);
+				AssetDatabase.CreateAsset(settings, BlizzardAppInfos.SETTINGS_PATH);
 				AssetDatabase.SaveAssets();
 			}
 			return settings;
@@ -64,7 +64,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		public static bool IsSettingsAvailable()
 		{
-			return File.Exists(BlizzardAppInfos.settingsPath);
+			return File.Exists(BlizzardAppInfos.SETTINGS_PATH);
 		}
 
 		public override void OnDeactivate()

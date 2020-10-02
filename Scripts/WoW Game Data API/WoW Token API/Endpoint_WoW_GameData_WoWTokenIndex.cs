@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_WoWTokenIndex = basePath_Wow_gameData + "/token/index";
+			internal const string apiPath_WoWTokenIndex = BASEPATH_WOW_GAMEDATA + "/token/index";
 
 			/// <summary>
 			/// Coroutine that retrieves the WoW Token index.
@@ -32,7 +32,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndex(BattleNetRegion region, Action<Json_Wow_WoWTokenIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = apiPath_WoWTokenIndex;
-				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -46,7 +46,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndexRaw(BattleNetRegion region, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = apiPath_WoWTokenIndex;
-				yield return SendRequest(region, namespaceDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

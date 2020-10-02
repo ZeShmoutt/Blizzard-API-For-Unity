@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class D3GameData
 		{
-			internal const string apiPath_EraLeaderboard = basePath_D3_gameData + "/era/{0}/leaderboard/{1}";
+			internal const string apiPath_EraLeaderboard = BASEPATH_D3_GAMEDATA + "/era/{0}/leaderboard/{1}";
 
 			/// <summary>
 			/// Coroutine that retrieves the specified leaderboard for the specified season.
@@ -31,7 +31,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEraLeaderboard(int seasonId, string leaderboard, Action<Json_D3_EraLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEraLeaderboard(int seasonId, string leaderboard, Action<Json_D3_EraLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_EraLeaderboard, seasonId, leaderboard);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
@@ -47,7 +47,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetEraLeaderboardRaw(int seasonId, string leaderboard, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator GetEraLeaderboardRaw(int seasonId, string leaderboard, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(apiPath_EraLeaderboard, seasonId, leaderboard);
 				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);

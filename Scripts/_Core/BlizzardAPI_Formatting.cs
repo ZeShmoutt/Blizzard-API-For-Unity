@@ -13,7 +13,7 @@
 		/// <returns>Returns an API path.</returns>
 		internal static string FormatWowCharacterEndpointPath(string realmSlug, string characterName)
 		{
-			return string.Concat(basePath_Wow_character, realmSlug, "/", characterName);
+			return string.Concat(BASEPATH_WOW_CHARACTER, realmSlug, "/", characterName);
 		}
 
 		/// <summary>
@@ -24,7 +24,7 @@
 		/// <returns>Returns an API path.</returns>
 		internal static string FormatWowGuildEndpointPath(string realmSlug, string nameSlug)
 		{
-			return string.Concat(basePath_Wow_guild, realmSlug, "/", nameSlug);
+			return string.Concat(BASEPATH_WOW_GUILD, realmSlug, "/", nameSlug);
 		}
 	}
 }

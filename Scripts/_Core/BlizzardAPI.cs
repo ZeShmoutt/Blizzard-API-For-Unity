@@ -14,42 +14,42 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	{
 		#region URL constants
 
-		private const string urlStart = "https://";
+		private const string URL_START = "https://";
 
-		private const string urlDomain = ".api.blizzard.com";
-		private const string urlDomainCN = "gateway.battlenet.com.cn";
+		private const string URL_DOMAIN = ".api.blizzard.com";
+		private const string URL_DOMAIN_CN = "gateway.battlenet.com.cn";
 
-		private const string headerNamespace = "namespace=";
-		private const string headerToken = "access_token=";
+		private const string HEADER_NAMESPACE = "namespace=";
+		private const string HEADER_TOKEN = "access_token=";
 
-		private const string namespaceDynamic = "dynamic-";
-		private const string namespaceProfile = "profile-";
-		private const string namespaceStatic = "static-";
-		private const string namespaceClassicDynamic = "dynamic-classic-";
-		private const string namespaceClassicProfile = "profile-classic-";
-		private const string namespaceClassicStatic = "static-classic-";
+		private const string NAMESPACE_DYNAMIC = "dynamic-";
+		private const string NAMESPACE_PROFILE = "profile-";
+		private const string NAMESPACE_STATIC = "static-";
+		private const string NAMESPACE_CLASSIC_DYNAMIC = "dynamic-classic-";
+		private const string NAMESPACE_CLASSIC_PROFILE = "profile-classic-";
+		private const string NAMESPACE_CLASSIC_STATIC = "static-classic-";
 
-		private const string headerApiNamespace = "Battlenet-Namespace";
-		private const string headerAuthorization = "Authorization";
-		private const string headerIfModifiedSince = "If-Modified-Since";
-		private const string headerLastModified = "Last-Modified";
+		private const string HEADER_API_NAMESPACE = "Battlenet-Namespace";
+		private const string HEADER_AUTHORIZATION = "Authorization";
+		private const string HEADER_IF_MODIFIED_SINCE = "If-Modified-Since";
+		private const string HEADER_LAST_MODIFIED = "Last-Modified";
 
 		#endregion
 
 		#region Common API paths
 
-		private const string basePath_media = "/media";
-		private const string basePath_data = "/data";
+		private const string BASEPATH_MEDIA = "/media";
+		private const string BASEPATH_DATA = "/data";
 
-		private const string basePath_D3_gameData = basePath_data + "/d3";
+		private const string BASEPATH_D3_GAMEDATA = BASEPATH_DATA + "/d3";
 
-		private const string basePath_Hearthstone_gameData = "/hearthstone";
+		private const string BASEPATH_HEARTHSTONE_GAMEDATA = "/hearthstone";
 
-		private const string basePath_SC2_gameData = basePath_data + "/sc2";
+		private const string BASEPATH_SC2_GAMEDATA = BASEPATH_DATA + "/sc2";
 
-		private const string basePath_Wow_gameData = basePath_data + "/wow";
-		private const string basePath_Wow_character = "/profile/wow/character/";
-		private const string basePath_Wow_guild = basePath_data + "/wow/guild/";
+		private const string BASEPATH_WOW_GAMEDATA = BASEPATH_DATA + "/wow";
+		private const string BASEPATH_WOW_CHARACTER = "/profile/wow/character/";
+		private const string BASEPATH_WOW_GUILD = BASEPATH_DATA + "/wow/guild/";
 
 		#endregion
 
@@ -127,7 +127,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 		#region Custom request by URL
 
-		internal const string urlNamespaceParameter = "namespace";
+		internal const string URL_NAMESPACE_PARAMETER = "namespace";
 
 		/// <summary>
 		/// Send a request to Blizzard with the specified URL, converts the result to a JSON-based class, and execute an action on the result.
@@ -194,17 +194,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		{
 			Dictionary<string, string> headers = new Dictionary<string, string>
 			{
-				{ headerAuthorization, "Bearer " + accessToken.token }
+				{ HEADER_AUTHORIZATION, "Bearer " + accessToken.token }
 			};
 
 			if (!string.IsNullOrEmpty(apiNamespace))
 			{
-				headers.Add(headerApiNamespace, apiNamespace);
+				headers.Add(HEADER_API_NAMESPACE, apiNamespace);
 			}
 
 			if (!string.IsNullOrEmpty(ifModifiedSince))
 			{
-				headers.Add(headerIfModifiedSince, ifModifiedSince);
+				headers.Add(HEADER_IF_MODIFIED_SINCE, ifModifiedSince);
 			}
 
 			return headers;
@@ -243,12 +243,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				}
 				else
 				{
-					Debug.LogFormat("Requested document was not modified since {0}", headers[headerIfModifiedSince]);
+					Debug.LogFormat("Requested document was not modified since {0}", headers[HEADER_IF_MODIFIED_SINCE]);
 				}
 
 				if (action_LastModified != null)
 				{
-					string lastModifiedString = request.GetResponseHeader(headerLastModified);
+					string lastModifiedString = request.GetResponseHeader(HEADER_LAST_MODIFIED);
 					action_LastModified(lastModifiedString);
 				}
 			}

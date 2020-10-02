@@ -34,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetGuildRoster(BattleNetRegion region, string realmSlug, string nameSlug, Action<Json_Wow_GuildRoster> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildRoster;
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -50,7 +50,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetGuildRosterRaw(BattleNetRegion region, string realmSlug, string nameSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildRoster;
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

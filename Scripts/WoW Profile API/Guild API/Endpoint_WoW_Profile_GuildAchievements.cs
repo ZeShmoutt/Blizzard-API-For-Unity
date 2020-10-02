@@ -34,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetGuildAchievements(BattleNetRegion region, string realmSlug, string nameSlug, Action<Json_Wow_GuildAchievements> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildAchievements;
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -50,7 +50,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetGuildAchievementsRaw(BattleNetRegion region, string realmSlug, string nameSlug, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowGuildEndpointPath(realmSlug, nameSlug) + apiPath_GuildAchievements;
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

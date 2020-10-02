@@ -35,7 +35,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterPvPBracketStatistics(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<Json_Wow_CharacterPvPBracketStatistics> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterPvPBracketStatistics, pvpBracket);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -52,7 +52,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterPvPBracketStatisticsRaw(BattleNetRegion region, string realmSlug, string characterName, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterPvPBracketStatistics, pvpBracket);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

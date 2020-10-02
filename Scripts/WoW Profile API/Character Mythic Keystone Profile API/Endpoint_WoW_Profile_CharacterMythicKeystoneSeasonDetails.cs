@@ -36,7 +36,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterMythicKeystoneSeasonDetails(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<Json_Wow_CharacterMythicKeystoneSeasonDetails> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -54,7 +54,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetCharacterMythicKeystoneSeasonDetailsRaw(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
-				yield return SendRequest(region, namespaceProfile, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}

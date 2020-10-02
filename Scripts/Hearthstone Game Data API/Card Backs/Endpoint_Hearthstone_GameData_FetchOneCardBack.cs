@@ -26,7 +26,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchOneCardBack(int cardBackId, Action<Json_Hearthstone_CardBack> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator FetchOneCardBack(int cardBackId, Action<Json_Hearthstone_CardBack> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchOneCardBack, cardBackId));
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
@@ -41,7 +41,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchOneCardBackRaw(int cardBackId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator FetchOneCardBackRaw(int cardBackId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchOneCardBack, cardBackId));
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);

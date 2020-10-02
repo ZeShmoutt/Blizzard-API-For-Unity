@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class SC2GameData
 		{
-			internal const string apiPath_GetLeagueData = basePath_SC2_gameData + "/league/{0}/{1}/{2}/{3}";
+			internal const string apiPath_GetLeagueData = BASEPATH_SC2_GAMEDATA + "/league/{0}/{1}/{2}/{3}";
 
 			/// <summary>
 			/// Coroutine that retrieves data for the specified season, queue, team, and league.

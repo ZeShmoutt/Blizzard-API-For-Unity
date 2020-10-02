@@ -26,7 +26,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchDeck(string deckCode, Action<Json_Hearthstone_Deck> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator FetchDeck(string deckCode, Action<Json_Hearthstone_Deck> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchDeck, deckCode));
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);
@@ -41,7 +41,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator FetchDeckRaw(string deckCode, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DefaultRegion)
+			public static IEnumerator FetchDeckRaw(string deckCode, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string url = string.Concat(UrlDomain(region), string.Format(apiPath_FetchDeck, deckCode));
 				yield return CustomRequest(url, null, action_Result, ifModifiedSince, action_LastModified);

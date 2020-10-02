@@ -15,7 +15,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowClassicGameData
 		{
-			internal const string apiPath_WoWTokenIndex = basePath_Wow_gameData + "/token/index";
+			internal const string apiPath_WoWTokenIndex = BASEPATH_WOW_GAMEDATA + "/token/index";
 
 			/// <summary>
 			/// Coroutine that retrieves the WoW Token index. In Classic, this is only available for China.
@@ -28,7 +28,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndex(Action<Json_WowClassic_WoWTokenIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = apiPath_WoWTokenIndex;
-				yield return SendRequest(BattleNetRegion.China, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(BattleNetRegion.China, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 			/// <summary>
@@ -42,7 +42,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
 			{
 				string path = apiPath_WoWTokenIndex;
-				yield return SendRequest(BattleNetRegion.China, namespaceClassicDynamic, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(BattleNetRegion.China, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
 		}
