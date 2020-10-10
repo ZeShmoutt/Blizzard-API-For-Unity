@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowClassicGameData
 		{
-			internal const string apiPath_CreatureDisplayMedia = BASEPATH_WOW_GAMEDATA + "/media/creature-display/{0}";
+			internal const string API_PATH_CREATUREDISPLAYMEDIA = BASEPATH_WOW_GAMEDATA + "/media/creature-display/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves media for a creature display by ID.
@@ -28,11 +28,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCreatureDisplayMedia(int creatureDisplayId, Action<Json_WowClassic_CreatureDisplayMedia> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetCreatureDisplayMedia(int creatureDisplayId, Action<Json_WowClassic_CreatureDisplayMedia> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_CreatureDisplayMedia, creatureDisplayId);
+				string path = string.Format(API_PATH_CREATUREDISPLAYMEDIA, creatureDisplayId);
 				yield return SendRequest(region, NAMESPACE_CLASSIC_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -43,11 +44,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCreatureDisplayMediaRaw(int creatureDisplayId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetCreatureDisplayMediaRaw(int creatureDisplayId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_CreatureDisplayMedia, creatureDisplayId);
+				string path = string.Format(API_PATH_CREATUREDISPLAYMEDIA, creatureDisplayId);
 				yield return SendRequest(region, NAMESPACE_CLASSIC_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

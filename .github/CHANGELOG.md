@@ -3,6 +3,19 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] - 2020-10-10
+### Added
+ - Added `action_onError` to all endpoints
+  - This action will be triggered if the request returns an error
+
+### Changed
+ - Removed hard dependancies from the package
+  - This means that the Unity Editor Coroutines package is no longer required, but it can still be added to enable additional tools
+ - Internal naming changes for consistency
+
+### Bug fix
+ - Separated the editor scripts into their own assembly to avoid compilation bugs
+
 ## [1.10.1] - 2020-07-10
 ### API update
  - Updated TODO.md according to Blizzard's changelog :

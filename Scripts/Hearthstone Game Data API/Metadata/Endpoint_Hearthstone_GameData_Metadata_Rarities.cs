@@ -29,9 +29,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMetadataRarities(Action<Json_Hearthstone_Metadata_Rarity[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetMetadataRarities(Action<Json_Hearthstone_Metadata_Rarity[]> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				yield return GetMetadata(apiPath_Metadata_Rarities, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadata(apiPath_Metadata_Rarities, action_Result, ifModifiedSince, action_LastModified, action_OnError, region);
 			}
 			
 			/// <summary>
@@ -42,9 +42,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetMetadataRaritiesRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetMetadataRaritiesRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				yield return GetMetadataRaw(apiPath_Metadata_Rarities, action_Result, ifModifiedSince, action_LastModified, region);
+				yield return GetMetadataRaw(apiPath_Metadata_Rarities, action_Result, ifModifiedSince, action_LastModified, action_OnError, region);
 			}
 		}
 	}

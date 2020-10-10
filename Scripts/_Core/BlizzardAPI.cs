@@ -79,13 +79,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="action_Result">Action to execute with the result of the request.</param>
 		/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
-		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
+		/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_JSON
+		public static IEnumerator SendRequest<T>(BattleNetRegion region, string apiNamespace, string apiPath, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null) where T : Object_JSON
 		{
 			if (action_Result != null)
 			{
-				yield return SendRequest(region, apiNamespace, apiPath, x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, apiNamespace, apiPath, x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified, action_OnError);
 			}
 			else
 			{
@@ -102,9 +102,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="action_Result">Action to execute with the result of the request.</param>
 		/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
-		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
+		/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 		/// <returns></returns>
-		public static IEnumerator SendRequest(BattleNetRegion region, string apiNamespace, string apiPath, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+		public static IEnumerator SendRequest(BattleNetRegion region, string apiNamespace, string apiPath, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 		{
 			yield return CheckAccessToken();
 
@@ -120,7 +120,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				headers = CreateHeaders(null, ifModifiedSince);
 			}
 
-			yield return APIRequest(url, headers, action_Result, action_LastModified);
+			yield return APIRequest(url, headers, action_Result, action_LastModified, action_OnError);
 		}
 
 		#endregion
@@ -134,22 +134,21 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		/// <typeparam name="T">Type of JSON result expected (character, realm, etc.).</typeparam>
 		/// <param name="url">Region to retrieve the data from.</param>
-		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
-		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
+		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
 		/// <param name="action_Result">Action to execute with the result of the request.</param>
 		/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
-		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
+		/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 		/// <returns></returns>
-		public static IEnumerator CustomRequest<T>(string url, Dictionary<string, string> additionalHeaders, Action<T> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null) where T : Object_JSON
+		public static IEnumerator CustomRequest<T>(string url, Dictionary<string, string> additionalHeaders, Action<T> action_Result, string ifModifiedSince, Action<string> action_LastModified, Action<string> action_OnError = null) where T : Object_JSON
 		{
 			if (action_Result != null)
 			{
-				yield return CustomRequest(url, additionalHeaders, x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified);
+				yield return CustomRequest(url, additionalHeaders, x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified, action_OnError);
 			}
 			else
 			{
-				yield return CustomRequest(url, additionalHeaders, null, ifModifiedSince, action_LastModified);
+				yield return CustomRequest(url, additionalHeaders, null, ifModifiedSince, action_LastModified, action_OnError);
 			}
 		}
 
@@ -157,14 +156,13 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// Send a request to Blizzard with the specified URL, and execute an action on the JSON result.
 		/// </summary>
 		/// <param name="url">Region to retrieve the data from.</param>
-		/// <param name="apiNamespace">Blizzard's API namespace used for this request (use API.Namespaces for that).</param>
-		/// <param name="apiPath">URL path to the requested document (see the API documentation for that).</param>
+		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
 		/// <param name="action_Result">Action to execute with the result of the request.</param>
 		/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
-		/// <param name="additionalHeaders">Additional headers to send with the web request.</param>
+		/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 		/// <returns></returns>
-		public static IEnumerator CustomRequest(string url, Dictionary<string, string> additionalHeaders, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+		public static IEnumerator CustomRequest(string url, Dictionary<string, string> additionalHeaders, Action<string> action_Result, string ifModifiedSince, Action<string> action_LastModified, Action<string> action_OnError = null)
 		{
 			yield return CheckAccessToken();
 
@@ -177,7 +175,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				}
 			}
 
-			yield return APIRequest(url, headers, action_Result, action_LastModified);
+			yield return APIRequest(url, headers, action_Result, action_LastModified, action_OnError);
 		}
 
 		#endregion
@@ -217,8 +215,9 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="headers">The request headers.</param>
 		/// <param name="action_Result">Action to execute with the result of the request.</param>
 		/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+		/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 		/// <returns></returns>
-		private static IEnumerator APIRequest(string url, Dictionary<string, string> headers, Action<string> action_Result, Action<string> action_LastModified)
+		private static IEnumerator APIRequest(string url, Dictionary<string, string> headers, Action<string> action_Result, Action<string> action_LastModified, Action<string> action_OnError)
 		{
 			UnityWebRequest request = UnityWebRequest.Get(url);
 			foreach (KeyValuePair<string, string> item in headers)
@@ -234,16 +233,18 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{
 					string resultContent = request.downloadHandler.text;
 
-					Debug.LogFormat("Retrieved JSON : {0}", resultContent);
-
 					if (action_Result != null)
 					{
 						action_Result(resultContent);
 					}
+					else
+					{
+						DefaultResultAction(resultContent);
+					}
 				}
 				else
 				{
-					Debug.LogFormat("Requested document was not modified since {0}", headers[HEADER_IF_MODIFIED_SINCE]);
+					DefaultIfModifiedSinceAction(headers[HEADER_IF_MODIFIED_SINCE]);
 				}
 
 				if (action_LastModified != null)
@@ -254,8 +255,52 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			}
 			else
 			{
-				Debug.LogError("<color=red>Error : </color>" + request.error);
+				if (action_OnError != null)
+				{
+					action_OnError(request.error);
+				}
+				else
+				{
+					DefaultErrorAction(request.error);
+				}
 			}
+		}
+
+		/// <summary>
+		/// Log a message to the console. Default action used when an API request is successful.
+		/// </summary>
+		/// <param name="result">Value of the If-Modified-Since header.</param>
+		public static void DefaultResultAction(string result)
+		{
+			Debug.LogFormat("<color=purple>Request result :</color> ", result);
+		}
+
+		/// <summary>
+		/// Log a message to the console. Default action used when an API request returns a result, using the value of the Last-Modified header.
+		/// </summary>
+		/// <param name="lastModified">Date of the last server-side modification.</param>
+		public static void DefaultLastModifiedAction(string lastModified)
+		{
+			Debug.LogFormat("<color=teal>Request info :</color> requested document last modification was on {0}", lastModified);
+		}
+
+		/// <summary>
+		/// Log a message to the console. Default action used when an API request is ignored because of the If-Modified-Since header.
+		/// </summary>
+		/// <param name="ifModifiedSince">Value of the If-Modified-Since header.</param>
+		public static void DefaultIfModifiedSinceAction(string ifModifiedSince)
+		{
+			Debug.LogFormat("<color=teal>Request info :</color> requested document was not modified since {0}", ifModifiedSince);
+		}
+
+		/// <summary>
+		/// Log a message to the console. Default action used when an API request returns an error.
+		/// </summary>
+		/// <param name="errorCode">Error code returned by the request.</param>
+		/// <param name="error">Error message returned by the request.</param>
+		public static void DefaultErrorAction(string error)
+		{
+			Debug.LogErrorFormat("<color=red>Request error :</color> {1}", error);
 		}
 
 		#endregion

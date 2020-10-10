@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowProfile
 		{
-			internal const string apiPath_CharacterMythicKeystoneSeasonDetails = "/mythic-keystone-profile/season/{0}";
+			internal const string API_PATH_CHARACTERMYTHICKEYSTONESEASONDETAILS = "/mythic-keystone-profile/season/{0}";
 
 			/// <summary>
 			/// Coroutine that retrieves the Mythic Keystone season details for a character.
@@ -32,10 +32,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCharacterMythicKeystoneSeasonDetails(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<Json_Wow_CharacterMythicKeystoneSeasonDetails> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetCharacterMythicKeystoneSeasonDetails(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<Json_Wow_CharacterMythicKeystoneSeasonDetails> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(API_PATH_CHARACTERMYTHICKEYSTONESEASONDETAILS, seasonId);
 				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -50,10 +51,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <returns></returns>
-			public static IEnumerator GetCharacterMythicKeystoneSeasonDetailsRaw(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetCharacterMythicKeystoneSeasonDetailsRaw(BattleNetRegion region, string realmSlug, string characterName, int seasonId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
-				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(apiPath_CharacterMythicKeystoneSeasonDetails, seasonId);
+				string path = FormatWowCharacterEndpointPath(realmSlug, characterName) + string.Format(API_PATH_CHARACTERMYTHICKEYSTONESEASONDETAILS, seasonId);
 				yield return SendRequest(region, NAMESPACE_PROFILE, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

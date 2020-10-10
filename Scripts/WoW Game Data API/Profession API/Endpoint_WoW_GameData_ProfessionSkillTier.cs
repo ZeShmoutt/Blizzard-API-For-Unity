@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_ProfessionSkillTier = BASEPATH_WOW_GAMEDATA + "/profession/{0}/skill-tier/{1}";
+			internal const string API_PATH_PROFESSIONSKILLTIER = BASEPATH_WOW_GAMEDATA + "/profession/{0}/skill-tier/{1}";
 
 			/// <summary>
 			/// Coroutine that retrieves a skill tier for a profession by ID.
@@ -29,11 +29,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetProfessionSkillTier(int professionId, int skillTierId, Action<Json_Wow_ProfessionSkillTier> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetProfessionSkillTier(int professionId, int skillTierId, Action<Json_Wow_ProfessionSkillTier> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_ProfessionSkillTier, professionId, skillTierId);
+				string path = string.Format(API_PATH_PROFESSIONSKILLTIER, professionId, skillTierId);
 				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -45,11 +46,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetProfessionSkillTierRaw(int professionId, int skillTierId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetProfessionSkillTierRaw(int professionId, int skillTierId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_ProfessionSkillTier, professionId, skillTierId);
+				string path = string.Format(API_PATH_PROFESSIONSKILLTIER, professionId, skillTierId);
 				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

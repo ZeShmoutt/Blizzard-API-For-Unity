@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_WoWTokenIndex = BASEPATH_WOW_GAMEDATA + "/token/index";
+			internal const string API_PATH_WOWTOKENINDEX = BASEPATH_WOW_GAMEDATA + "/token/index";
 
 			/// <summary>
 			/// Coroutine that retrieves the WoW Token index.
@@ -28,10 +28,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <returns></returns>
-			public static IEnumerator GetWoWTokenIndex(BattleNetRegion region, Action<Json_Wow_WoWTokenIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetWoWTokenIndex(BattleNetRegion region, Action<Json_Wow_WoWTokenIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
-				string path = apiPath_WoWTokenIndex;
+				string path = API_PATH_WOWTOKENINDEX;
 				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -42,10 +43,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <returns></returns>
-			public static IEnumerator GetWoWTokenIndexRaw(BattleNetRegion region, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null)
+			public static IEnumerator GetWoWTokenIndexRaw(BattleNetRegion region, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
-				string path = apiPath_WoWTokenIndex;
+				string path = API_PATH_WOWTOKENINDEX;
 				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 

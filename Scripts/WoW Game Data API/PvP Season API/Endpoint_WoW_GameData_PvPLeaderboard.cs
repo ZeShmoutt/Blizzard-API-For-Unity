@@ -19,7 +19,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// </summary>
 		public static partial class WowGameData
 		{
-			internal const string apiPath_PvPLeaderboard = BASEPATH_WOW_GAMEDATA + "/pvp-season/{0}/pvp-leaderboard/{1}";
+			internal const string API_PATH_PVPLEADERBOARD = BASEPATH_WOW_GAMEDATA + "/pvp-season/{0}/pvp-leaderboard/{1}";
 
 			/// <summary>
 			/// Coroutine that retrieves the PvP leaderboard of a specific PvP bracket for a PvP season.
@@ -29,11 +29,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the data once retrieved and converted.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPvPLeaderboard(int pvpSeasonId, string pvpBracket, Action<Json_Wow_PvPLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetPvPLeaderboard(int pvpSeasonId, string pvpBracket, Action<Json_Wow_PvPLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_PvPLeaderboard, pvpSeasonId, pvpBracket);
+				string path = string.Format(API_PATH_PVPLEADERBOARD, pvpSeasonId, pvpBracket);
 				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
@@ -45,11 +46,12 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// <param name="action_Result">Action to execute with the raw JSON string.</param>
 			/// <param name="ifModifiedSince">Adds a request header to check if the document has been modified since this date (in HTML format), which will return an empty response body if it's older.</param>
 			/// <param name="action_LastModified">Action to execute with the date of the last server-side modification to the document.</param>
+			/// <param name="action_OnError">Action to execute when the request returns an error.</param>
 			/// <param name="region">The region of the data to retrieve.</param>
 			/// <returns></returns>
-			public static IEnumerator GetPvPLeaderboardRaw(int pvpSeasonId, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, BattleNetRegion region = DEFAULT_REGION)
+			public static IEnumerator GetPvPLeaderboardRaw(int pvpSeasonId, string pvpBracket, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
-				string path = string.Format(apiPath_PvPLeaderboard, pvpSeasonId, pvpBracket);
+				string path = string.Format(API_PATH_PVPLEADERBOARD, pvpSeasonId, pvpBracket);
 				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
 			}
 
