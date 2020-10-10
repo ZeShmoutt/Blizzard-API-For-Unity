@@ -35,6 +35,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		#endregion
 
+#if UNITY_EDITORCOROUTINES
 		#region Constants
 
 		private static readonly GUIContent labelTitle = new GUIContent("Blizzard API Testing Tool");
@@ -96,7 +97,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 
 		private void OnGUI()
 		{
-#if UNITY_EDITORCOROUTINES
 			EditorGUILayout.LabelField(labelTitle, EditorStyles.largeLabel);
 			DrawDomainChoice();
 			EditorGUILayout.Space();
@@ -104,9 +104,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			DrawParametersFields();
 			EditorGUILayout.Space();
 			DrawSendRequestButton();
-#else
-			EditorGUILayout.HelpBox("EditorCoroutines package is not installed.", MessageType.Warning);
-#endif
 		}
 
 		#endregion
@@ -484,5 +481,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 		}
 
 		#endregion
+#endif
 	}
 }
