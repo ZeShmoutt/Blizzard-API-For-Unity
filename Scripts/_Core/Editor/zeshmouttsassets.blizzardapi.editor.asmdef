@@ -1,9 +1,12 @@
 {
-    "name": "Blizzard API for Unity",
+    "name": "Blizzard API for Unity (Editor)",
     "references": [
+        "Blizzard API for Unity",
         "Unity.EditorCoroutines.Editor"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

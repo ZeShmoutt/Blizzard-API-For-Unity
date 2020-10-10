@@ -33,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 	}
 
 	// Create a new type of Settings Asset.
-	internal class BlizzardAppInfos : ScriptableObject
+	public class BlizzardAppInfos : ScriptableObject
 	{
 		public const string SETTINGS_FOLDER = "Assets/ZeShmouttsAssets/Resources/";
 		public const string SETTINGS_FILENAME = "BlizzardAppInfos";
