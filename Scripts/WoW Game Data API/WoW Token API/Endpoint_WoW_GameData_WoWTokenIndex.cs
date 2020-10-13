@@ -33,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndex(BattleNetRegion region, Action<Json_Wow_WoWTokenIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
 				string path = API_PATH_WOWTOKENINDEX;
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -48,7 +48,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetWoWTokenIndexRaw(BattleNetRegion region, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
 				string path = API_PATH_WOWTOKENINDEX;
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

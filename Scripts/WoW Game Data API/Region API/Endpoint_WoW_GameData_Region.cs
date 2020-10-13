@@ -34,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetRegion(int regionId, Action<Json_Wow_Region> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_REGION, regionId);
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -50,7 +50,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetRegionRaw(int regionId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_REGION, regionId);
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

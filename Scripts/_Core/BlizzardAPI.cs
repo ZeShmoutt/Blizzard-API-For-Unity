@@ -89,7 +89,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			}
 			else
 			{
-				yield return SendRequest(region, apiNamespace, apiPath, null, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, apiNamespace, apiPath, null, ifModifiedSince, action_LastModified, action_OnError);
 			}
 		}
 
@@ -144,7 +144,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		{
 			if (action_Result != null)
 			{
-				yield return CustomRequest(url, additionalHeaders, x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified, action_OnError);
+				yield return CustomRequest(url, additionalHeaders, action_Result: x => action_Result(JsonUtility.FromJson<T>(x)), ifModifiedSince, action_LastModified, action_OnError);
 			}
 			else
 			{
@@ -272,7 +272,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="result">Value of the If-Modified-Since header.</param>
 		public static void DefaultResultAction(string result)
 		{
-			Debug.LogFormat("<color=purple>Request result :</color> ", result);
+			Debug.LogFormat("<color=purple>Request result :</color> {0}", result);
 		}
 
 		/// <summary>
@@ -300,7 +300,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		/// <param name="error">Error message returned by the request.</param>
 		public static void DefaultErrorAction(string error)
 		{
-			Debug.LogErrorFormat("<color=red>Request error :</color> {1}", error);
+			Debug.LogErrorFormat("<color=red>Request error :</color> {0}", error);
 		}
 
 		#endregion

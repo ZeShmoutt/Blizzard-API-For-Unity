@@ -34,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetConnectedRealm(int connectedRealmId, Action<Json_WowClassic_ConnectedRealm> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_CONNECTEDREALM, connectedRealmId);
-				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -50,7 +50,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetConnectedRealmRaw(int connectedRealmId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_CONNECTEDREALM, connectedRealmId);
-				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_CLASSIC_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

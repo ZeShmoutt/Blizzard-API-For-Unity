@@ -33,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetPetsIndex(Action<Json_Wow_PetsIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = API_PATH_PETSINDEX;
-				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -48,7 +48,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetPetsIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = API_PATH_PETSINDEX;
-				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

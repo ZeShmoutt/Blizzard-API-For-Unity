@@ -34,7 +34,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetRecipeMedia(int recipeId, Action<Json_Wow_RecipeMedia> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_RECIPEMEDIA, recipeId);
-				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -50,7 +50,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetRecipeMediaRaw(int recipeId, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_RECIPEMEDIA, recipeId);
-				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_STATIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

@@ -33,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetMythicKeystonePeriodsIndex(Action<Json_Wow_MythicKeystonePeriodsIndex> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = API_PATH_MYTHICKEYSTONEPERIODSINDEX;
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -48,7 +48,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetMythicKeystonePeriodsIndexRaw(Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = API_PATH_MYTHICKEYSTONEPERIODSINDEX;
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

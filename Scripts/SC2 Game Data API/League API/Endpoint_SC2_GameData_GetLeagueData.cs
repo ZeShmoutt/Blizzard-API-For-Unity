@@ -37,7 +37,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetLeagueData(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<Json_SC2_GetLeagueData> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
 				string path = string.Format(API_PATH_GETLEAGUEDATA, seasonId, queue, teamType, league);
-				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -56,7 +56,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetLeagueDataRaw(BattleNetRegion region, int seasonId, Queue queue, TeamType teamType, League league, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null)
 			{
 				string path = string.Format(API_PATH_GETLEAGUEDATA, seasonId, queue, teamType, league);
-				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

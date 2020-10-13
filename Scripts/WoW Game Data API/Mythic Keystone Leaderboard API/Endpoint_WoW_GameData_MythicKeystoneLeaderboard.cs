@@ -36,7 +36,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetMythicKeystoneLeaderboard(int connectedRealmId, int dungeonId, int period, Action<Json_Wow_MythicKeystoneLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_MYTHICKEYSTONELEADERBOARD, connectedRealmId, dungeonId, period);
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -54,7 +54,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetMythicKeystoneLeaderboardRaw(int connectedRealmId, int dungeonId, int period, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_MYTHICKEYSTONELEADERBOARD, connectedRealmId, dungeonId, period);
-				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, NAMESPACE_DYNAMIC, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}

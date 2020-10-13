@@ -35,7 +35,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetSeasonLeaderboard(int seasonId, string leaderboard, Action<Json_D3_SeasonLeaderboard> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_SEASONLEADERBOARD, seasonId, leaderboard);
-				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 			/// <summary>
@@ -52,7 +52,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			public static IEnumerator GetSeasonLeaderboardRaw(int seasonId, string leaderboard, Action<string> action_Result, string ifModifiedSince = null, Action<string> action_LastModified = null, Action<string> action_OnError = null, BattleNetRegion region = DEFAULT_REGION)
 			{
 				string path = string.Format(API_PATH_SEASONLEADERBOARD, seasonId, leaderboard);
-				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified);
+				yield return SendRequest(region, null, path, action_Result, ifModifiedSince, action_LastModified, action_OnError);
 			}
 
 		}
