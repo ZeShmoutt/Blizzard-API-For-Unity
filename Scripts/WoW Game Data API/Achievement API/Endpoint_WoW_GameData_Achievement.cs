@@ -90,6 +90,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RefIdStruct media;
 
 		public int display_order;
+		[Serializable]
+		public struct AchievementRequirements
+		{
+			public TypeNameStruct faction;
+		}
+		public AchievementRequirements requirements;
+		
 		// {{JSON_END}}
 	}
 }

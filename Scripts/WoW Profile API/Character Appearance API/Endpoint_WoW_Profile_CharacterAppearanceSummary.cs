@@ -102,16 +102,19 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public GuildCrest guild_crest;
 
 		[Serializable]
-		public struct CharacterAppearance
+		public struct CharacterCustomizationChoice
 		{
-			public int face_variation;
-			public int skin_color;
-			public int hair_variation;
-			public int hair_color;
-			public int feature_variation;
-			public int[] custom_display_options;
+			public int id;
+			public int display_order;
 		}
-		public CharacterAppearance appearance;
+
+		[Serializable]
+		public struct CharacterCustomization
+		{
+			public NameIdStruct option;
+			public CharacterCustomizationChoice choice;
+		}
+		public CharacterCustomization[] customizations;
 
 		[Serializable]
 		public struct ItemAppearance

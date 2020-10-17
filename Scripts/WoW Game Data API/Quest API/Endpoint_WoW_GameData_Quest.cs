@@ -76,8 +76,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public RefNameIdStruct category;
 		public RefNameIdStruct area;
 		public LocalizedString description;
-		public int recommended_minimum_level;
-		public int recommended_maximum_level;
 
 		[Serializable]
 		public struct QuestRequirementOperator

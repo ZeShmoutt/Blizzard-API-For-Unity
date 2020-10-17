@@ -3,6 +3,11 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] - 2020-10-17
+### API Update
+ - Updated the API according to Blizzard's changelog :
+   - [API Changes - WoW Shadowlands Pre-Patch](https://us.forums.blizzard.com/en/blizzard/t/api-changes-wow-shadowlands-pre-patch/11826)
+
 ## [1.11.1] - 2020-10-12
 ### Bug fix
  - Fixed `action_onError` actually not working
