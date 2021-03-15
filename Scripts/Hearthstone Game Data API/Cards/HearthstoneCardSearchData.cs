@@ -53,6 +53,11 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public BlizzardAPI.HearthstoneGameData.MinionType minionType = BlizzardAPI.HearthstoneGameData.MinionType.All;
 
 		/// <summary>
+		/// The school of a spell card (for example, arcane, nature, fel, and so on). The default value is 'All'.
+		/// </summary>
+		public BlizzardAPI.HearthstoneGameData.SpellSchool spellSchool = BlizzardAPI.HearthstoneGameData.SpellSchool.All;
+
+		/// <summary>
 		/// A required keyword on the card (for example, battlecry, deathrattle, and so on). The default value is 'All'.
 		/// </summary>
 		public BlizzardAPI.HearthstoneGameData.CardKeyword keyword = BlizzardAPI.HearthstoneGameData.CardKeyword.All;

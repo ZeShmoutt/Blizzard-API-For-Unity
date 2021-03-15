@@ -123,6 +123,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public Json_Hearthstone_Metadata_Rarity[] rarities;
 		public Json_Hearthstone_Metadata_Class[] classes;
 		public Json_Hearthstone_Metadata_MinionType[] minionTypes;
+		public Json_Hearthstone_Metadata_SpellSchool[] spellSchools;
 		public Json_Hearthstone_Metadata_GameMode[] gameModes;
 		public Json_Hearthstone_Metadata_Keyword[] keywords;
 		public string[] filterableFields;

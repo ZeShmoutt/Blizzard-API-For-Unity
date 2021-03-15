@@ -25,82 +25,90 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			/// </summary>
 			public enum CardSet
 			{
-				All,
-				DemonHunterInitiate,
-				AshesOfOutland,
-				GalakrondsAwakening,
-				DescentOfDragons,
-				SaviorsOfUldum,
-				RiseOfShadows,
-				RastakhansRumble,
-				TheBoomsdayProject,
-				TheWitchwood,
-				KoboldsAndCatacombs,
-				KnightsOfTheFrozenThrone,
-				JourneyToUngoro,
-				MeanStreetsOfGadgetzan,
-				OneNightInKarazhan,
-				WhispersOfTheOldGods,
-				LeagueOfExplorers,
-				TheGrandTournament,
-				BlackrockMountain,
-				GoblinsVsGnomes,
-				CurseOfNaxxramas,
-				HallOfFame,
-				Classic,
-				Basic
+				All = 0,
+				Basic = 2,
+				Classic = 3,
+				HallOfFame = 4,
+				CurseOfNaxxramas = 12,
+				GoblinsVsGnomes = 13,
+				BlackrockMountain = 14,
+				TheGrandTournament = 15,
+				LeagueOfExplorers = 20,
+				WhispersOfTheOldGods = 21,
+				OneNightInKarazhan = 23,
+				MeanStreetsOfGadgetzan = 25,
+				JourneyToUnGoro = 27,
+				KnightsOfTheFrozenThrone = 1001,
+				KoboldsAndCatacombs = 1004,
+				TheWitchwood = 1125,
+				TheBoomsdayProject = 1127,
+				RastakhanSRumble = 1129,
+				RiseOfShadows = 1130,
+				SaviorsOfUldum = 1158,
+				DescentOfDragons = 1347,
+				GalakrondSAwakening = 1403,
+				AshesOfOutland = 1414,
+				ScholomanceAcademy = 1443,
+				DemonHunterInitiate = 1463,
+				MadnessAtTheDarkmoonFaire = 1466,
+				ForgedInTheBarrens = 1525,
+				Core = 1637
 			}
 			
 			internal static readonly Dictionary<CardSet, string> CardSetParameters = new Dictionary<CardSet, string>
 			{
 				{ CardSet.All, "" },
-				{ CardSet.DemonHunterInitiate, "demonhunter-initiate" },
-				{ CardSet.AshesOfOutland, "ashes-of-outland" },
-				{ CardSet.GalakrondsAwakening, "galakronds-awakening" },
-				{ CardSet.DescentOfDragons, "descent-of-dragons" },
-				{ CardSet.SaviorsOfUldum, "saviors-of-uldum" },
-				{ CardSet.RiseOfShadows, "rise-of-shadows" },
-				{ CardSet.RastakhansRumble, "rastakhans-rumble" },
-				{ CardSet.TheBoomsdayProject, "the-boomsday-project" },
-				{ CardSet.TheWitchwood, "the-witchwood" },
-				{ CardSet.KoboldsAndCatacombs, "kobolds-and-catacombs" },
-				{ CardSet.KnightsOfTheFrozenThrone, "knights-of-the-frozen-throne" },
-				{ CardSet.JourneyToUngoro, "journey-to-ungoro" },
-				{ CardSet.MeanStreetsOfGadgetzan, "mean-streets-of-gadgetzan" },
-				{ CardSet.OneNightInKarazhan, "one-night-in-karazhan" },
-				{ CardSet.WhispersOfTheOldGods, "whispers-of-the-old-gods" },
-				{ CardSet.LeagueOfExplorers, "league-of-explorers" },
-				{ CardSet.TheGrandTournament, "the-grand-tournament" },
-				{ CardSet.BlackrockMountain, "blackrock-mountain" },
-				{ CardSet.GoblinsVsGnomes, "goblins-vs-gnomes" },
-				{ CardSet.CurseOfNaxxramas, "naxxramas" },
-				{ CardSet.HallOfFame, "hall-of-fame" },
+				{ CardSet.Basic, "basic" },
 				{ CardSet.Classic, "classic" },
-				{ CardSet.Basic, "basic" }
+				{ CardSet.HallOfFame, "hall-of-fame" },
+				{ CardSet.CurseOfNaxxramas, "naxxramas" },
+				{ CardSet.GoblinsVsGnomes, "goblins-vs-gnomes" },
+				{ CardSet.BlackrockMountain, "blackrock-mountain" },
+				{ CardSet.TheGrandTournament, "the-grand-tournament" },
+				{ CardSet.LeagueOfExplorers, "league-of-explorers" },
+				{ CardSet.WhispersOfTheOldGods, "whispers-of-the-old-gods" },
+				{ CardSet.OneNightInKarazhan, "one-night-in-karazhan" },
+				{ CardSet.MeanStreetsOfGadgetzan, "mean-streets-of-gadgetzan" },
+				{ CardSet.JourneyToUnGoro, "journey-to-ungoro" },
+				{ CardSet.KnightsOfTheFrozenThrone, "knights-of-the-frozen-throne" },
+				{ CardSet.KoboldsAndCatacombs, "kobolds-and-catacombs" },
+				{ CardSet.TheWitchwood, "the-witchwood" },
+				{ CardSet.TheBoomsdayProject, "the-boomsday-project" },
+				{ CardSet.RastakhanSRumble, "rastakhans-rumble" },
+				{ CardSet.RiseOfShadows, "rise-of-shadows" },
+				{ CardSet.SaviorsOfUldum, "saviors-of-uldum" },
+				{ CardSet.DescentOfDragons, "descent-of-dragons" },
+				{ CardSet.GalakrondSAwakening, "galakronds-awakening" },
+				{ CardSet.AshesOfOutland, "ashes-of-outland" },
+				{ CardSet.ScholomanceAcademy, "scholomance-academy" },
+				{ CardSet.DemonHunterInitiate, "demonhunter-initiate" },
+				{ CardSet.MadnessAtTheDarkmoonFaire, "madness-at-the-darkmoon-faire" },
+				{ CardSet.ForgedInTheBarrens, "forged-in-the-barrens" },
+				{ CardSet.Core, "core" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
 			public enum CardClass
 			{
-				All,
-				DemonHunter,
-				Druid,
-				Hunter,
-				Mage,
-				Paladin,
-				Priest,
-				Rogue,
-				Shaman,
-				Warlock,
-				Warrior,
-				Neutral
+				All = 0,
+				Druid = 2,
+				Hunter = 3,
+				Mage = 4,
+				Paladin = 5,
+				Priest = 6,
+				Rogue = 7,
+				Shaman = 8,
+				Warlock = 9,
+				Warrior = 10,
+				Neutral = 12,
+				DemonHunter = 14
 			}
 			
 			internal static readonly Dictionary<CardClass, string> CardClassParameters = new Dictionary<CardClass, string>
 			{
 				{ CardClass.All, "" },
-				{ CardClass.DemonHunter, "demonhunter" },
 				{ CardClass.Druid, "druid" },
 				{ CardClass.Hunter, "hunter" },
 				{ CardClass.Mage, "mage" },
@@ -110,8 +118,10 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardClass.Shaman, "shaman" },
 				{ CardClass.Warlock, "warlock" },
 				{ CardClass.Warrior, "warrior" },
-				{ CardClass.Neutral, "neutral" }
+				{ CardClass.Neutral, "neutral" },
+				{ CardClass.DemonHunter, "demonhunter" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
@@ -128,17 +138,18 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardCollectability.Collectible, "1" },
 				{ CardCollectability.Uncollectible, "0" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
 			public enum CardRarity
 			{
-				All,
-				Common,
-				Free,
-				Rare,
-				Epic,
-				Legendary
+				All = 0,
+				Common = 1,
+				Free = 2,
+				Rare = 3,
+				Epic = 4,
+				Legendary = 5
 			}
 			
 			internal static readonly Dictionary<CardRarity, string> CardRarityParameters = new Dictionary<CardRarity, string>
@@ -150,16 +161,17 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardRarity.Epic, "epic" },
 				{ CardRarity.Legendary, "legendary" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
 			public enum CardType
 			{
-				All,
-				Hero,
-				Minion,
-				Spell,
-				Weapon
+				All = 0,
+				Hero = 3,
+				Minion = 4,
+				Spell = 5,
+				Weapon = 7
 			}
 			
 			internal static readonly Dictionary<CardType, string> CardTypeParameters = new Dictionary<CardType, string>
@@ -170,20 +182,21 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardType.Spell, "spell" },
 				{ CardType.Weapon, "weapon" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
 			public enum MinionType
 			{
-				Murloc,
-				Demon,
-				Mech,
-				Elemental,
-				Beast,
-				Totem,
-				Pirate,
-				Dragon,
-				All
+				Murloc = 14,
+				Demon = 15,
+				Mech = 17,
+				Elemental = 18,
+				Beast = 20,
+				Totem = 21,
+				Pirate = 23,
+				Dragon = 24,
+				All = 26
 			}
 			
 			internal static readonly Dictionary<MinionType, string> MinionTypeParameters = new Dictionary<MinionType, string>
@@ -198,44 +211,80 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ MinionType.Dragon, "dragon" },
 				{ MinionType.All, "all" }
 			};
+			
+			/// <summary>
+			/// Used for Hearthstone searches.
+			/// </summary>
+			public enum SpellSchool
+			{
+				All = 0,
+				Arcane = 1,
+				Fire = 2,
+				Frost = 3,
+				Nature = 4,
+				Holy = 5,
+				Shadow = 6,
+				Fel = 7
+			}
+			
+			internal static readonly Dictionary<SpellSchool, string> SpellSchoolParameters = new Dictionary<SpellSchool, string>
+			{
+				{ SpellSchool.All, "" },
+				{ SpellSchool.Arcane, "arcane" },
+				{ SpellSchool.Fire, "fire" },
+				{ SpellSchool.Frost, "frost" },
+				{ SpellSchool.Nature, "nature" },
+				{ SpellSchool.Holy, "holy" },
+				{ SpellSchool.Shadow, "shadow" },
+				{ SpellSchool.Fel, "fel" }
+			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
 			public enum CardKeyword
 			{
-				All,
-				Taunt,
-				SpellDamage,
-				DivineShield,
-				Charge,
-				Secret,
-				Stealth,
-				Battlecry,
-				Freeze,
-				Windfury,
-				Deathrattle,
-				Combo,
-				Overload,
-				Silence,
-				Counter,
-				Immune,
-				Inspire,
-				Discover,
-				Quest,
-				Poisonous,
-				Adapt,
-				Lifesteal,
-				Recruit,
-				Echo,
-				Rush,
-				Overkill,
-				Magnetic,
-				Lackey,
-				Twinspell,
-				MegaWindfury,
-				Reborn,
-				Invoke,
-				Outcast
+				All = 0,
+				Taunt = 1,
+				SpellDamage = 2,
+				DivineShield = 3,
+				Charge = 4,
+				Secret = 5,
+				Stealth = 6,
+				Battlecry = 8,
+				Freeze = 10,
+				Windfury = 11,
+				Deathrattle = 12,
+				Combo = 13,
+				Overload = 14,
+				Silence = 15,
+				Counter = 16,
+				Immune = 17,
+				SpareParts = 19,
+				Inspire = 20,
+				Discover = 21,
+				Quest = 31,
+				Poisonous = 32,
+				Adapt = 34,
+				Lifesteal = 38,
+				Recruit = 39,
+				Echo = 52,
+				Rush = 53,
+				Overkill = 61,
+				StartOfGame = 64,
+				Magnetic = 66,
+				Lackey = 71,
+				Twinspell = 76,
+				MegaWindfury = 77,
+				Reborn = 78,
+				Invoke = 79,
+				Outcast = 86,
+				Spellburst = 88,
+				Sidequest = 89,
+				Corrupt = 91,
+				StartOfCombat = 92,
+				Frenzy = 99,
+				NatureSpellDamage = 104
 			}
 			
 			internal static readonly Dictionary<CardKeyword, string> CardKeywordParameters = new Dictionary<CardKeyword, string>
@@ -256,6 +305,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardKeyword.Silence, "silence" },
 				{ CardKeyword.Counter, "counter" },
 				{ CardKeyword.Immune, "immune" },
+				{ CardKeyword.SpareParts, "spare-part" },
 				{ CardKeyword.Inspire, "inspire" },
 				{ CardKeyword.Discover, "discover" },
 				{ CardKeyword.Quest, "quest" },
@@ -266,30 +316,41 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardKeyword.Echo, "echo" },
 				{ CardKeyword.Rush, "rush" },
 				{ CardKeyword.Overkill, "overkill" },
+				{ CardKeyword.StartOfGame, "startofgamekeyword" },
 				{ CardKeyword.Magnetic, "modular" },
 				{ CardKeyword.Lackey, "evilzug" },
 				{ CardKeyword.Twinspell, "twinspell" },
 				{ CardKeyword.MegaWindfury, "mega-windfury" },
 				{ CardKeyword.Reborn, "reborn" },
 				{ CardKeyword.Invoke, "empower" },
-				{ CardKeyword.Outcast, "outcast" }
+				{ CardKeyword.Outcast, "outcast" },
+				{ CardKeyword.Spellburst, "spellburst" },
+				{ CardKeyword.Sidequest, "sidequest" },
+				{ CardKeyword.Corrupt, "corrupt" },
+				{ CardKeyword.StartOfCombat, "start-of-combat" },
+				{ CardKeyword.Frenzy, "frenzy" },
+				{ CardKeyword.NatureSpellDamage, "spellpowernature" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone searches.
 			/// </summary>
 			public enum GameMode
 			{
-				StandardWildFormats,
-				Battlegrounds,
-				CurrentArenaCards
+				StandardWildFormats = 1,
+				Battlegrounds = 2,
+				CurrentArenaCards = 3,
+				CurrentDuelsCards = 4
 			}
 			
 			internal static readonly Dictionary<GameMode, string> GameModeParameters = new Dictionary<GameMode, string>
 			{
 				{ GameMode.StandardWildFormats, "constructed" },
 				{ GameMode.Battlegrounds, "battlegrounds" },
-				{ GameMode.CurrentArenaCards, "arena" }
+				{ GameMode.CurrentArenaCards, "arena" },
+				{ GameMode.CurrentDuelsCards, "duels" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card searches.
 			/// </summary>
@@ -308,6 +369,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardSortType.SortByHealth, "health" },
 				{ CardSortType.SortByName, "name" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone card back searches.
 			/// </summary>
@@ -322,25 +384,26 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardBackSortType.SortByDate, "date" },
 				{ CardBackSortType.SortByName, "name" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone searches.
 			/// </summary>
 			public enum CardBackCategory
 			{
-				All,
-				Basic,
-				Fireside,
-				Achievements,
-				Heroes,
-				Seasonal,
-				Legend,
-				Esports,
-				Games,
-				Promotion,
-				PrePurchase,
-				Blizzard,
-				Golden,
-				Events
+				All = 0,
+				Basic = 1,
+				Fireside = 2,
+				Achievements = 3,
+				Heroes = 4,
+				Seasonal = 5,
+				Legend = 6,
+				Esports = 7,
+				Games = 8,
+				Promotion = 9,
+				PrePurchase = 10,
+				Blizzard = 11,
+				Golden = 12,
+				Events = 13
 			}
 			
 			internal static readonly Dictionary<CardBackCategory, string> CardBackCategoryParameters = new Dictionary<CardBackCategory, string>
@@ -360,6 +423,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ CardBackCategory.Golden, "golden" },
 				{ CardBackCategory.Events, "events" }
 			};
+			
 			/// <summary>
 			/// Used for Hearthstone searches.
 			/// </summary>
@@ -374,7 +438,6 @@ namespace ZeShmouttsAssets.BlizzardAPI
 				{ SortOrder.Ascending, "asc" },
 				{ SortOrder.Descending, "desc" }
 			};
-			
 		}
 	}
 }

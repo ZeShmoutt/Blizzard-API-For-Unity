@@ -252,21 +252,33 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			DrawCardSearchParameter(5, "Collectible", ref parameterCardSearch.collectible, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardCollectability.All);
 			DrawCardSearchParameter(6, "Rarity", ref parameterCardSearch.rarity, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardRarity.All);
 			DrawCardSearchParameter(7, "Type", ref parameterCardSearch.type, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardType.All);
-			if (parameterCardSearch.type == BlizzardAPI.HearthstoneGameData.CardType.Minion)
+
+			EditorGUI.indentLevel++;
+			switch (parameterCardSearch.type)
 			{
-				DrawCardSearchParameter(8, "Minion type", ref parameterCardSearch.minionType, DrawEnumField, BlizzardAPI.HearthstoneGameData.MinionType.All);
+				case BlizzardAPI.HearthstoneGameData.CardType.Minion:
+					DrawCardSearchParameter(8, "Minion type", ref parameterCardSearch.minionType, DrawEnumField, BlizzardAPI.HearthstoneGameData.MinionType.All);
+					break;
+				case BlizzardAPI.HearthstoneGameData.CardType.Spell:
+					DrawCardSearchParameter(8, "Spell school", ref parameterCardSearch.spellSchool, DrawEnumField, BlizzardAPI.HearthstoneGameData.SpellSchool.All);
+					break;
+				case BlizzardAPI.HearthstoneGameData.CardType.All:
+				case BlizzardAPI.HearthstoneGameData.CardType.Hero:
+				case BlizzardAPI.HearthstoneGameData.CardType.Weapon:
+				default:
+					bool guiEnabled = GUI.enabled;
+					GUI.enabled = false;
+					EditorGUILayout.BeginHorizontal();
+					EditorGUILayout.ToggleLeft("Additional type parameter", false);
+					EditorGUILayout.LabelField("---", EditorStyles.miniLabel);
+					EditorGUILayout.EndHorizontal();
+					GUI.enabled = guiEnabled;
+					parameterCardSearch.minionType = BlizzardAPI.HearthstoneGameData.MinionType.All;
+					parameterCardSearch.spellSchool = BlizzardAPI.HearthstoneGameData.SpellSchool.All;
+					break;
 			}
-			else
-			{
-				bool guiEnabled = GUI.enabled;
-				GUI.enabled = false;
-				EditorGUILayout.BeginHorizontal();
-				EditorGUILayout.ToggleLeft("Minion type", false);
-				EditorGUILayout.LabelField("N/A", EditorStyles.miniLabel);
-				EditorGUILayout.EndHorizontal();
-				GUI.enabled = guiEnabled;
-				parameterCardSearch.minionType = BlizzardAPI.HearthstoneGameData.MinionType.All;
-			}
+			EditorGUI.indentLevel--;
+
 			DrawCardSearchParameter(9, "Keyword", ref parameterCardSearch.keyword, DrawEnumField, BlizzardAPI.HearthstoneGameData.CardKeyword.All);
 			DrawCardSearchParameter(10, "Game mode", ref parameterCardSearch.gameMode, DrawEnumField, BlizzardAPI.HearthstoneGameData.GameMode.StandardWildFormats);
 			DrawCardSearchParameter(11, "Page", ref parameterCardSearch.page, DrawIntField, -1);

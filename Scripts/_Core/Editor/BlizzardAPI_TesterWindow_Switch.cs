@@ -122,6 +122,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataSets(action_Result: (Action<Json_Hearthstone_Metadata_Set[]>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 17:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataSpellSchools(action_Result: (Action<Json_Hearthstone_Metadata_SpellSchool[]>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					break;
+				case 18:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.HearthstoneGameData.GetMetadataTypes(action_Result: (Action<Json_Hearthstone_Metadata_Type[]>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				default:
