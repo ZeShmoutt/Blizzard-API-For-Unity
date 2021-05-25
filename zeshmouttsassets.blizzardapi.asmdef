@@ -1,8 +1,6 @@
 {
     "name": "Blizzard API for Unity",
-    "references": [
-        "Unity.EditorCoroutines.Editor"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -12,12 +10,6 @@
     "defineConstraints": [
         "UNITY_2018_4_OR_NEWER"
     ],
-    "versionDefines": [
-        {
-            "name": "com.unity.editorcoroutines",
-            "expression": "0.1.0",
-            "define": "UNITY_EDITORCOROUTINES"
-        }
-    ],
+    "versionDefines": [],
     "noEngineReferences": false
 }
