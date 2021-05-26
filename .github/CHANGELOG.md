@@ -3,6 +3,10 @@ All notable changes to this package will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/), and this project *somewhat* adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.13.2] - 2021-05-26
+### Unity version
+ - Updated project to Unity 2020.2.2f1
+
 ## [1.13.1] - 2021-03-15
 ### Bug fix
  - Added the missing script files for Hearthstone spell schools metadata

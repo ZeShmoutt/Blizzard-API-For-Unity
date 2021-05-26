@@ -203,7 +203,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 					UnityWebRequest tokenRequest = UnityWebRequest.Post(url, form);
 					yield return tokenRequest.SendWebRequest();
 
-					if (!tokenRequest.isNetworkError && !tokenRequest.isHttpError)
+					if (!tokenRequest.ReturnedNetworkError())
 					{
 						string resultContent = tokenRequest.downloadHandler.text;
 						AccessToken_JSON json = JsonUtility.FromJson<AccessToken_JSON>(resultContent);

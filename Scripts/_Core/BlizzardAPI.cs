@@ -227,7 +227,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 
 			yield return request.SendWebRequest();
 
-			if (!request.isNetworkError && !request.isHttpError)
+			if (!request.ReturnedNetworkError())
 			{
 				if (request.responseCode != 304)
 				{
@@ -264,6 +264,16 @@ namespace ZeShmouttsAssets.BlizzardAPI
 					DefaultErrorAction(request.error);
 				}
 			}
+		}
+
+		/// <summary>
+		/// Checks if a web request ended in a network error (connection or protocol).
+		/// </summary>
+		/// <param name="_request">The web request to check.</param>
+		/// <returns></returns>
+		internal static bool ReturnedNetworkError(this UnityWebRequest _request)
+		{
+			return _request.result.HasFlag(UnityWebRequest.Result.ConnectionError) || _request.result.HasFlag(UnityWebRequest.Result.ProtocolError);
 		}
 
 		/// <summary>
