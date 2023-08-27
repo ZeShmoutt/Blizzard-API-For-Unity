@@ -203,10 +203,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClass(classId: (int)methodParameters[0], action_Result: (Action<Json_WowClassic_PlayableClass>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 18:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassMedia(playableClassId: (int)methodParameters[0], action_Result: (Action<Json_WowClassic_PlayableClassMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassesIndex(action_Result: (Action<Json_WowClassic_PlayableClassesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 19:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassesIndex(action_Result: (Action<Json_WowClassic_PlayableClassesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableClassMedia(playableClassId: (int)methodParameters[0], action_Result: (Action<Json_WowClassic_PlayableClassMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 20:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowClassicGameData.GetPlayableRace(playableRaceId: (int)methodParameters[0], action_Result: (Action<Json_WowClassic_PlayableRace>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
@@ -362,10 +362,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneAffix(keystoneAffixId: (int)methodParameters[0], action_Result: (Action<Json_Wow_MythicKeystoneAffix>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 38:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneAffixMedia(keystoneAffixId: (int)methodParameters[0], action_Result: (Action<Json_Wow_MythicKeystoneAffixMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneAffixesIndex(action_Result: (Action<Json_Wow_MythicKeystoneAffixesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 39:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneAffixesIndex(action_Result: (Action<Json_Wow_MythicKeystoneAffixesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneAffixMedia(keystoneAffixId: (int)methodParameters[0], action_Result: (Action<Json_Wow_MythicKeystoneAffixMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 40:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetMythicKeystoneDungeon(dungeonId: (int)methodParameters[0], action_Result: (Action<Json_Wow_MythicKeystoneDungeon>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
@@ -401,28 +401,28 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPet(petId: (int)methodParameters[0], action_Result: (Action<Json_Wow_Pet>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 51:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetsIndex(action_Result: (Action<Json_Wow_PetsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
-					break;
-				case 52:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetAbilitiesIndex(action_Result: (Action<Json_Wow_PetAbilitiesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
-				case 53:
+				case 52:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetAbility(petAbilityId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PetAbility>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
-				case 54:
+				case 53:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetAbilityMedia(petAbilityId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PetAbilityMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
-				case 55:
+				case 54:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetMedia(petId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PetMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
+					break;
+				case 55:
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPetsIndex(action_Result: (Action<Json_Wow_PetsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 56:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPlayableClass(classId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PlayableClass>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 57:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPlayableClassMedia(playableClassId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PlayableClassMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPlayableClassesIndex(action_Result: (Action<Json_Wow_PlayableClassesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 58:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPlayableClassesIndex(action_Result: (Action<Json_Wow_PlayableClassesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPlayableClassMedia(playableClassId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PlayableClassMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 59:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetPvPTalentSlots(classId: (int)methodParameters[0], action_Result: (Action<Json_Wow_PvPTalentSlots>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
@@ -455,10 +455,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetProfessionMedia(professionId: (int)methodParameters[0], action_Result: (Action<Json_Wow_ProfessionMedia>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 69:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetProfessionSkillTier(professionId: (int)methodParameters[0], skillTierId: (int)methodParameters[1], action_Result: (Action<Json_Wow_ProfessionSkillTier>)methodParameters[2], ifModifiedSince: (string)methodParameters[3], action_LastModified: (Action<string>)methodParameters[4], action_OnError: (Action<string>)methodParameters[5], region: (BattleNetRegion)methodParameters[6]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetProfessionsIndex(action_Result: (Action<Json_Wow_ProfessionsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 70:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetProfessionsIndex(action_Result: (Action<Json_Wow_ProfessionsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetProfessionSkillTier(professionId: (int)methodParameters[0], skillTierId: (int)methodParameters[1], action_Result: (Action<Json_Wow_ProfessionSkillTier>)methodParameters[2], ifModifiedSince: (string)methodParameters[3], action_LastModified: (Action<string>)methodParameters[4], action_OnError: (Action<string>)methodParameters[5], region: (BattleNetRegion)methodParameters[6]));
 					break;
 				case 71:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetRecipe(recipeId: (int)methodParameters[0], action_Result: (Action<Json_Wow_Recipe>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
@@ -506,13 +506,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestCategory(questCategoryId: (int)methodParameters[0], action_Result: (Action<Json_Wow_QuestCategory>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 86:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestType(questTypeId: (int)methodParameters[0], action_Result: (Action<Json_Wow_QuestType>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestsIndex(action_Result: (Action<Json_Wow_QuestsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 87:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestTypesIndex(action_Result: (Action<Json_Wow_QuestTypesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestType(questTypeId: (int)methodParameters[0], action_Result: (Action<Json_Wow_QuestType>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
 					break;
 				case 88:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestsIndex(action_Result: (Action<Json_Wow_QuestsIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetQuestTypesIndex(action_Result: (Action<Json_Wow_QuestTypesIndex>)methodParameters[0], ifModifiedSince: (string)methodParameters[1], action_LastModified: (Action<string>)methodParameters[2], action_OnError: (Action<string>)methodParameters[3], region: (BattleNetRegion)methodParameters[4]));
 					break;
 				case 89:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowGameData.GetRealm(realmSlug: (string)methodParameters[0], action_Result: (Action<Json_Wow_Realm>)methodParameters[1], ifModifiedSince: (string)methodParameters[2], action_LastModified: (Action<string>)methodParameters[3], action_OnError: (Action<string>)methodParameters[4], region: (BattleNetRegion)methodParameters[5]));
@@ -578,10 +578,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.Editor
 			switch (method)
 			{
 				case 0:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowProfile.GetCharacterAchievementStatistics(region: (BattleNetRegion)methodParameters[0], realmSlug: (string)methodParameters[1], characterName: (string)methodParameters[2], action_Result: (Action<Json_Wow_CharacterAchievementStatistics>)methodParameters[3], ifModifiedSince: (string)methodParameters[4], action_LastModified: (Action<string>)methodParameters[5], action_OnError: (Action<string>)methodParameters[6]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowProfile.GetCharacterAchievementsSummary(region: (BattleNetRegion)methodParameters[0], realmSlug: (string)methodParameters[1], characterName: (string)methodParameters[2], action_Result: (Action<Json_Wow_CharacterAchievementsSummary>)methodParameters[3], ifModifiedSince: (string)methodParameters[4], action_LastModified: (Action<string>)methodParameters[5], action_OnError: (Action<string>)methodParameters[6]));
 					break;
 				case 1:
-					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowProfile.GetCharacterAchievementsSummary(region: (BattleNetRegion)methodParameters[0], realmSlug: (string)methodParameters[1], characterName: (string)methodParameters[2], action_Result: (Action<Json_Wow_CharacterAchievementsSummary>)methodParameters[3], ifModifiedSince: (string)methodParameters[4], action_LastModified: (Action<string>)methodParameters[5], action_OnError: (Action<string>)methodParameters[6]));
+					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowProfile.GetCharacterAchievementStatistics(region: (BattleNetRegion)methodParameters[0], realmSlug: (string)methodParameters[1], characterName: (string)methodParameters[2], action_Result: (Action<Json_Wow_CharacterAchievementStatistics>)methodParameters[3], ifModifiedSince: (string)methodParameters[4], action_LastModified: (Action<string>)methodParameters[5], action_OnError: (Action<string>)methodParameters[6]));
 					break;
 				case 2:
 					EditorCoroutineUtility.StartCoroutineOwnerless(BlizzardAPI.WowProfile.GetCharacterAppearanceSummary(region: (BattleNetRegion)methodParameters[0], realmSlug: (string)methodParameters[1], characterName: (string)methodParameters[2], action_Result: (Action<Json_Wow_CharacterAppearanceSummary>)methodParameters[3], ifModifiedSince: (string)methodParameters[4], action_LastModified: (Action<string>)methodParameters[5], action_OnError: (Action<string>)methodParameters[6]));

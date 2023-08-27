@@ -20,7 +20,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 		public static partial class HearthstoneGameData
 		{
 			internal const string apiPath_Metadata_SpellSchools = "spellSchools";
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to spell schools.
 			/// </summary>
@@ -33,7 +33,7 @@ namespace ZeShmouttsAssets.BlizzardAPI
 			{
 				yield return GetMetadata(apiPath_Metadata_SpellSchools, action_Result, ifModifiedSince, action_LastModified, action_OnError, region);
 			}
-
+			
 			/// <summary>
 			/// Coroutine that retrieves metadata related to spell schools, as a raw JSON string.
 			/// </summary>
