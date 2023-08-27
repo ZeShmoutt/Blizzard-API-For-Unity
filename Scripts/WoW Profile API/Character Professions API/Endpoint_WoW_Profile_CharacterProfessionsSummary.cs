@@ -82,16 +82,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		{
 			public int skill_points;
 			public int max_skill_points;
-			public ProfessionTierNameId tier;
+			public NameIdStruct tier;
 
 			public KeyNameIdStruct[] known_recipes;
-		}
-
-		[Serializable]
-		public struct ProfessionTierNameId
-		{
-			public string name;
-			public int id;
 		}
 
 		public Profession[] primaries;

@@ -89,7 +89,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public HRefStruct achievements;
 		public HRefStruct titles;
 		public HRefStruct pvp_summary;
-		public HRefStruct raid_progression;
+		public HRefStruct encounters;
 		public HRefStruct media;
 
 		public int last_login_timestamp;
@@ -102,9 +102,20 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public HRefStruct equipment;
 		public HRefStruct appearance;
 		public HRefStruct collections;
-
+		public TitleStruct active_title;
 		public HRefStruct reputations;
 		public HRefStruct quests;
+		public HRefStruct achievements_statistics;
+		public HRefStruct professions;
+
+		[Serializable]
+		public struct CovenantProgress
+		{
+			public KeyNameIdStruct chosen_covenant;
+			public int renown_level;
+			public HRefStruct soulbinds;
+		}
+		public CovenantProgress covenant_progress;
 		// {{JSON_END}}
 	}
 }
