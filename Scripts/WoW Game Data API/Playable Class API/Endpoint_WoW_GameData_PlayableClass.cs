@@ -73,10 +73,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public GenderedLocalizedString gender_name;
 
-		public RefNameIdStruct power_type;
-		public RefNameIdStruct[] specializations;
+		public KeyNameIdStruct power_type;
+		public KeyNameIdStruct[] specializations;
 
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		public HRefStruct pvp_talent_slots;
 		// {{JSON_END}}
 	}

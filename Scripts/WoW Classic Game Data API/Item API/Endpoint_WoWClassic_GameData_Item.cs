@@ -73,9 +73,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public TypeNameStruct quality;
 		public int level;
 		public int required_level;
-		public RefIdStruct media;
-		public RefNameIdStruct item_class;
-		public RefNameIdStruct item_subclass;
+		public KeyIdStruct media;
+		public KeyNameIdStruct item_class;
+		public KeyNameIdStruct item_subclass;
 		public TypeNameStruct inventory_type;
 		public int purchase_price;
 		public int sell_price;

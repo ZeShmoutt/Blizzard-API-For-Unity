@@ -70,8 +70,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct[] achievements;
-		public RefNameIdStruct[] subcategories;
+		public KeyNameIdStruct[] achievements;
+		public KeyNameIdStruct[] subcategories;
 		public bool is_guild_category;
 
 		[Serializable]

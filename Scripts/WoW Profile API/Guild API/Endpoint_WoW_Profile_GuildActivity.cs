@@ -77,7 +77,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct GuildActivityEncounter
 		{
-			public RefNameIdStruct encounter;
+			public KeyNameIdStruct encounter;
 			public TypeStruct mode;
 		}
 
@@ -85,7 +85,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct GuildActivityCharacterAchievement
 		{
 			public CharacterStruct character;
-			public RefNameIdStruct achievement;
+			public KeyNameIdStruct achievement;
 		}
 
 		[Serializable]

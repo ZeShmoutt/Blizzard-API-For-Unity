@@ -68,7 +68,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] current_leaderboards;
+		public KeyNameIdStruct[] current_leaderboards;
 		// {{JSON_END}}
 	}
 }

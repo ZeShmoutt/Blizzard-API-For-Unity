@@ -77,7 +77,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		{
 			public int id;
 			public LocalizedString name;
-			public RefIdStruct creature_display;
+			public KeyIdStruct creature_display;
 		}
 		public JournalCreature[] creatures;
 
@@ -85,7 +85,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct JournalItem
 		{
 			public int id;
-			public RefNameIdStruct item;
+			public KeyNameIdStruct item;
 		}
 		public JournalItem[] items;
 
@@ -95,12 +95,12 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int id;
 			public LocalizedString title;
 			public LocalizedString body_text;
-			public RefIdStruct creature_display;
+			public KeyIdStruct creature_display;
 			public JournalSection[] sections;
 		}
 		public JournalSection[] sections;
 
-		public RefNameIdStruct instance;
+		public KeyNameIdStruct instance;
 		public TypeStruct category;
 		public TypeNameStruct[] modes;
 		// {{JSON_END}}

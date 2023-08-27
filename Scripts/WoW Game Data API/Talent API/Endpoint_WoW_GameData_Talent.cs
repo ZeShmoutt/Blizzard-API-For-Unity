@@ -73,10 +73,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public int column_index;
 		public int level;
 		public LocalizedString description;
-		public RefNameIdStruct spell;
-		public RefNameIdStruct playable_class;
-		public RefNameIdStruct playable_specialization;
-		public RefNameIdStruct overrides_spell;
+		public KeyNameIdStruct spell;
+		public KeyNameIdStruct playable_class;
+		public KeyNameIdStruct playable_specialization;
+		public KeyNameIdStruct overrides_spell;
 		// {{JSON_END}}
 	}
 }

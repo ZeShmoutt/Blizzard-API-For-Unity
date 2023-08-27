@@ -85,7 +85,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Reputation
 		{
-			public RefNameIdStruct faction;
+			public KeyNameIdStruct faction;
 			public ReputationStanding standing;
 		}
 		public Reputation[] reputations;

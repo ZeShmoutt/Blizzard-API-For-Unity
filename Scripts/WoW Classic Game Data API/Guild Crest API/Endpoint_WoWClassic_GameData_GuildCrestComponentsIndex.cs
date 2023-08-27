@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct GuildCrestEmblem
 		{
 			public int id;
-			public RefIdStruct media;
+			public KeyIdStruct media;
 		}
 
 		public GuildCrestEmblem[] emblems;

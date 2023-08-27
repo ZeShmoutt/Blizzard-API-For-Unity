@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int class_id;
 		public LocalizedString name;
-		public RefNameIdStruct[] item_subclasses;
+		public KeyNameIdStruct[] item_subclasses;
 		// {{JSON_END}}
 	}
 }

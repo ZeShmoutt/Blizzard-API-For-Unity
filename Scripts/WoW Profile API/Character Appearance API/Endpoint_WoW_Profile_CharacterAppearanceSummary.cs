@@ -71,9 +71,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public CharacterStruct character;
-		public RefNameIdStruct playable_race;
-		public RefNameIdStruct playable_class;
-		public RefNameIdStruct active_spec;
+		public KeyNameIdStruct playable_race;
+		public KeyNameIdStruct playable_class;
+		public KeyNameIdStruct active_spec;
 		public TypeNameStruct gender;
 		public TypeNameStruct faction;
 
@@ -88,7 +88,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct GuildCrestItem
 		{
 			public int id;
-			public RefIdStruct media;
+			public KeyIdStruct media;
 			public GuildCrestItemColor color;
 		}
 

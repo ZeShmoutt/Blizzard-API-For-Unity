@@ -73,9 +73,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public GenderedLocalizedString gender_name;
 
-		public RefNameIdStruct power_type;
+		public KeyNameIdStruct power_type;
 
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		// {{JSON_END}}
 	}
 }

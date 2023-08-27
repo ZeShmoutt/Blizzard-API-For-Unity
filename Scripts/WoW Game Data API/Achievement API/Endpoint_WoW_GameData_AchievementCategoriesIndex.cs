@@ -66,9 +66,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] categories;
-		public RefNameIdStruct[] root_categories;
-		public RefNameIdStruct[] guild_categories;
+		public KeyNameIdStruct[] categories;
+		public KeyNameIdStruct[] root_categories;
+		public KeyNameIdStruct[] guild_categories;
 		// {{JSON_END}}
 	}
 }

@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct[] items;
+		public KeyNameIdStruct[] items;
 
 		[Serializable]
 		public struct ItemSetEffect

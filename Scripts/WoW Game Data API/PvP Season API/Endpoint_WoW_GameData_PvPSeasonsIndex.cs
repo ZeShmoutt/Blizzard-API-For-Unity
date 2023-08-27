@@ -65,8 +65,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	{
 		// {{JSON_START}}
 		public LinkStruct _links;
-		public RefIdStruct[] seasons;
-		public RefIdStruct current_season;
+		public KeyIdStruct[] seasons;
+		public KeyIdStruct current_season;
 		// {{JSON_END}}
 	}
 }

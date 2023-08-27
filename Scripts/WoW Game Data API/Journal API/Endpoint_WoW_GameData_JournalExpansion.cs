@@ -70,8 +70,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct[] dungeons;
-		public RefNameIdStruct[] raids;
+		public KeyNameIdStruct[] dungeons;
+		public KeyNameIdStruct[] raids;
 		// {{JSON_END}}
 	}
 }

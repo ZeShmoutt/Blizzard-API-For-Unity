@@ -68,13 +68,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefIdStruct season;
+		public KeyIdStruct season;
 
 		[Serializable]
 		public struct PvPReward
 		{
 			public IdTypeStruct bracket;
-			public RefNameIdStruct achievement;
+			public KeyNameIdStruct achievement;
 			public int rating_cutoff;
 			public TypeNameStruct faction;
 		}

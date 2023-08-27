@@ -76,7 +76,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct TitleSource
 		{
 			public TypeNameStruct type;
-			public RefNameIdStruct[] achievements;
+			public KeyNameIdStruct[] achievements;
 		}
 		public TitleSource source;
 		// {{JSON_END}}

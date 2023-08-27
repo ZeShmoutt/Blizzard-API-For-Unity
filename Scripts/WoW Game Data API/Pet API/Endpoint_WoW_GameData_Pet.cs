@@ -81,7 +81,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct PetAbility
 		{
-			public RefNameIdStruct ability;
+			public KeyNameIdStruct ability;
 			public int slot;
 			public int required_level;
 		}
@@ -89,7 +89,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public TypeNameStruct source;
 		public string icon;
-		public RefNameIdStruct creature;
+		public KeyNameIdStruct creature;
 		public bool is_random_creature_display;
 		// {{JSON_END}}
 	}

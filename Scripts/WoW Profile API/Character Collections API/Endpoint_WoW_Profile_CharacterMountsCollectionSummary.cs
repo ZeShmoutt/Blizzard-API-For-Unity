@@ -73,7 +73,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct MountEntry
 		{
-			public RefNameIdStruct[] mount;
+			public KeyNameIdStruct[] mount;
 		}
 		public MountEntry[] mounts;
 		// {{JSON_END}}

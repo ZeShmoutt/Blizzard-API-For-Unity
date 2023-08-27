@@ -74,14 +74,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefIdStruct season;
+		public KeyIdStruct season;
 
 		[Serializable]
 		public struct MythicDungeonRunCharacter
 		{
 			public CharacterStruct character;
-			public RefNameIdStruct specialization;
-			public RefNameIdStruct race;
+			public KeyNameIdStruct specialization;
+			public KeyNameIdStruct race;
 			public int equipped_item_level;
 		}
 
@@ -91,9 +91,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public long completed_timestamp;
 			public long duration;
 			public int keystone_level;
-			public RefNameIdStruct[] keystone_affixes;
+			public KeyNameIdStruct[] keystone_affixes;
 			public MythicDungeonRunCharacter[] members;
-			public RefNameIdStruct dungeon;
+			public KeyNameIdStruct dungeon;
 			public bool is_completed_within_time;
 		}
 		public MythicSeasonBestRun[] best_runs;

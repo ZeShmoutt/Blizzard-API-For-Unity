@@ -73,7 +73,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Profession
 		{
-			public RefNameIdStruct profession;
+			public KeyNameIdStruct profession;
 			public ProfessionTier[] tiers;
 		}
 
@@ -84,7 +84,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int max_skill_points;
 			public ProfessionTierNameId tier;
 
-			public RefNameIdStruct[] known_recipes;
+			public KeyNameIdStruct[] known_recipes;
 		}
 
 		[Serializable]

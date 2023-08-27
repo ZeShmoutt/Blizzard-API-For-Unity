@@ -79,7 +79,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct ProfessionSkillTierCategory
 		{
 			public LocalizedString name;
-			public RefNameIdStruct[] recipes;
+			public KeyNameIdStruct[] recipes;
 		}
 		public ProfessionSkillTierCategory[] categories;
 		// {{JSON_END}}

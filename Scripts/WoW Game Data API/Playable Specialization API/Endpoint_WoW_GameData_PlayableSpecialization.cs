@@ -69,10 +69,10 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public int id;
-		public RefNameIdStruct playable_class;
+		public KeyNameIdStruct playable_class;
 		public LocalizedString name;
 		public GenderedLocalizedString gender_description;
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		public TypeNameStruct role;
 
 		[Serializable]
@@ -88,7 +88,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Talent
 		{
-			public RefNameIdStruct talent;
+			public KeyNameIdStruct talent;
 			public SpellTooltip spell_tooltip;
 			public int column_index;
 		}
@@ -105,7 +105,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct PvpTalent
 		{
-			public RefNameIdStruct talent;
+			public KeyNameIdStruct talent;
 			public SpellTooltip spell_tooltip;
 		}
 		public PvpTalent[] pvp_talents;

@@ -71,7 +71,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public CharacterStruct character;
-		public RefNameIdStruct[] quests;
+		public KeyNameIdStruct[] quests;
 		// {{JSON_END}}
 	}
 }

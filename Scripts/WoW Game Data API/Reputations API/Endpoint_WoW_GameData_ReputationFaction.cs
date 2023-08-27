@@ -71,7 +71,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public int id;
 		public LocalizedString name;
 		public LocalizedString description;
-		public RefIdStruct reputation_tiers;
+		public KeyIdStruct reputation_tiers;
 		// {{JSON_END}}
 	}
 }

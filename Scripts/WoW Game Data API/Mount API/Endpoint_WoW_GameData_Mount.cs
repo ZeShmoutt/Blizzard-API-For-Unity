@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefIdStruct[] creature_displays;
+		public KeyIdStruct[] creature_displays;
 		public LocalizedString description;
 		public TypeNameStruct source;
 		public TypeNameStruct faction;

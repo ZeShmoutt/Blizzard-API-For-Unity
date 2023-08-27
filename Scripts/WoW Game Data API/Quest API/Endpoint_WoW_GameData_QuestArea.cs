@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString area;
-		public RefNameIdStruct[] quests;
+		public KeyNameIdStruct[] quests;
 		// {{JSON_END}}
 	}
 }

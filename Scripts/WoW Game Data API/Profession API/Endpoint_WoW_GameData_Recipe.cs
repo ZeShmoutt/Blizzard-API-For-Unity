@@ -70,15 +70,15 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefIdStruct media;
-		public RefNameIdStruct crafted_item;
-		public RefNameIdStruct alliance_crafted_item;
-		public RefNameIdStruct horde_crafted_item;
+		public KeyIdStruct media;
+		public KeyNameIdStruct crafted_item;
+		public KeyNameIdStruct alliance_crafted_item;
+		public KeyNameIdStruct horde_crafted_item;
 
 		[Serializable]
 		public struct Reagent
 		{
-			public RefNameIdStruct reagent;
+			public KeyNameIdStruct reagent;
 			public int quantity;
 		}
 		public Reagent[] reagents;

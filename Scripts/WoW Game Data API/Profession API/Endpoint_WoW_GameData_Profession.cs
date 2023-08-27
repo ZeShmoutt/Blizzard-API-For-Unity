@@ -72,12 +72,12 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LocalizedString name;
 		public LocalizedString description;
 		public TypeNameStruct type;
-		public RefIdStruct media;
+		public KeyIdStruct media;
 
 		public int minimum_skill_level;
 		public int maximum_skill_level;
 
-		public RefNameIdStruct[] skill_tiers;
+		public KeyNameIdStruct[] skill_tiers;
 		// {{JSON_END}}
 	}
 }

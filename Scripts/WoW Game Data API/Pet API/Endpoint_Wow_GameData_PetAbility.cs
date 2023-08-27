@@ -73,7 +73,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public IdTypeNameStruct battle_pet_type;
 		public int cooldown;
 		public int rounds;
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		// {{JSON_END}}
 	}
 }

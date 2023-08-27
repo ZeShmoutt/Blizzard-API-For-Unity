@@ -83,7 +83,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		{
 			public ProfileStruct profile;
 			public TypeStruct faction;
-			public RefIdStruct specialization;
+			public KeyIdStruct specialization;
 		}
 
 		[Serializable]
@@ -100,7 +100,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct KeystoneAffix
 		{
-			public RefNameIdStruct keystone_affix;
+			public KeyNameIdStruct keystone_affix;
 			public int starting_level;
 		}
 		public KeystoneAffix[] keystone_affixes;

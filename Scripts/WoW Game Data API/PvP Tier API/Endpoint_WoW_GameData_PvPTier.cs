@@ -72,7 +72,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LocalizedString name;
 		public int min_rating;
 		public int max_rating;
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		public IdTypeStruct bracket;
 		public int rating_type;
 		// {{JSON_END}}

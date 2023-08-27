@@ -76,8 +76,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public TypeNameStruct faction;
 		public IdTypeStruct bracket;
 		public int rating;
-		public RefIdStruct season;
-		public RefIdStruct tier;
+		public KeyIdStruct season;
+		public KeyIdStruct tier;
 
 		[Serializable]
 		public struct MatchStatistics

@@ -66,7 +66,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] azerite_essences;
+		public KeyNameIdStruct[] azerite_essences;
 		// {{JSON_END}}
 	}
 }

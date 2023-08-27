@@ -70,9 +70,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct type;
-		public RefNameIdStruct family;
-		public RefIdStruct creature_displays;
+		public KeyNameIdStruct type;
+		public KeyNameIdStruct family;
+		public KeyIdStruct creature_displays;
 		public bool is_tameable;
 		// {{JSON_END}}
 	}

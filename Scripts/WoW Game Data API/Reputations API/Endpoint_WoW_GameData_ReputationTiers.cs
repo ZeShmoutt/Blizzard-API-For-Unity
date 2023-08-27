@@ -79,7 +79,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int id;
 		}
 		public ReputationTier[] tiers;
-		public RefNameIdStruct faction;
+		public KeyNameIdStruct faction;
 		// {{JSON_END}}
 	}
 }

@@ -86,7 +86,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct Achievement
 		{
 			public int id;
-			public RefStringIdStruct achievement;
+			public KeyStringIdStruct achievement;
 			public AchievementCriteria criteria;
 			public long completed_timestamp;
 		}
@@ -95,7 +95,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct AchievementCategoryProgress
 		{
-			public RefStringIdStruct category;
+			public KeyStringIdStruct category;
 			public int quantity;
 			public int points;
 		}
@@ -105,7 +105,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct AchievementRecentEvent
 		{
 			public int id;
-			public RefStringIdStruct achievement;
+			public KeyStringIdStruct achievement;
 			public long timestamp;
 		}
 		public AchievementRecentEvent[] recent_events;

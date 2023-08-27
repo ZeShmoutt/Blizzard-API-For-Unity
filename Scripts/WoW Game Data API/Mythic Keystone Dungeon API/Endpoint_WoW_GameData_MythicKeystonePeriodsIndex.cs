@@ -66,8 +66,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefIdStruct[] periods;
-		public RefIdStruct current_period;
+		public KeyIdStruct[] periods;
+		public KeyIdStruct current_period;
 		// {{JSON_END}}
 	}
 }

@@ -72,7 +72,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LocalizedString name;
 		public NameIdStruct map;
 		public SlugStruct zone;
-		public RefNameIdStruct dungeon;
+		public KeyNameIdStruct dungeon;
 
 		[Serializable]
 		public struct KeystoneUpgrade

@@ -72,7 +72,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public string slug;
 		public string criteria_type;
-		public RefNameStruct zone;
+		public KeyNameStruct zone;
 
 		[Serializable]
 		public struct LeaderboardEntryGuild

@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public int id;
 		public long start_timestamp;
 		public long end_timestamp;
-		public RefIdStruct[] periods;
+		public KeyIdStruct[] periods;
 		// {{JSON_END}}
 	}
 }

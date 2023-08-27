@@ -71,7 +71,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public int id;
-		public RefNameIdStruct category;
+		public KeyNameIdStruct category;
 		public LocalizedString name;
 		public LocalizedString description;
 		public int points;
@@ -86,8 +86,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int amount;
 		}
 		public CriteriaStruct criteria;
-		public RefNameIdStruct next_achievement;
-		public RefIdStruct media;
+		public KeyNameIdStruct next_achievement;
+		public KeyIdStruct media;
 
 		public int display_order;
 		[Serializable]

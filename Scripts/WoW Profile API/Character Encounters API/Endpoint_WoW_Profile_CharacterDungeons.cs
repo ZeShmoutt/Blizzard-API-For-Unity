@@ -73,7 +73,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct DungeonModeEncounter
 		{
-			public RefNameIdStruct encounter;
+			public KeyNameIdStruct encounter;
 			public int completed_count;
 			public long last_kill_timestamp;
 		}
@@ -97,14 +97,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Dungeon
 		{
-			public RefNameIdStruct instance;
+			public KeyNameIdStruct instance;
 			public DungeonMode[] modes;
 		}
 
 		[Serializable]
 		public struct Expansion
 		{
-			public RefNameIdStruct expansion;
+			public KeyNameIdStruct expansion;
 			public Dungeon[] instances;
 		}
 		public Expansion[] expansions;

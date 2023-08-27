@@ -92,7 +92,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct GuildCrestEmblemPart
 		{
 			public int id;
-			public RefIdStruct media;
+			public KeyIdStruct media;
 			public GuildCrestColor color;
 		}
 

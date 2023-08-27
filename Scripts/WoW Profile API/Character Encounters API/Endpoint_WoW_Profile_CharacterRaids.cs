@@ -75,7 +75,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct RaidModeEncounter
 		{
-			public RefNameIdStruct encounter;
+			public KeyNameIdStruct encounter;
 			public int completed_count;
 			public long last_kill_timestamp;
 		}
@@ -99,14 +99,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Raid
 		{
-			public RefNameIdStruct instance;
+			public KeyNameIdStruct instance;
 			public RaidMode[] modes;
 		}
 
 		[Serializable]
 		public struct Expansion
 		{
-			public RefNameIdStruct expansion;
+			public KeyNameIdStruct expansion;
 			public Raid[] instances;
 		}
 		public Expansion[] expansions;

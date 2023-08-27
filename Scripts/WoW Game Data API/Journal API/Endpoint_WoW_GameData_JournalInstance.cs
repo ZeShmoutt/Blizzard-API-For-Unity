@@ -73,8 +73,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public NameIdStruct map;
 		public NameIdStruct area;
 		public LocalizedString description;
-		public RefNameIdStruct[] encounters;
-		public RefNameIdStruct expansion;
+		public KeyNameIdStruct[] encounters;
+		public KeyNameIdStruct expansion;
 		public NameIdStruct location;
 
 		[Serializable]
@@ -86,7 +86,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		}
 		public InstanceMode[] modes;
 
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		public int minimum_level;
 		public TypeStruct category;
 		// {{JSON_END}}

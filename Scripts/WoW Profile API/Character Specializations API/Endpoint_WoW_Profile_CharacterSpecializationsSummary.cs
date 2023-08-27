@@ -73,7 +73,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct SpellTooltip
 		{
-			public RefNameIdStruct spell;
+			public KeyNameIdStruct spell;
 			public LocalizedString description;
 			public LocalizedString cast_time;
 			public LocalizedString power_cost;
@@ -84,7 +84,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct SpecializationPvPTalent
 		{
-			public RefNameIdStruct talent;
+			public KeyNameIdStruct talent;
 			public SpellTooltip spell_tooltip;
 		}
 
@@ -98,7 +98,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct SpecializationTalent
 		{
-			public RefNameIdStruct talent;
+			public KeyNameIdStruct talent;
 			public SpellTooltip spell_tooltip;
 			public int tier_index;
 			public int column_index;
@@ -107,12 +107,12 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct Specialization
 		{
-			public RefNameIdStruct specialization;
+			public KeyNameIdStruct specialization;
 			public SpecializationTalent[] talents;
 			public SpecializationPvPTalentSlot[] pvp_talent_slots;
 		}
 		public Specialization[] specializations;
-		public RefNameIdStruct active_specialization;
+		public KeyNameIdStruct active_specialization;
 
 		public CharacterStruct character;
 		// {{JSON_END}}

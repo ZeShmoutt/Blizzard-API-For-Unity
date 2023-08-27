@@ -68,8 +68,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefIdStruct season;
-		public RefStringIdStruct[] leaderboards;
+		public KeyIdStruct season;
+		public KeyStringIdStruct[] leaderboards;
 		// {{JSON_END}}
 	}
 }

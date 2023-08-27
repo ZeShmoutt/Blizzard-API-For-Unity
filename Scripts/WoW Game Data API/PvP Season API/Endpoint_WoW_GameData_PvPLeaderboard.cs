@@ -70,7 +70,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefIdStruct season;
+		public KeyIdStruct season;
 		public string name;
 		public IdTypeStruct bracket;
 
@@ -90,7 +90,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int rank;
 			public int rating;
 			public SeasonMatchStatistics season_match_statistics;
-			public RefIdStruct tier;
+			public KeyIdStruct tier;
 		}
 		public PvPLeaderboardEntry[] entries;
 		// {{JSON_END}}

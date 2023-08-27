@@ -72,9 +72,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString title;
-		public RefNameIdStruct type;
-		public RefNameIdStruct category;
-		public RefNameIdStruct area;
+		public KeyNameIdStruct type;
+		public KeyNameIdStruct category;
+		public KeyNameIdStruct area;
 		public LocalizedString description;
 
 		[Serializable]
@@ -82,15 +82,15 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		{
 			public TypeNameStruct @operator;
 			public QuestRequirementOperator[] conditions;
-			public RefNameIdStruct target;
+			public KeyNameIdStruct target;
 		}
 
 		[Serializable]
 		public struct QuestRequirement
 		{
 			public int min_character_level;
-			public RefNameIdStruct[] races;
-			public RefNameIdStruct[] classes;
+			public KeyNameIdStruct[] races;
+			public KeyNameIdStruct[] classes;
 			public TypeNameStruct faction;
 			public QuestRequirementOperator quests;
 		}
@@ -100,13 +100,13 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct QuestRewardItemRequirement
 		{
-			public RefNameIdStruct[] playable_specializations;
+			public KeyNameIdStruct[] playable_specializations;
 		}
 
 		[Serializable]
 		public struct QuestRewardItem
 		{
-			public RefNameIdStruct item;
+			public KeyNameIdStruct item;
 			public QuestRewardItemRequirement requirements;
 		}
 
@@ -119,7 +119,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct QuestRewardReputation
 		{
-			public RefNameIdStruct reward;
+			public KeyNameIdStruct reward;
 			public int value;
 		}
 
@@ -145,7 +145,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public QuestRewardItems items;
 			public QuestRewardReputation[] reputations;
 			public QuestRewardMoney money;
-			public RefNameIdStruct spell;
+			public KeyNameIdStruct spell;
 		}
 		public QuestRewards rewards;
 

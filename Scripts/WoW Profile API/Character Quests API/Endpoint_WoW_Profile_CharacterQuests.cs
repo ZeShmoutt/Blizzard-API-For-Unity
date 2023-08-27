@@ -71,7 +71,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public CharacterStruct character;
-		public RefNameIdStruct[] in_progress;
+		public KeyNameIdStruct[] in_progress;
 		public HRefStruct completed;
 		// {{JSON_END}}
 	}

@@ -66,8 +66,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] factions;
-		public RefNameIdStruct[] root_factions;
+		public KeyNameIdStruct[] factions;
+		public KeyNameIdStruct[] root_factions;
 		// {{JSON_END}}
 	}
 }

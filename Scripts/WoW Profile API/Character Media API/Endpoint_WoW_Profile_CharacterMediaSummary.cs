@@ -80,7 +80,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		}
 		public CharacterStruct character;
 
-		public KeyValueStruct[] assets;
+		public AssetStruct[] assets;
 		// {{JSON_END}}
 	}
 }

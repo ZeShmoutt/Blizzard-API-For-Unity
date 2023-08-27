@@ -101,7 +101,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public int id;
-		public RefNameIdStruct region;
+		public KeyNameIdStruct region;
 		public HRefStruct connected_realm;
 		public LocalizedString name;
 		public LocalizedString category;

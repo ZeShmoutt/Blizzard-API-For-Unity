@@ -80,8 +80,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public long id;
 			public RealmStruct realm;
 			public int level;
-			public RefIdStruct playable_class;
-			public RefIdStruct playable_race;
+			public KeyIdStruct playable_class;
+			public KeyIdStruct playable_race;
 		}
 
 		[Serializable]

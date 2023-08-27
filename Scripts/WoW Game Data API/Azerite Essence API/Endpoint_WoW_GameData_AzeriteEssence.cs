@@ -70,18 +70,18 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct[] allowed_specializations;
+		public KeyNameIdStruct[] allowed_specializations;
 
 		[Serializable]
 		public struct AzeritePower
 		{
 			public int id;
 			public int rank;
-			public RefNameIdStruct main_power_spell;
-			public RefNameIdStruct passive_power_spell;
+			public KeyNameIdStruct main_power_spell;
+			public KeyNameIdStruct passive_power_spell;
 		}
 		public AzeritePower[] powers;
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		// {{JSON_END}}
 	}
 }

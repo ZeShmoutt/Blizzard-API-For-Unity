@@ -69,9 +69,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public LinkStruct _links;
 
 		public int id;
-		public RefNameIdStruct spell;
-		public RefNameIdStruct playable_specialization;
-		public RefNameIdStruct overrides_spell;
+		public KeyNameIdStruct spell;
+		public KeyNameIdStruct playable_specialization;
+		public KeyNameIdStruct overrides_spell;
 		public LocalizedString description;
 		public int unlock_player_level;
 		public int[] compatible_slots;

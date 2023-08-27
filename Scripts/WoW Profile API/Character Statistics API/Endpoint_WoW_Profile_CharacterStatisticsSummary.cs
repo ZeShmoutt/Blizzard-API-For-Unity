@@ -87,7 +87,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int health;
 		public int power;
-		public RefNameIdStruct power_type;
+		public KeyNameIdStruct power_type;
 		public StatisticSecondary speed;
 		public StatisticMain strength;
 		public StatisticMain agility;

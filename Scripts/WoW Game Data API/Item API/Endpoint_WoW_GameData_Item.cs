@@ -75,9 +75,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public TypeNameStruct quality;
 		public int level;
 		public int required_level;
-		public RefIdStruct media;
-		public RefNameIdStruct item_class;
-		public RefNameIdStruct item_subclass;
+		public KeyIdStruct media;
+		public KeyNameIdStruct item_class;
+		public KeyNameIdStruct item_subclass;
 		public TypeNameStruct inventory_type;
 		public int purchase_price;
 		public int sell_price;
@@ -89,18 +89,18 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct ItemPreview
 		{
-			public RefIdStruct item;
+			public KeyIdStruct item;
 			public TypeNameStruct quality;
 			public LocalizedString name;
-			public RefIdStruct media;
-			public RefNameIdStruct item_class;
-			public RefNameIdStruct item_subclass;
+			public KeyIdStruct media;
+			public KeyNameIdStruct item_class;
+			public KeyNameIdStruct item_subclass;
 			public TypeNameStruct inventory_type;
 			public TypeNameStruct binding;
 			public ArmorStruct armor;
 			public WeaponStruct weapon;
 			public StatStruct[] stats;
-			public SpellStruct[] spells;
+			public SpellTooltipStruct[] spells;
 			public LocalizedString unique_equipped;
 		}
 
@@ -136,13 +136,6 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public bool is_negated;
 			public bool is_equip_bonus;
 			public DisplayStringColorStruct display;
-		}
-
-		[Serializable]
-		public struct SpellStruct
-		{
-			public RefNameIdStruct spell;
-			public LocalizedString description;
 		}
 		// {{JSON_END}}
 	}

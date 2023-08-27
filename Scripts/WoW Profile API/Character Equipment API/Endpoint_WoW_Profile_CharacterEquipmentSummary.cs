@@ -75,7 +75,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct EquippedItemTransmog
 		{
-			public RefNameIdStruct item;
+			public KeyNameIdStruct item;
 			public LocalizedString display_string;
 			public int item_modified_appearance_id;
 		}
@@ -123,7 +123,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct EquippedItemSpellTooltip
 		{
-			public RefNameIdStruct spell;
+			public KeyNameIdStruct spell;
 			public LocalizedString description;
 			public LocalizedString cast_time;
 			public ColorStruct display_color;
@@ -145,8 +145,8 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public int rank;
 			public EquippedItemSpellTooltip main_spell_tooltip;
 			public EquippedItemSpellTooltip passive_spell_tooltip;
-			public RefNameIdStruct essence;
-			public RefIdStruct media;
+			public KeyNameIdStruct essence;
+			public KeyIdStruct media;
 		}
 
 		[Serializable]
@@ -166,16 +166,16 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public struct EquippedItemSocket
 		{
 			public TypeNameStruct socket_type;
-			public RefNameIdStruct item;
+			public KeyNameIdStruct item;
 			public LocalizedString display_string;
-			public RefIdStruct media;
+			public KeyIdStruct media;
 		}
 
 		[Serializable]
 		public struct EquippedItemEnchantment
 		{
 			public LocalizedString display_string;
-			public RefNameIdStruct source_item;
+			public KeyNameIdStruct source_item;
 			public int enchantment_id;
 			public IdTypeStruct enchantment_slot;
 			public EquippedItemSpellTooltip spell;
@@ -201,7 +201,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct EquippedItem
 		{
-			public RefIdStruct item;
+			public KeyIdStruct item;
 			public EquippedItemSocket[] sockets;
 			public EquippedItemEnchantment[] enchantments;
 			public TypeNameStruct slot;
@@ -212,9 +212,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 			public LocalizedString name;
 			public int modified_appearance_id;
 			public EquippedItemAzeriteDetails azerite_details;
-			public RefIdStruct media;
-			public RefNameIdStruct item_class;
-			public RefNameIdStruct item_subclass;
+			public KeyIdStruct media;
+			public KeyNameIdStruct item_class;
+			public KeyNameIdStruct item_subclass;
 			public TypeNameStruct inventory_type;
 			public TypeNameStruct binding;
 			public LocalizedString unique_equipped;
@@ -245,14 +245,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct ItemSetItem
 		{
-			public RefNameIdStruct item;
+			public KeyNameIdStruct item;
 			public bool is_equipped;
 		}
 
 		[Serializable]
 		public struct EquippedItemSet
 		{
-			public RefNameIdStruct item_set;
+			public KeyNameIdStruct item_set;
 			public ItemSetItem[] items;
 			public ItemSetEffect[] effects;
 			public LocalizedString display_string;

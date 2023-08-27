@@ -70,9 +70,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public int id;
 		public LocalizedString name;
-		public RefNameIdStruct specialization;
+		public KeyNameIdStruct specialization;
 
-		public RefIdStruct media;
+		public KeyIdStruct media;
 		// {{JSON_END}}
 	}
 }

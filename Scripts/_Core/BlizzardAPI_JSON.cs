@@ -153,10 +153,19 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	}
 
 	/// <summary>
+	/// "key" (HRefStruct).
+	/// </summary>
+	[Serializable]
+	public struct KeyStruct
+	{
+		public HRefStruct key;
+	}
+
+	/// <summary>
 	/// "key" (HRefStruct), "id" (int).
 	/// </summary>
 	[Serializable]
-	public struct RefIdStruct
+	public struct KeyIdStruct
 	{
 		public HRefStruct key;
 		public int id;
@@ -166,7 +175,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// "key" (HRefStruct), "name" (LocalizedString), "id" (int).
 	/// </summary>
 	[Serializable]
-	public struct RefNameIdStruct
+	public struct KeyNameIdStruct
 	{
 		public HRefStruct key;
 		public LocalizedString name;
@@ -187,7 +196,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// "key" (HRefStruct), "name" (string), "id" (int).
 	/// </summary>
 	[Serializable]
-	public struct RefStringIdStruct
+	public struct KeyStringIdStruct
 	{
 		public HRefStruct key;
 		public string name;
@@ -195,13 +204,14 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	}
 
 	/// <summary>
-	/// "key" (string), "value" (string).
+	/// "key" (string), "value" (string), "file_data_id" (int).
 	/// </summary>
 	[Serializable]
-	public struct KeyValueStruct
+	public struct AssetStruct
 	{
 		public string key;
 		public string value;
+		public int file_data_id;
 	}
 
 	/// <summary>
@@ -329,7 +339,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	/// "key" (HRefStruct), "name" (LocalizedString).
 	/// </summary>
 	[Serializable]
-	public struct RefNameStruct
+	public struct KeyNameStruct
 	{
 		public HRefStruct key;
 		public LocalizedString name;
@@ -353,6 +363,47 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 	{
 		public LocalizedString display_string;
 		public ColorStruct color;
+	}
+
+	/// <summary>
+	/// "spell" (RefNameIdStruct), "description" (LocalizedString), "cast_time" (LocalizedString), "power_cost" (LocalizedString), "range" (LocalizedString).
+	/// </summary>
+	[Serializable]
+	public struct SpellTooltipStruct
+	{
+		public KeyNameIdStruct spell;
+		public LocalizedString description;
+		public LocalizedString cast_time;
+		public LocalizedString power_cost;
+		public LocalizedString range;
+	}
+
+	[Serializable]
+	public struct TalentNodeRankTooltip
+	{
+		public KeyNameIdStruct talent;
+		public SpellTooltipStruct spell_tooltip;
+
+	}
+
+	[Serializable]
+	public struct TalentNodeRank
+	{
+		public int rank;
+		public TalentNodeRankTooltip tooltip;
+	}
+
+	[Serializable]
+	public struct TalentNodeStruct
+	{
+		public int id;
+		public int[] unlocks;
+		public IdTypeStruct node_type;
+		public TalentNodeRank[] ranks;
+		public int display_row;
+		public int display_col;
+		public int raw_position_x;
+		public int raw_position_y;
 	}
 
 	#endregion

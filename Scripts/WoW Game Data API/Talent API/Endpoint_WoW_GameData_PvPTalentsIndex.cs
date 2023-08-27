@@ -66,7 +66,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		// {{JSON_START}}
 		public LinkStruct _links;
 
-		public RefNameIdStruct[] pvp_talents;
+		public KeyNameIdStruct[] pvp_talents;
 		// {{JSON_END}}
 	}
 }

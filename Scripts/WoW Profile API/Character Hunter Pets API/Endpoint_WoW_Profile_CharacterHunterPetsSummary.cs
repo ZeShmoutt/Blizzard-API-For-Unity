@@ -79,11 +79,11 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		{
 			public string namee;
 			public int level;
-			public RefNameIdStruct creature;
+			public KeyNameIdStruct creature;
 			public int slot;
 			public bool is_active;
 			public bool is_summoned;
-			public RefIdStruct creature_display;
+			public KeyIdStruct creature_display;
 		}
 		public HunterPet[] hunter_pets;
 		// {{JSON_END}}

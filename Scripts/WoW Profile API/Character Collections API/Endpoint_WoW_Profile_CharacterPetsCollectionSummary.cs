@@ -82,11 +82,11 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		[Serializable]
 		public struct BattlePet
 		{
-			public RefNameIdStruct species;
+			public KeyNameIdStruct species;
 			public int level;
 			public TypeNameStruct quality;
 			public BattlePetStats stats;
-			public RefIdStruct creature_display;
+			public KeyIdStruct creature_display;
 			public long id;
 		}
 		public BattlePet[] pets;

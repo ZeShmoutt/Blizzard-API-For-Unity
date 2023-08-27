@@ -72,7 +72,7 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 
 		public CharacterStruct character;
 		public TitleStruct active_title;
-		public RefNameIdStruct[] titles;
+		public KeyNameIdStruct[] titles;
 		// {{JSON_END}}
 	}
 }

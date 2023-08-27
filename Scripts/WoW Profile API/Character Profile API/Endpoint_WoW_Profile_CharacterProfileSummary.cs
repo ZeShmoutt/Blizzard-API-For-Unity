@@ -74,9 +74,9 @@ namespace ZeShmouttsAssets.BlizzardAPI.JSON
 		public TypeNameStruct gender;
 		public TypeNameStruct faction;
 
-		public RefNameIdStruct race;
-		public RefNameIdStruct character_class;
-		public RefNameIdStruct active_spec;
+		public KeyNameIdStruct race;
+		public KeyNameIdStruct character_class;
+		public KeyNameIdStruct active_spec;
 
 		public RealmStruct realm;
 
